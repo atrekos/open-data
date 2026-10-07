@@ -1,0 +1,819 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/engine-result/0.2.json",
+  "title": "Atrekos engine result, before frameworks (retired)",
+  "description": "The engine result as written by engineVersion 0.2.0, before frameworks became catalogue data: it carries one projection per hard-coded standard. A frozen description for readers of older archives; it is never produced any more.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "activeQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "deactivatedBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "deactivatedBy"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "answerRationales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "questionCode": {
+            "type": "string"
+          },
+          "questionText": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "questionCode",
+          "questionText",
+          "rationale"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "activeDamageScenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "questionCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "questionCode"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "activeSteps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "name"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "attackPaths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "steps",
+          "riskId"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "pathRaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "riskId"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "initialRisks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "riskId"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "residualRisks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "riskId"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "riskId"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "tracing": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": {}
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "qualityIndicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "message"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "projections": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "resultSummary": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": {}
+            },
+            "annexI": {
+              "type": "object",
+              "properties": {
+                "entries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "letter": {
+                        "type": "string"
+                      },
+                      "requirementText": {
+                        "type": "string"
+                      },
+                      "implementingCountermeasures": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "addressedRiskIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "mitigatedRiskIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "verdict": {
+                        "type": "string",
+                        "enum": [
+                          "addressed",
+                          "partially_met",
+                          "not_met",
+                          "partial",
+                          "not_answered",
+                          "not_addressed",
+                          "disclaimed",
+                          "insufficient",
+                          "not_judgeable",
+                          "not_applicable"
+                        ]
+                      },
+                      "notJudgeable": {
+                        "type": "string"
+                      },
+                      "subItems": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "requirementText": {
+                              "type": "string"
+                            },
+                            "implementingCountermeasures": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "addressedRiskIds": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "mitigatedRiskIds": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "verdict": {
+                              "type": "string",
+                              "enum": [
+                                "addressed",
+                                "partially_met",
+                                "not_met",
+                                "partial",
+                                "not_answered",
+                                "not_addressed",
+                                "disclaimed",
+                                "insufficient",
+                                "not_judgeable",
+                                "not_applicable"
+                              ]
+                            },
+                            "notJudgeable": {
+                              "type": "string"
+                            },
+                            "applicability": {
+                              "type": "string",
+                              "const": "where_applicable"
+                            },
+                            "conditions": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "tier": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "code"
+                                ],
+                                "additionalProperties": {}
+                              }
+                            },
+                            "coveredOnlyByConditions": {
+                              "type": "boolean",
+                              "const": true
+                            },
+                            "disclaimedBy": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "rationale": {
+                                    "type": "string"
+                                  },
+                                  "carriedBy": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "code",
+                                  "rationale"
+                                ],
+                                "additionalProperties": {}
+                              }
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "requirementText",
+                            "implementingCountermeasures",
+                            "addressedRiskIds",
+                            "mitigatedRiskIds",
+                            "verdict"
+                          ],
+                          "additionalProperties": {}
+                        }
+                      },
+                      "unassignedCountermeasures": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "basis": {
+                        "type": "string",
+                        "const": "assessment"
+                      },
+                      "assessmentEvidence": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {}
+                      },
+                      "disclaimedBy": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "rationale": {
+                              "type": "string"
+                            },
+                            "carriedBy": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "rationale"
+                          ],
+                          "additionalProperties": {}
+                        }
+                      },
+                      "conditions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "tier": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "code"
+                          ],
+                          "additionalProperties": {}
+                        }
+                      },
+                      "coveredOnlyByConditions": {
+                        "type": "boolean",
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "letter",
+                      "requirementText",
+                      "implementingCountermeasures",
+                      "addressedRiskIds",
+                      "mitigatedRiskIds",
+                      "verdict"
+                    ],
+                    "additionalProperties": {}
+                  }
+                }
+              },
+              "required": [
+                "entries"
+              ],
+              "additionalProperties": {}
+            },
+            "iec62443": {
+              "type": "object",
+              "properties": {
+                "entries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "controlId": {
+                        "type": "string"
+                      },
+                      "controlName": {
+                        "type": "string"
+                      },
+                      "sl1": {
+                        "type": "boolean"
+                      },
+                      "sl2": {
+                        "type": "boolean"
+                      },
+                      "sl3": {
+                        "type": "boolean"
+                      },
+                      "sl4": {
+                        "type": "boolean"
+                      },
+                      "implementingCountermeasures": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "addressedRiskIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "mitigatedRiskIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "verdict": {
+                        "type": "string",
+                        "enum": [
+                          "addressed",
+                          "partially_met",
+                          "not_met",
+                          "partial",
+                          "not_answered",
+                          "not_addressed",
+                          "disclaimed",
+                          "insufficient",
+                          "not_judgeable",
+                          "not_applicable"
+                        ]
+                      },
+                      "notJudgeable": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "controlId",
+                      "controlName",
+                      "sl1",
+                      "sl2",
+                      "sl3",
+                      "sl4",
+                      "implementingCountermeasures",
+                      "addressedRiskIds",
+                      "mitigatedRiskIds",
+                      "verdict"
+                    ],
+                    "additionalProperties": {}
+                  }
+                }
+              },
+              "required": [
+                "entries"
+              ],
+              "additionalProperties": {}
+            },
+            "annexII": {
+              "type": "object",
+              "properties": {
+                "entries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      },
+                      "boundQuestions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "questionCode": {
+                              "type": "string"
+                            },
+                            "answered": {
+                              "type": "boolean"
+                            },
+                            "answer1": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "answer2": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "rationale": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "questionCode",
+                            "answered",
+                            "answer1",
+                            "answer2",
+                            "rationale"
+                          ],
+                          "additionalProperties": {}
+                        }
+                      },
+                      "evidence": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "documentationEvidence": {
+                        "type": "object",
+                        "properties": {
+                          "source": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "source"
+                        ],
+                        "additionalProperties": {}
+                      },
+                      "verdict": {
+                        "type": "string",
+                        "enum": [
+                          "addressed",
+                          "partially_met",
+                          "not_met",
+                          "partial",
+                          "not_answered",
+                          "not_addressed",
+                          "disclaimed",
+                          "insufficient",
+                          "not_judgeable",
+                          "not_applicable"
+                        ]
+                      },
+                      "notJudgeable": {
+                        "type": "string"
+                      },
+                      "missing": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "signedOffRationale": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "text",
+                      "boundQuestions",
+                      "evidence",
+                      "verdict"
+                    ],
+                    "additionalProperties": {}
+                  }
+                }
+              },
+              "required": [
+                "entries"
+              ],
+              "additionalProperties": {}
+            },
+            "annexIPartII": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "entries": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "requirementText": {
+                            "type": "string"
+                          },
+                          "guidance": {
+                            "type": "string"
+                          },
+                          "boundQuestions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "questionCode": {
+                                  "type": "string"
+                                },
+                                "answered": {
+                                  "type": "boolean"
+                                },
+                                "answer1": {
+                                  "anyOf": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                },
+                                "answer2": {
+                                  "anyOf": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                },
+                                "rationale": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "questionCode",
+                                "answered",
+                                "answer1",
+                                "answer2",
+                                "rationale"
+                              ],
+                              "additionalProperties": {}
+                            }
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "addressed",
+                              "partial",
+                              "not_addressed",
+                              "not_answered",
+                              "not_met",
+                              "partially_met"
+                            ]
+                          },
+                          "evidence": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "requirementText",
+                          "guidance",
+                          "boundQuestions",
+                          "status",
+                          "evidence"
+                        ],
+                        "additionalProperties": {}
+                      }
+                    }
+                  },
+                  "required": [
+                    "entries"
+                  ],
+                  "additionalProperties": {}
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "frameworks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": {}
+              }
+            },
+            "jsonExport": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": {}
+            }
+          },
+          "required": [
+            "resultSummary",
+            "annexI",
+            "iec62443",
+            "annexII",
+            "annexIPartII",
+            "jsonExport"
+          ],
+          "additionalProperties": {}
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "inputHash": {
+      "type": "string"
+    },
+    "engineVersion": {
+      "type": "string",
+      "const": "0.2.0"
+    }
+  },
+  "required": [
+    "version",
+    "activeQuestions",
+    "answerRationales",
+    "activeDamageScenarios",
+    "activeSteps",
+    "attackPaths",
+    "pathRaps",
+    "initialRisks",
+    "residualRisks",
+    "treatments",
+    "tracing",
+    "qualityIndicators",
+    "projections",
+    "inputHash",
+    "engineVersion"
+  ],
+  "additionalProperties": {}
+}

@@ -1,0 +1,3593 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/engine-result/0.3.json",
+  "title": "Atrekos engine result",
+  "description": "The engine result (`output/engine-result.json`, the API `result` body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "activeQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "deactivatedBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "deactivatedBy"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "answerRationales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "questionCode": {
+            "type": "string"
+          },
+          "questionText": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "questionCode",
+          "questionText",
+          "rationale"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "activeDamageScenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "questionCode": {
+            "type": "string"
+          },
+          "composedText": {
+            "type": "string"
+          },
+          "criterion": {
+            "type": "string"
+          },
+          "damageLevelId": {
+            "type": "string"
+          },
+          "damageLevelValue": {
+            "type": "number"
+          },
+          "strideCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "questionCode",
+          "composedText",
+          "criterion",
+          "damageLevelId",
+          "damageLevelValue"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "activeSteps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "prerequisiteCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "factorEstimates": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "value"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "questionCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "name",
+          "prerequisiteCodes",
+          "factorEstimates",
+          "questionCodes"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "attackPaths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "riskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "steps",
+          "riskId"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "pathRaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          },
+          "factorMaxima": {
+            "type": "object",
+            "properties": {
+              "ET": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "EX": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "KT": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "WO": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "EQ": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "ET",
+              "EX",
+              "KT",
+              "WO",
+              "EQ"
+            ],
+            "additionalProperties": true
+          },
+          "rapSum": {
+            "type": "number"
+          },
+          "rapClass": {
+            "type": "string"
+          },
+          "rapClassThreshold": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "riskId",
+          "factorMaxima",
+          "rapSum",
+          "rapClass",
+          "rapClassThreshold"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "initialRisks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          },
+          "finalStepCode": {
+            "type": "string"
+          },
+          "damageLevelId": {
+            "type": "string"
+          },
+          "damageLevelValue": {
+            "type": "number"
+          },
+          "rapClass": {
+            "type": "string"
+          },
+          "rapSum": {
+            "type": "number"
+          },
+          "riskValueId": {
+            "type": "string"
+          },
+          "riskValueName": {
+            "type": "string"
+          },
+          "riskValueNumeric": {
+            "type": "number"
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "factorMaxima": {
+            "type": "object",
+            "properties": {
+              "ET": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "EX": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "KT": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "WO": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              },
+              "EQ": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "ET",
+              "EX",
+              "KT",
+              "WO",
+              "EQ"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "riskId",
+          "finalStepCode",
+          "damageLevelId",
+          "damageLevelValue",
+          "rapClass",
+          "rapSum",
+          "riskValueId",
+          "riskValueName",
+          "riskValueNumeric",
+          "path",
+          "factorMaxima"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "residualRisks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          },
+          "finalStepCode": {
+            "type": "string"
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "factorMaxima": {
+            "type": "object",
+            "properties": {
+              "ET": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contributingMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins",
+                  "contributingMitigations"
+                ],
+                "additionalProperties": true
+              },
+              "EX": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contributingMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins",
+                  "contributingMitigations"
+                ],
+                "additionalProperties": true
+              },
+              "KT": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contributingMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins",
+                  "contributingMitigations"
+                ],
+                "additionalProperties": true
+              },
+              "WO": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contributingMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins",
+                  "contributingMitigations"
+                ],
+                "additionalProperties": true
+              },
+              "EQ": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "origins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contributingMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "value",
+                  "origins",
+                  "contributingMitigations"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "ET",
+              "EX",
+              "KT",
+              "WO",
+              "EQ"
+            ],
+            "additionalProperties": true
+          },
+          "rapSum": {
+            "type": "number"
+          },
+          "rapClass": {
+            "type": "string"
+          },
+          "rapClassOverridden": {
+            "type": "boolean"
+          },
+          "inlineRapSource": {
+            "type": "string"
+          },
+          "inlineMitigations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "refusedInlineEntries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "writtenClass": {
+                  "type": "string"
+                },
+                "calculatedClass": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "writtenClass",
+                "calculatedClass"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "damageLevelId": {
+            "type": "string"
+          },
+          "damageLevelValue": {
+            "type": "number"
+          },
+          "riskValueId": {
+            "type": "string"
+          },
+          "riskValueName": {
+            "type": "string"
+          },
+          "riskValueNumeric": {
+            "type": "number"
+          },
+          "appliedDSTs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ops": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "type": "string",
+                            "const": "remove"
+                          },
+                          "ds": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "ds"
+                        ],
+                        "additionalProperties": true
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "type": "string",
+                            "const": "replace"
+                          },
+                          "from": {
+                            "type": "string"
+                          },
+                          "to": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "from",
+                          "to"
+                        ],
+                        "additionalProperties": true
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "ops"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "activeCountermeasures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "activeAssumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "riskId",
+          "finalStepCode",
+          "path",
+          "factorMaxima",
+          "rapSum",
+          "rapClass",
+          "rapClassOverridden",
+          "damageLevelId",
+          "damageLevelValue",
+          "riskValueId",
+          "riskValueName",
+          "riskValueNumeric",
+          "appliedDSTs",
+          "activeCountermeasures",
+          "activeAssumptions"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          },
+          "proposal": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "manual"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "residualRiskValue": {
+            "type": "number"
+          },
+          "tolerableThreshold": {
+            "type": "number"
+          },
+          "callerOverride": {
+            "type": "object",
+            "properties": {
+              "decision": {
+                "type": "string",
+                "enum": [
+                  "accept",
+                  "avoid",
+                  "mitigate",
+                  "transfer"
+                ]
+              },
+              "rationale": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "reviewBy": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "decision",
+              "rationale"
+            ],
+            "additionalProperties": true
+          },
+          "nonNegotiable": {
+            "type": "object",
+            "properties": {
+              "conditionRationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conditionRationale"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "riskId",
+          "proposal",
+          "rationale",
+          "residualRiskValue",
+          "tolerableThreshold"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "tracing": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "residualRisks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "riskId": {
+                    "type": "string"
+                  },
+                  "finalStepCode": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "factorMaxima": {
+                    "type": "object",
+                    "properties": {
+                      "ET": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "origins": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "contributingMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "origins",
+                          "contributingMitigations"
+                        ],
+                        "additionalProperties": true
+                      },
+                      "EX": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "origins": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "contributingMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "origins",
+                          "contributingMitigations"
+                        ],
+                        "additionalProperties": true
+                      },
+                      "KT": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "origins": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "contributingMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "origins",
+                          "contributingMitigations"
+                        ],
+                        "additionalProperties": true
+                      },
+                      "WO": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "origins": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "contributingMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "origins",
+                          "contributingMitigations"
+                        ],
+                        "additionalProperties": true
+                      },
+                      "EQ": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "origins": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "contributingMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "origins",
+                          "contributingMitigations"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "ET",
+                      "EX",
+                      "KT",
+                      "WO",
+                      "EQ"
+                    ],
+                    "additionalProperties": true
+                  },
+                  "rapSum": {
+                    "type": "number"
+                  },
+                  "rapClass": {
+                    "type": "string"
+                  },
+                  "rapClassOverridden": {
+                    "type": "boolean"
+                  },
+                  "inlineRapSource": {
+                    "type": "string"
+                  },
+                  "inlineMitigations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "refusedInlineEntries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "writtenClass": {
+                          "type": "string"
+                        },
+                        "calculatedClass": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "writtenClass",
+                        "calculatedClass"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "damageLevelId": {
+                    "type": "string"
+                  },
+                  "damageLevelValue": {
+                    "type": "number"
+                  },
+                  "riskValueId": {
+                    "type": "string"
+                  },
+                  "riskValueName": {
+                    "type": "string"
+                  },
+                  "riskValueNumeric": {
+                    "type": "number"
+                  },
+                  "appliedDSTs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ops": {
+                          "type": "array",
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "kind": {
+                                    "type": "string",
+                                    "const": "remove"
+                                  },
+                                  "ds": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "kind",
+                                  "ds"
+                                ],
+                                "additionalProperties": true
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "kind": {
+                                    "type": "string",
+                                    "const": "replace"
+                                  },
+                                  "from": {
+                                    "type": "string"
+                                  },
+                                  "to": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "kind",
+                                  "from",
+                                  "to"
+                                ],
+                                "additionalProperties": true
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "ops"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "activeCountermeasures": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "activeAssumptions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "riskId",
+                  "finalStepCode",
+                  "path",
+                  "factorMaxima",
+                  "rapSum",
+                  "rapClass",
+                  "rapClassOverridden",
+                  "damageLevelId",
+                  "damageLevelValue",
+                  "riskValueId",
+                  "riskValueName",
+                  "riskValueNumeric",
+                  "appliedDSTs",
+                  "activeCountermeasures",
+                  "activeAssumptions"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "divergentRiskIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "confirmedMitigationIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "residualRisks",
+            "divergentRiskIds",
+            "confirmedMitigationIds"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "qualityIndicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "affectedElements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accepted": {
+            "type": "object",
+            "properties": {
+              "acceptedBy": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "acceptedBy",
+              "rationale"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "message"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "projections": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "resultSummary": {
+              "type": "object",
+              "properties": {
+                "totalQuestions": {
+                  "type": "number"
+                },
+                "answeredQuestions": {
+                  "type": "number"
+                },
+                "unansweredQuestions": {
+                  "type": "number"
+                },
+                "activeDSCount": {
+                  "type": "number"
+                },
+                "activeStepsCount": {
+                  "type": "number"
+                },
+                "totalPaths": {
+                  "type": "number"
+                },
+                "totalRisks": {
+                  "type": "number"
+                },
+                "residualRisksCount": {
+                  "type": "number"
+                },
+                "riskDistribution": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": "number"
+                  }
+                },
+                "residualRiskDistribution": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": "number"
+                  }
+                },
+                "qiSummary": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "number"
+                    },
+                    "warnings": {
+                      "type": "number"
+                    },
+                    "info": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "errors",
+                    "warnings",
+                    "info"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "required": [
+                "totalQuestions",
+                "answeredQuestions",
+                "unansweredQuestions",
+                "activeDSCount",
+                "activeStepsCount",
+                "totalPaths",
+                "totalRisks",
+                "residualRisksCount",
+                "riskDistribution",
+                "residualRiskDistribution",
+                "qiSummary"
+              ],
+              "additionalProperties": true
+            },
+            "frameworks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "catalog": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "publisher": {
+                        "type": "string"
+                      },
+                      "sourceUrl": {
+                        "type": "string"
+                      },
+                      "licence": {
+                        "type": "string"
+                      },
+                      "disclaimer": {
+                        "type": "string"
+                      },
+                      "textPolicy": {
+                        "type": "string",
+                        "enum": [
+                          "full",
+                          "title",
+                          "id"
+                        ]
+                      },
+                      "defaultBasis": {
+                        "type": "string",
+                        "enum": [
+                          "countermeasures",
+                          "questions",
+                          "assessment",
+                          "documentation"
+                        ]
+                      },
+                      "levels": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "label"
+                          ],
+                          "additionalProperties": true
+                        }
+                      },
+                      "attributes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "values": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "label"
+                          ],
+                          "additionalProperties": true
+                        }
+                      },
+                      "applicabilityEffect": {
+                        "type": "string",
+                        "enum": [
+                          "marker",
+                          "exclude"
+                        ]
+                      },
+                      "validity": {
+                        "type": "object",
+                        "properties": {
+                          "from": {
+                            "type": "string"
+                          },
+                          "until": {
+                            "type": "string"
+                          },
+                          "basis": {
+                            "type": "string"
+                          },
+                          "transitionalNote": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "basis"
+                        ],
+                        "additionalProperties": true
+                      },
+                      "asOf": {
+                        "type": "string"
+                      },
+                      "reviewNote": {
+                        "type": "string"
+                      },
+                      "processing": {
+                        "type": "string",
+                        "enum": [
+                          "text",
+                          "titles",
+                          "none"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "version",
+                      "licence",
+                      "disclaimer"
+                    ],
+                    "additionalProperties": true
+                  },
+                  "summary": {
+                    "type": "object",
+                    "properties": {
+                      "total": {
+                        "type": "number"
+                      },
+                      "addressedFull": {
+                        "type": "number"
+                      },
+                      "addressedPartial": {
+                        "type": "number"
+                      },
+                      "notApplicable": {
+                        "type": "number"
+                      },
+                      "notAddressed": {
+                        "type": "number"
+                      },
+                      "notJudgeable": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "total",
+                      "addressedFull",
+                      "addressedPartial",
+                      "notApplicable",
+                      "notAddressed",
+                      "notJudgeable"
+                    ],
+                    "additionalProperties": true
+                  },
+                  "entries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "controlId": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "parentId": {
+                          "type": "string"
+                        },
+                        "depth": {
+                          "type": "number"
+                        },
+                        "childControlIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "basis": {
+                          "type": "string",
+                          "enum": [
+                            "countermeasures",
+                            "questions",
+                            "assessment",
+                            "documentation"
+                          ]
+                        },
+                        "levels": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "attributes": {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        },
+                        "relations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "scheme": {
+                                "type": "string"
+                              },
+                              "target": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "subset-of",
+                                  "superset-of",
+                                  "equal",
+                                  "intersects",
+                                  "related",
+                                  "indicative",
+                                  "supersedes",
+                                  "derived-from",
+                                  "incorporated-into"
+                                ]
+                              },
+                              "assertedBy": {
+                                "type": "string",
+                                "enum": [
+                                  "publisher",
+                                  "operator"
+                                ]
+                              },
+                              "note": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "scheme",
+                              "target"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "implementingCountermeasures": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "addressedRiskIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "mitigatedRiskIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "boundQuestions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "questionCode": {
+                                "type": "string"
+                              },
+                              "answered": {
+                                "type": "boolean"
+                              },
+                              "answer1": {
+                                "anyOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "answer2": {
+                                "anyOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "rationale": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "questionCode",
+                              "answered",
+                              "answer1",
+                              "answer2",
+                              "rationale"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "assessmentEvidence": {
+                          "type": "object",
+                          "properties": {
+                            "totalQuestions": {
+                              "type": "number"
+                            },
+                            "answeredQuestions": {
+                              "type": "number"
+                            },
+                            "totalRisks": {
+                              "type": "number"
+                            },
+                            "decidedRisks": {
+                              "type": "number"
+                            },
+                            "decidedAutomatically": {
+                              "type": "number"
+                            },
+                            "decidedByPerson": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "totalQuestions",
+                            "answeredQuestions",
+                            "totalRisks",
+                            "decidedRisks",
+                            "decidedAutomatically",
+                            "decidedByPerson"
+                          ],
+                          "additionalProperties": true
+                        },
+                        "unassignedCountermeasures": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "unassignedQuestions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "active",
+                            "withdrawn",
+                            "restricted"
+                          ]
+                        },
+                        "statusNote": {
+                          "type": "string"
+                        },
+                        "applicability": {
+                          "type": "object",
+                          "properties": {
+                            "note": {
+                              "type": "string"
+                            },
+                            "when": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "notes": {
+                          "type": "string"
+                        },
+                        "attribution": {
+                          "type": "string"
+                        },
+                        "conditions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "tier": {
+                                "type": "string",
+                                "enum": [
+                                  "manufacturer",
+                                  "integrator",
+                                  "operator",
+                                  "end_user"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "code"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "coveredOnlyByConditions": {
+                          "type": "boolean",
+                          "const": true
+                        },
+                        "disclaimedBy": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "rationale": {
+                                "type": "string"
+                              },
+                              "carriedBy": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "rationale"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "documentationEvidence": {
+                          "type": "object",
+                          "properties": {
+                            "source": {
+                              "type": "string",
+                              "enum": [
+                                "contacts",
+                                "toeName",
+                                "description",
+                                "productIdentification",
+                                "docAddress",
+                                "instructions"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "source"
+                          ],
+                          "additionalProperties": true
+                        },
+                        "missing": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "signedOffRationale": {
+                          "type": "string"
+                        },
+                        "verdict": {
+                          "type": "string",
+                          "enum": [
+                            "addressed",
+                            "partially_met",
+                            "not_met",
+                            "partial",
+                            "not_answered",
+                            "not_addressed",
+                            "disclaimed",
+                            "insufficient",
+                            "not_judgeable",
+                            "not_applicable"
+                          ]
+                        },
+                        "notJudgeable": {
+                          "type": "string",
+                          "enum": [
+                            "no_catalog_mapping",
+                            "no_binding_available"
+                          ]
+                        },
+                        "notApplicable": {
+                          "type": "string",
+                          "enum": [
+                            "excluded_by_applicability",
+                            "withdrawn"
+                          ]
+                        },
+                        "summary": {
+                          "type": "object",
+                          "properties": {
+                            "total": {
+                              "type": "number"
+                            },
+                            "addressedFull": {
+                              "type": "number"
+                            },
+                            "addressedPartial": {
+                              "type": "number"
+                            },
+                            "notApplicable": {
+                              "type": "number"
+                            },
+                            "notAddressed": {
+                              "type": "number"
+                            },
+                            "notJudgeable": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "addressedFull",
+                            "addressedPartial",
+                            "notApplicable",
+                            "notAddressed",
+                            "notJudgeable"
+                          ],
+                          "additionalProperties": true
+                        },
+                        "outcome": {
+                          "type": "string",
+                          "enum": [
+                            "addressedFull",
+                            "addressedPartial",
+                            "notApplicable",
+                            "notAddressed",
+                            "notJudgeable"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "controlId",
+                        "title",
+                        "depth",
+                        "basis",
+                        "implementingCountermeasures",
+                        "addressedRiskIds",
+                        "mitigatedRiskIds",
+                        "verdict"
+                      ],
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "required": [
+                  "catalog",
+                  "summary",
+                  "entries"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "jsonExport": {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "string"
+                },
+                "generatedAt": {
+                  "type": "string"
+                },
+                "assessment": {
+                  "type": "object",
+                  "properties": {
+                    "toeName": {
+                      "type": "string"
+                    },
+                    "docMeta": {
+                      "type": "object",
+                      "properties": {
+                        "generatedAt": {
+                          "type": "string"
+                        },
+                        "toeName": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "contacts": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "productLifetime": {
+                          "type": "string"
+                        },
+                        "supportDuration": {
+                          "type": "string"
+                        },
+                        "productIdentification": {
+                          "type": "string"
+                        },
+                        "docAddress": {
+                          "type": "string"
+                        },
+                        "instructions": {
+                          "type": "string"
+                        },
+                        "illustrations": {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {}
+                        }
+                      },
+                      "required": [
+                        "generatedAt"
+                      ],
+                      "additionalProperties": true
+                    },
+                    "answerRationales": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "questionCode": {
+                            "type": "string"
+                          },
+                          "questionText": {
+                            "type": "string"
+                          },
+                          "rationale": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "questionCode",
+                          "questionText",
+                          "rationale"
+                        ],
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "required": [
+                    "toeName",
+                    "docMeta",
+                    "answerRationales"
+                  ],
+                  "additionalProperties": true
+                },
+                "risks": {
+                  "type": "object",
+                  "properties": {
+                    "initial": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "riskId": {
+                            "type": "string"
+                          },
+                          "finalStepCode": {
+                            "type": "string"
+                          },
+                          "damageLevelId": {
+                            "type": "string"
+                          },
+                          "damageLevelValue": {
+                            "type": "number"
+                          },
+                          "rapClass": {
+                            "type": "string"
+                          },
+                          "rapSum": {
+                            "type": "number"
+                          },
+                          "riskValueId": {
+                            "type": "string"
+                          },
+                          "riskValueName": {
+                            "type": "string"
+                          },
+                          "riskValueNumeric": {
+                            "type": "number"
+                          },
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "factorMaxima": {
+                            "type": "object",
+                            "properties": {
+                              "ET": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "EX": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "KT": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "WO": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "EQ": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins"
+                                ],
+                                "additionalProperties": true
+                              }
+                            },
+                            "required": [
+                              "ET",
+                              "EX",
+                              "KT",
+                              "WO",
+                              "EQ"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "required": [
+                          "riskId",
+                          "finalStepCode",
+                          "damageLevelId",
+                          "damageLevelValue",
+                          "rapClass",
+                          "rapSum",
+                          "riskValueId",
+                          "riskValueName",
+                          "riskValueNumeric",
+                          "path",
+                          "factorMaxima"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "residual": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "riskId": {
+                            "type": "string"
+                          },
+                          "finalStepCode": {
+                            "type": "string"
+                          },
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "factorMaxima": {
+                            "type": "object",
+                            "properties": {
+                              "ET": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "contributingMitigations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins",
+                                  "contributingMitigations"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "EX": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "contributingMitigations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins",
+                                  "contributingMitigations"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "KT": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "contributingMitigations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins",
+                                  "contributingMitigations"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "WO": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "contributingMitigations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins",
+                                  "contributingMitigations"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "EQ": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "origins": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "contributingMitigations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "origins",
+                                  "contributingMitigations"
+                                ],
+                                "additionalProperties": true
+                              }
+                            },
+                            "required": [
+                              "ET",
+                              "EX",
+                              "KT",
+                              "WO",
+                              "EQ"
+                            ],
+                            "additionalProperties": true
+                          },
+                          "rapSum": {
+                            "type": "number"
+                          },
+                          "rapClass": {
+                            "type": "string"
+                          },
+                          "rapClassOverridden": {
+                            "type": "boolean"
+                          },
+                          "inlineRapSource": {
+                            "type": "string"
+                          },
+                          "inlineMitigations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "refusedInlineEntries": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "writtenClass": {
+                                  "type": "string"
+                                },
+                                "calculatedClass": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "writtenClass",
+                                "calculatedClass"
+                              ],
+                              "additionalProperties": true
+                            }
+                          },
+                          "damageLevelId": {
+                            "type": "string"
+                          },
+                          "damageLevelValue": {
+                            "type": "number"
+                          },
+                          "riskValueId": {
+                            "type": "string"
+                          },
+                          "riskValueName": {
+                            "type": "string"
+                          },
+                          "riskValueNumeric": {
+                            "type": "number"
+                          },
+                          "appliedDSTs": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ops": {
+                                  "type": "array",
+                                  "items": {
+                                    "oneOf": [
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "kind": {
+                                            "type": "string",
+                                            "const": "remove"
+                                          },
+                                          "ds": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "kind",
+                                          "ds"
+                                        ],
+                                        "additionalProperties": true
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "kind": {
+                                            "type": "string",
+                                            "const": "replace"
+                                          },
+                                          "from": {
+                                            "type": "string"
+                                          },
+                                          "to": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "kind",
+                                          "from",
+                                          "to"
+                                        ],
+                                        "additionalProperties": true
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "required": [
+                                "ops"
+                              ],
+                              "additionalProperties": true
+                            }
+                          },
+                          "activeCountermeasures": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "activeAssumptions": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "riskId",
+                          "finalStepCode",
+                          "path",
+                          "factorMaxima",
+                          "rapSum",
+                          "rapClass",
+                          "rapClassOverridden",
+                          "damageLevelId",
+                          "damageLevelValue",
+                          "riskValueId",
+                          "riskValueName",
+                          "riskValueNumeric",
+                          "appliedDSTs",
+                          "activeCountermeasures",
+                          "activeAssumptions"
+                        ],
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "required": [
+                    "initial",
+                    "residual"
+                  ],
+                  "additionalProperties": true
+                },
+                "tracing": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "residualRisks": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "riskId": {
+                                "type": "string"
+                              },
+                              "finalStepCode": {
+                                "type": "string"
+                              },
+                              "path": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "factorMaxima": {
+                                "type": "object",
+                                "properties": {
+                                  "ET": {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "number"
+                                      },
+                                      "origins": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "contributingMitigations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "origins",
+                                      "contributingMitigations"
+                                    ],
+                                    "additionalProperties": true
+                                  },
+                                  "EX": {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "number"
+                                      },
+                                      "origins": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "contributingMitigations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "origins",
+                                      "contributingMitigations"
+                                    ],
+                                    "additionalProperties": true
+                                  },
+                                  "KT": {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "number"
+                                      },
+                                      "origins": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "contributingMitigations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "origins",
+                                      "contributingMitigations"
+                                    ],
+                                    "additionalProperties": true
+                                  },
+                                  "WO": {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "number"
+                                      },
+                                      "origins": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "contributingMitigations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "origins",
+                                      "contributingMitigations"
+                                    ],
+                                    "additionalProperties": true
+                                  },
+                                  "EQ": {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "number"
+                                      },
+                                      "origins": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "contributingMitigations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "origins",
+                                      "contributingMitigations"
+                                    ],
+                                    "additionalProperties": true
+                                  }
+                                },
+                                "required": [
+                                  "ET",
+                                  "EX",
+                                  "KT",
+                                  "WO",
+                                  "EQ"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "rapSum": {
+                                "type": "number"
+                              },
+                              "rapClass": {
+                                "type": "string"
+                              },
+                              "rapClassOverridden": {
+                                "type": "boolean"
+                              },
+                              "inlineRapSource": {
+                                "type": "string"
+                              },
+                              "inlineMitigations": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "refusedInlineEntries": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "writtenClass": {
+                                      "type": "string"
+                                    },
+                                    "calculatedClass": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "writtenClass",
+                                    "calculatedClass"
+                                  ],
+                                  "additionalProperties": true
+                                }
+                              },
+                              "damageLevelId": {
+                                "type": "string"
+                              },
+                              "damageLevelValue": {
+                                "type": "number"
+                              },
+                              "riskValueId": {
+                                "type": "string"
+                              },
+                              "riskValueName": {
+                                "type": "string"
+                              },
+                              "riskValueNumeric": {
+                                "type": "number"
+                              },
+                              "appliedDSTs": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "ops": {
+                                      "type": "array",
+                                      "items": {
+                                        "oneOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "kind": {
+                                                "type": "string",
+                                                "const": "remove"
+                                              },
+                                              "ds": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "kind",
+                                              "ds"
+                                            ],
+                                            "additionalProperties": true
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "kind": {
+                                                "type": "string",
+                                                "const": "replace"
+                                              },
+                                              "from": {
+                                                "type": "string"
+                                              },
+                                              "to": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "kind",
+                                              "from",
+                                              "to"
+                                            ],
+                                            "additionalProperties": true
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  },
+                                  "required": [
+                                    "ops"
+                                  ],
+                                  "additionalProperties": true
+                                }
+                              },
+                              "activeCountermeasures": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "activeAssumptions": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "required": [
+                              "riskId",
+                              "finalStepCode",
+                              "path",
+                              "factorMaxima",
+                              "rapSum",
+                              "rapClass",
+                              "rapClassOverridden",
+                              "damageLevelId",
+                              "damageLevelValue",
+                              "riskValueId",
+                              "riskValueName",
+                              "riskValueNumeric",
+                              "appliedDSTs",
+                              "activeCountermeasures",
+                              "activeAssumptions"
+                            ],
+                            "additionalProperties": true
+                          }
+                        },
+                        "divergentRiskIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "confirmedMitigationIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "residualRisks",
+                        "divergentRiskIds",
+                        "confirmedMitigationIds"
+                      ],
+                      "additionalProperties": true
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "quality": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "severity": {
+                        "type": "string",
+                        "enum": [
+                          "error",
+                          "warning",
+                          "info"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "affectedElements": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "accepted": {
+                        "type": "object",
+                        "properties": {
+                          "acceptedBy": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "rationale": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "acceptedBy",
+                          "rationale"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "severity",
+                      "message"
+                    ],
+                    "additionalProperties": true
+                  }
+                },
+                "projections": {
+                  "type": "object",
+                  "properties": {
+                    "resultSummary": {
+                      "type": "object",
+                      "properties": {
+                        "totalQuestions": {
+                          "type": "number"
+                        },
+                        "answeredQuestions": {
+                          "type": "number"
+                        },
+                        "unansweredQuestions": {
+                          "type": "number"
+                        },
+                        "activeDSCount": {
+                          "type": "number"
+                        },
+                        "activeStepsCount": {
+                          "type": "number"
+                        },
+                        "totalPaths": {
+                          "type": "number"
+                        },
+                        "totalRisks": {
+                          "type": "number"
+                        },
+                        "residualRisksCount": {
+                          "type": "number"
+                        },
+                        "riskDistribution": {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {
+                            "type": "number"
+                          }
+                        },
+                        "residualRiskDistribution": {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {
+                            "type": "number"
+                          }
+                        },
+                        "qiSummary": {
+                          "type": "object",
+                          "properties": {
+                            "errors": {
+                              "type": "number"
+                            },
+                            "warnings": {
+                              "type": "number"
+                            },
+                            "info": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "errors",
+                            "warnings",
+                            "info"
+                          ],
+                          "additionalProperties": true
+                        }
+                      },
+                      "required": [
+                        "totalQuestions",
+                        "answeredQuestions",
+                        "unansweredQuestions",
+                        "activeDSCount",
+                        "activeStepsCount",
+                        "totalPaths",
+                        "totalRisks",
+                        "residualRisksCount",
+                        "riskDistribution",
+                        "residualRiskDistribution",
+                        "qiSummary"
+                      ],
+                      "additionalProperties": true
+                    },
+                    "frameworks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "catalog": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "version": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "publisher": {
+                                "type": "string"
+                              },
+                              "sourceUrl": {
+                                "type": "string"
+                              },
+                              "licence": {
+                                "type": "string"
+                              },
+                              "disclaimer": {
+                                "type": "string"
+                              },
+                              "textPolicy": {
+                                "type": "string",
+                                "enum": [
+                                  "full",
+                                  "title",
+                                  "id"
+                                ]
+                              },
+                              "defaultBasis": {
+                                "type": "string",
+                                "enum": [
+                                  "countermeasures",
+                                  "questions",
+                                  "assessment",
+                                  "documentation"
+                                ]
+                              },
+                              "levels": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "label": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "label"
+                                  ],
+                                  "additionalProperties": true
+                                }
+                              },
+                              "attributes": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "key": {
+                                      "type": "string"
+                                    },
+                                    "label": {
+                                      "type": "string"
+                                    },
+                                    "values": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  "required": [
+                                    "key",
+                                    "label"
+                                  ],
+                                  "additionalProperties": true
+                                }
+                              },
+                              "applicabilityEffect": {
+                                "type": "string",
+                                "enum": [
+                                  "marker",
+                                  "exclude"
+                                ]
+                              },
+                              "validity": {
+                                "type": "object",
+                                "properties": {
+                                  "from": {
+                                    "type": "string"
+                                  },
+                                  "until": {
+                                    "type": "string"
+                                  },
+                                  "basis": {
+                                    "type": "string"
+                                  },
+                                  "transitionalNote": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "basis"
+                                ],
+                                "additionalProperties": true
+                              },
+                              "asOf": {
+                                "type": "string"
+                              },
+                              "reviewNote": {
+                                "type": "string"
+                              },
+                              "processing": {
+                                "type": "string",
+                                "enum": [
+                                  "text",
+                                  "titles",
+                                  "none"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "version",
+                              "licence",
+                              "disclaimer"
+                            ],
+                            "additionalProperties": true
+                          },
+                          "summary": {
+                            "type": "object",
+                            "properties": {
+                              "total": {
+                                "type": "number"
+                              },
+                              "addressedFull": {
+                                "type": "number"
+                              },
+                              "addressedPartial": {
+                                "type": "number"
+                              },
+                              "notApplicable": {
+                                "type": "number"
+                              },
+                              "notAddressed": {
+                                "type": "number"
+                              },
+                              "notJudgeable": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "total",
+                              "addressedFull",
+                              "addressedPartial",
+                              "notApplicable",
+                              "notAddressed",
+                              "notJudgeable"
+                            ],
+                            "additionalProperties": true
+                          },
+                          "entries": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "controlId": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "type": "string"
+                                },
+                                "parentId": {
+                                  "type": "string"
+                                },
+                                "depth": {
+                                  "type": "number"
+                                },
+                                "childControlIds": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "basis": {
+                                  "type": "string",
+                                  "enum": [
+                                    "countermeasures",
+                                    "questions",
+                                    "assessment",
+                                    "documentation"
+                                  ]
+                                },
+                                "levels": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "propertyNames": {
+                                    "type": "string"
+                                  },
+                                  "additionalProperties": {
+                                    "type": "string"
+                                  }
+                                },
+                                "relations": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "scheme": {
+                                        "type": "string"
+                                      },
+                                      "target": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "subset-of",
+                                          "superset-of",
+                                          "equal",
+                                          "intersects",
+                                          "related",
+                                          "indicative",
+                                          "supersedes",
+                                          "derived-from",
+                                          "incorporated-into"
+                                        ]
+                                      },
+                                      "assertedBy": {
+                                        "type": "string",
+                                        "enum": [
+                                          "publisher",
+                                          "operator"
+                                        ]
+                                      },
+                                      "note": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "scheme",
+                                      "target"
+                                    ],
+                                    "additionalProperties": true
+                                  }
+                                },
+                                "implementingCountermeasures": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "addressedRiskIds": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "mitigatedRiskIds": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "boundQuestions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "questionCode": {
+                                        "type": "string"
+                                      },
+                                      "answered": {
+                                        "type": "boolean"
+                                      },
+                                      "answer1": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      },
+                                      "answer2": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      },
+                                      "rationale": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "questionCode",
+                                      "answered",
+                                      "answer1",
+                                      "answer2",
+                                      "rationale"
+                                    ],
+                                    "additionalProperties": true
+                                  }
+                                },
+                                "assessmentEvidence": {
+                                  "type": "object",
+                                  "properties": {
+                                    "totalQuestions": {
+                                      "type": "number"
+                                    },
+                                    "answeredQuestions": {
+                                      "type": "number"
+                                    },
+                                    "totalRisks": {
+                                      "type": "number"
+                                    },
+                                    "decidedRisks": {
+                                      "type": "number"
+                                    },
+                                    "decidedAutomatically": {
+                                      "type": "number"
+                                    },
+                                    "decidedByPerson": {
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "totalQuestions",
+                                    "answeredQuestions",
+                                    "totalRisks",
+                                    "decidedRisks",
+                                    "decidedAutomatically",
+                                    "decidedByPerson"
+                                  ],
+                                  "additionalProperties": true
+                                },
+                                "unassignedCountermeasures": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "unassignedQuestions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "status": {
+                                  "type": "string",
+                                  "enum": [
+                                    "active",
+                                    "withdrawn",
+                                    "restricted"
+                                  ]
+                                },
+                                "statusNote": {
+                                  "type": "string"
+                                },
+                                "applicability": {
+                                  "type": "object",
+                                  "properties": {
+                                    "note": {
+                                      "type": "string"
+                                    },
+                                    "when": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "additionalProperties": true
+                                },
+                                "notes": {
+                                  "type": "string"
+                                },
+                                "attribution": {
+                                  "type": "string"
+                                },
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "code": {
+                                        "type": "string"
+                                      },
+                                      "tier": {
+                                        "type": "string",
+                                        "enum": [
+                                          "manufacturer",
+                                          "integrator",
+                                          "operator",
+                                          "end_user"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "code"
+                                    ],
+                                    "additionalProperties": true
+                                  }
+                                },
+                                "coveredOnlyByConditions": {
+                                  "type": "boolean",
+                                  "const": true
+                                },
+                                "disclaimedBy": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "code": {
+                                        "type": "string"
+                                      },
+                                      "rationale": {
+                                        "type": "string"
+                                      },
+                                      "carriedBy": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "code",
+                                      "rationale"
+                                    ],
+                                    "additionalProperties": true
+                                  }
+                                },
+                                "documentationEvidence": {
+                                  "type": "object",
+                                  "properties": {
+                                    "source": {
+                                      "type": "string",
+                                      "enum": [
+                                        "contacts",
+                                        "toeName",
+                                        "description",
+                                        "productIdentification",
+                                        "docAddress",
+                                        "instructions"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "source"
+                                  ],
+                                  "additionalProperties": true
+                                },
+                                "missing": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "signedOffRationale": {
+                                  "type": "string"
+                                },
+                                "verdict": {
+                                  "type": "string",
+                                  "enum": [
+                                    "addressed",
+                                    "partially_met",
+                                    "not_met",
+                                    "partial",
+                                    "not_answered",
+                                    "not_addressed",
+                                    "disclaimed",
+                                    "insufficient",
+                                    "not_judgeable",
+                                    "not_applicable"
+                                  ]
+                                },
+                                "notJudgeable": {
+                                  "type": "string",
+                                  "enum": [
+                                    "no_catalog_mapping",
+                                    "no_binding_available"
+                                  ]
+                                },
+                                "notApplicable": {
+                                  "type": "string",
+                                  "enum": [
+                                    "excluded_by_applicability",
+                                    "withdrawn"
+                                  ]
+                                },
+                                "summary": {
+                                  "type": "object",
+                                  "properties": {
+                                    "total": {
+                                      "type": "number"
+                                    },
+                                    "addressedFull": {
+                                      "type": "number"
+                                    },
+                                    "addressedPartial": {
+                                      "type": "number"
+                                    },
+                                    "notApplicable": {
+                                      "type": "number"
+                                    },
+                                    "notAddressed": {
+                                      "type": "number"
+                                    },
+                                    "notJudgeable": {
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "total",
+                                    "addressedFull",
+                                    "addressedPartial",
+                                    "notApplicable",
+                                    "notAddressed",
+                                    "notJudgeable"
+                                  ],
+                                  "additionalProperties": true
+                                },
+                                "outcome": {
+                                  "type": "string",
+                                  "enum": [
+                                    "addressedFull",
+                                    "addressedPartial",
+                                    "notApplicable",
+                                    "notAddressed",
+                                    "notJudgeable"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "controlId",
+                                "title",
+                                "depth",
+                                "basis",
+                                "implementingCountermeasures",
+                                "addressedRiskIds",
+                                "mitigatedRiskIds",
+                                "verdict"
+                              ],
+                              "additionalProperties": true
+                            }
+                          }
+                        },
+                        "required": [
+                          "catalog",
+                          "summary",
+                          "entries"
+                        ],
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "required": [
+                    "resultSummary",
+                    "frameworks"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "required": [
+                "version",
+                "generatedAt",
+                "assessment",
+                "risks",
+                "tracing",
+                "quality",
+                "projections"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "resultSummary",
+            "frameworks",
+            "jsonExport"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "inputHash": {
+      "type": "string"
+    },
+    "engineVersion": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "activeQuestions",
+    "answerRationales",
+    "activeDamageScenarios",
+    "activeSteps",
+    "attackPaths",
+    "pathRaps",
+    "initialRisks",
+    "residualRisks",
+    "treatments",
+    "tracing",
+    "qualityIndicators",
+    "projections",
+    "inputHash",
+    "engineVersion"
+  ],
+  "additionalProperties": true
+}

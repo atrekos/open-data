@@ -1,0 +1,656 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/atrekos-stix-extension/1.json",
+  "title": "Atrekos STIX 2.1 extension",
+  "description": "The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "extension_type": {
+          "type": "string",
+          "const": "property-extension"
+        },
+        "kind": {
+          "type": "string",
+          "const": "pack"
+        },
+        "pack": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "licenseInfo": {
+              "type": "object",
+              "properties": {
+                "spdxId": {
+                  "type": "string"
+                },
+                "attribution": {
+                  "type": "string"
+                },
+                "sourceUrl": {
+                  "type": "string"
+                },
+                "copyrightNotice": {
+                  "type": "string"
+                },
+                "workTitle": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "derivedFromPack": {
+                  "type": "string"
+                },
+                "derivedFrom": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "uri": {
+                      "type": "string"
+                    },
+                    "license": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                },
+                "modifications": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "additionalSources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "workTitle": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string"
+                      },
+                      "creator": {
+                        "type": "string"
+                      },
+                      "copyrightNotice": {
+                        "type": "string"
+                      },
+                      "licenseName": {
+                        "type": "string"
+                      },
+                      "licenseText": {
+                        "type": "string"
+                      },
+                      "licenseUri": {
+                        "type": "string"
+                      },
+                      "sourceUrl": {
+                        "type": "string"
+                      },
+                      "scope": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "workTitle",
+                      "creator",
+                      "copyrightNotice",
+                      "licenseName",
+                      "licenseText",
+                      "sourceUrl",
+                      "scope"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "slug",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "projection": {
+          "type": "object",
+          "properties": {
+            "lossy": {
+              "type": "boolean",
+              "const": true
+            },
+            "canonical": {
+              "type": "string",
+              "const": "pack-artifact"
+            },
+            "canonicalVersion": {
+              "type": "number",
+              "const": 3
+            },
+            "canonicalSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "notCarried": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "lossy",
+            "canonical",
+            "canonicalVersion",
+            "canonicalSha256",
+            "notCarried"
+          ],
+          "additionalProperties": false
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "indentation": {
+                "type": "number"
+              },
+              "isQuestion": {
+                "type": "boolean"
+              },
+              "a1Options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "a2Config": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "infoTexts": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "inactiveOn": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "questionCode": {
+                      "type": "string"
+                    },
+                    "answer1": {
+                      "type": "string"
+                    },
+                    "answer2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "questionCode",
+                    "answer1"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "sort": {
+                "type": "number"
+              },
+              "frameworkControlIds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "catalogId": {
+                      "type": "string"
+                    },
+                    "controlId": {
+                      "type": "string"
+                    },
+                    "coverage": {
+                      "type": "string",
+                      "enum": [
+                        "full",
+                        "partial"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "catalogId",
+                    "controlId"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "code",
+              "text",
+              "indentation",
+              "isQuestion",
+              "a1Options",
+              "a2Config",
+              "infoTexts",
+              "inactiveOn",
+              "sort"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "damageScenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "questionCode": {
+                "type": "string"
+              },
+              "textPrefix": {
+                "type": "string"
+              },
+              "textSuffix": {
+                "type": "string"
+              },
+              "providesCriterion": {
+                "type": "string"
+              },
+              "matchAnswer1": {
+                "type": "string"
+              },
+              "matchAnswer2": {
+                "type": "string"
+              },
+              "explicitCriterion": {
+                "type": "string"
+              },
+              "explicitLevel": {
+                "type": "number"
+              },
+              "explicitExplanation": {
+                "type": "string"
+              },
+              "strideCode": {
+                "type": "string"
+              },
+              "unknownSubjectText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "questionCode",
+              "textPrefix",
+              "textSuffix",
+              "providesCriterion",
+              "matchAnswer1"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "requirements": {
+                "type": "string"
+              },
+              "stakeholderName": {
+                "type": "string"
+              },
+              "activatingAnswers": {
+                "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "activatingAnswersRaw": {
+                "type": "string"
+              },
+              "mitigatedStepCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dsts": {
+                "description": "Engine-owned: damage-scenario transformations. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "factorContributions": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "reference": {
+                "type": "string"
+              },
+              "frameworkControlIds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "catalogId": {
+                      "type": "string"
+                    },
+                    "controlId": {
+                      "type": "string"
+                    },
+                    "coverage": {
+                      "type": "string",
+                      "enum": [
+                        "full",
+                        "partial"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "catalogId",
+                    "controlId"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "tier": {
+                "description": "Engine-owned: the condition tier. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              }
+            },
+            "required": [
+              "code",
+              "name",
+              "description",
+              "requirements",
+              "stakeholderName",
+              "activatingAnswers",
+              "activatingAnswersRaw",
+              "mitigatedStepCodes",
+              "dsts",
+              "factorContributions",
+              "reference"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "extension_type",
+        "kind",
+        "pack",
+        "projection",
+        "questions",
+        "damageScenarios",
+        "assumptions"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "extension_type": {
+          "type": "string",
+          "const": "property-extension"
+        },
+        "kind": {
+          "type": "string",
+          "const": "attack-step"
+        },
+        "element": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "prerequisiteCodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "questionCodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "factorEstimates": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "requiredAnswersRaw": {
+              "type": "string"
+            },
+            "requiredAnswers": {
+              "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+            },
+            "comment": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "name",
+            "prerequisiteCodes",
+            "questionCodes",
+            "factorEstimates",
+            "requiredAnswersRaw",
+            "requiredAnswers",
+            "comment"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "extension_type",
+        "kind",
+        "element"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "extension_type": {
+          "type": "string",
+          "const": "property-extension"
+        },
+        "kind": {
+          "type": "string",
+          "const": "countermeasure"
+        },
+        "element": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "requirements": {
+              "type": "string"
+            },
+            "stakeholderName": {
+              "type": "string"
+            },
+            "activatingAnswers": {
+              "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+            },
+            "activatingAnswersRaw": {
+              "type": "string"
+            },
+            "mitigatedStepCodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "dsts": {
+              "description": "Engine-owned: damage-scenario transformations. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+            },
+            "factorContributions": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "reference": {
+              "type": "string"
+            },
+            "frameworkControlIds": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "catalogId": {
+                    "type": "string"
+                  },
+                  "controlId": {
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "type": "string",
+                    "enum": [
+                      "full",
+                      "partial"
+                    ]
+                  }
+                },
+                "required": [
+                  "catalogId",
+                  "controlId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "prerequisiteCodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "code",
+            "name",
+            "description",
+            "requirements",
+            "stakeholderName",
+            "activatingAnswers",
+            "activatingAnswersRaw",
+            "mitigatedStepCodes",
+            "dsts",
+            "factorContributions",
+            "reference",
+            "prerequisiteCodes"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "extension_type",
+        "kind",
+        "element"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

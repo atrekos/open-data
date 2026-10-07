@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/framework-file/1.json",
+  "title": "Atrekos framework file",
+  "description": "A framework library file: one descriptor and its controls. This schema is the shape level (VX-schema). The rules beyond shape stay in the application and run on upload: VX1 unique control ids, VX2 parents that exist and no cycles, VX3 declared levels, VX4 declared attribute values, VX5 relations that resolve, VX6 binding coverage, VX7 the text policy and its allowed processing.",
+  "type": "object",
+  "properties": {
+    "framework": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string"
+        },
+        "disclaimer": {
+          "type": "string"
+        },
+        "textPolicy": {
+          "type": "string",
+          "enum": [
+            "full",
+            "title",
+            "id"
+          ]
+        },
+        "defaultBasis": {
+          "type": "string",
+          "enum": [
+            "countermeasures",
+            "questions",
+            "assessment",
+            "documentation"
+          ]
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "key",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "applicabilityEffect": {
+          "type": "string",
+          "enum": [
+            "marker",
+            "exclude"
+          ]
+        },
+        "validity": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string"
+            },
+            "until": {
+              "type": "string"
+            },
+            "basis": {
+              "type": "string"
+            },
+            "transitionalNote": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "basis"
+          ],
+          "additionalProperties": false
+        },
+        "asOf": {
+          "type": "string"
+        },
+        "reviewNote": {
+          "type": "string"
+        },
+        "processing": {
+          "type": "string",
+          "enum": [
+            "text",
+            "titles",
+            "none"
+          ]
+        },
+        "compat": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "projectionKey": {
+                "type": "string"
+              },
+              "root": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "projectionKey"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Retired in #1175 M6: accepted and stored, never read."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "version",
+        "licence",
+        "disclaimer"
+      ],
+      "additionalProperties": false
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "controlId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "countermeasures",
+              "questions",
+              "assessment",
+              "documentation"
+            ]
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attributes": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "relations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "scheme": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "subset-of",
+                    "superset-of",
+                    "equal",
+                    "intersects",
+                    "related",
+                    "indicative",
+                    "supersedes",
+                    "derived-from",
+                    "incorporated-into"
+                  ]
+                },
+                "assertedBy": {
+                  "type": "string",
+                  "enum": [
+                    "publisher",
+                    "operator"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "scheme",
+                "target"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "withdrawn",
+              "restricted"
+            ]
+          },
+          "statusNote": {
+            "type": "string"
+          },
+          "applicability": {
+            "type": "object",
+            "properties": {
+              "note": {
+                "type": "string"
+              },
+              "when": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "notes": {
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "documentationSource": {
+            "type": "string",
+            "enum": [
+              "contacts",
+              "toeName",
+              "description",
+              "productIdentification",
+              "docAddress",
+              "instructions"
+            ]
+          }
+        },
+        "required": [
+          "controlId",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "framework",
+    "controls"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/archive-provenance/1.json",
+  "title": "Atrekos archive provenance",
+  "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers, the approval and the snapshot generations. Deleting it leaves the rest of the archive verifiable.",
+  "type": "object",
+  "properties": {
+    "assessmentId": {
+      "type": "string"
+    },
+    "orgId": {
+      "type": "string"
+    },
+    "productId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "packRevisionId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "packRevisionLabel": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cloneProvenance": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "sourceAssessmentId": {
+              "type": "string"
+            },
+            "pinning": {
+              "type": "string",
+              "enum": [
+                "source",
+                "latest"
+              ]
+            },
+            "diffSummary": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {},
+                  "description": "Internal clone bookkeeping; its shape is not part of the public contract."
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "migrationLog": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {},
+                  "description": "Internal clone bookkeeping; its shape is not part of the public contract."
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clonedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sourceAssessmentId",
+            "pinning",
+            "diffSummary",
+            "migrationLog",
+            "clonedAt"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "pinnedVersionIds": {
+      "type": "object",
+      "properties": {
+        "modelVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "questionsCatalogVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dsCatalogVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stepsCatalogVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assumptionsCatalogVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cmsCatalogVersionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "modelVersionId",
+        "questionsCatalogVersionId",
+        "dsCatalogVersionId",
+        "stepsCatalogVersionId",
+        "assumptionsCatalogVersionId",
+        "cmsCatalogVersionId"
+      ],
+      "additionalProperties": false
+    },
+    "evidenceStatus": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "working-copy"
+      ]
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "approverName": {
+              "type": "string"
+            },
+            "approverRole": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "approvedAt": {
+              "type": "string"
+            },
+            "inputHash": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "approverName",
+            "approverRole",
+            "rationale",
+            "approvedAt",
+            "inputHash"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "snapshotGenerations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "generation": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "completedAt": {
+            "type": "string"
+          },
+          "snapshotIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "generation",
+          "completedAt",
+          "snapshotIds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "assessmentId",
+    "orgId",
+    "productId",
+    "packRevisionId",
+    "cloneProvenance",
+    "pinnedVersionIds",
+    "evidenceStatus",
+    "approval",
+    "snapshotGenerations"
+  ],
+  "additionalProperties": false
+}

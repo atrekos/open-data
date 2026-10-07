@@ -1,0 +1,1395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/archive-input/1.json",
+  "title": "Atrekos archive input files",
+  "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed: answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+  "type": "object",
+  "properties": {
+    "input/answers.yaml": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "questionCode": {
+            "type": "string"
+          },
+          "answer1": {
+            "type": "string"
+          },
+          "answer2": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "needsReview": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "questionCode",
+          "answer1"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "input/mitigations.yaml": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attackStepCode": {
+            "type": "string"
+          },
+          "catalogCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "inline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "stakeholder": {
+                  "type": "string"
+                },
+                "stakeholderNote": {
+                  "type": "string"
+                },
+                "rapClass": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "attackStepCode",
+          "catalogCodes",
+          "inline"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "input/treatments.yaml": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "riskId": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "riskId",
+          "decision"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "input/qi-acceptances.yaml": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "qiCode": {
+            "type": "string"
+          },
+          "acceptedCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "qiCode",
+          "acceptedCount"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "input/condition-handovers.yaml": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assumptionCode": {
+            "type": "string"
+          },
+          "passedTo": {
+            "type": "string",
+            "const": "operator"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "assumptionCode",
+          "passedTo",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "input/toe.yaml": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "productLifetime": {
+          "type": "string"
+        },
+        "supportDuration": {
+          "type": "string"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description_detail": {
+          "type": "object",
+          "properties": {
+            "functionality": {
+              "type": "string"
+            },
+            "intendedUse": {
+              "type": "string"
+            },
+            "foreseeableMisuse": {
+              "type": "string"
+            },
+            "operationalEnvironment": {
+              "type": "object",
+              "properties": {
+                "deploymentContext": {
+                  "type": "string"
+                },
+                "networkZone": {
+                  "type": "string"
+                },
+                "physicalAccess": {
+                  "type": "string"
+                },
+                "operatorProfile": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "data",
+                  "function",
+                  "hardware",
+                  "firmware",
+                  "interface",
+                  "other"
+                ]
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "securityProperties": {
+                "type": "object",
+                "properties": {
+                  "c": {
+                    "type": "boolean"
+                  },
+                  "i": {
+                    "type": "boolean"
+                  },
+                  "a": {
+                    "type": "boolean"
+                  },
+                  "safety": {
+                    "type": "boolean"
+                  },
+                  "financial": {
+                    "type": "boolean"
+                  },
+                  "operational": {
+                    "type": "boolean"
+                  },
+                  "privacy": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "linkedDsCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "linkedStepCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sort": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "category",
+              "description",
+              "securityProperties",
+              "linkedDsCodes",
+              "linkedStepCodes",
+              "sort"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "interfaces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "network",
+                  "serial",
+                  "radio",
+                  "physical",
+                  "debug",
+                  "other"
+                ]
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "exposedTo": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sort": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "kind",
+              "description",
+              "exposedTo",
+              "sort"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "block_diagram",
+                  "dfd",
+                  "photo",
+                  "other"
+                ]
+              }
+            },
+            "required": [
+              "file",
+              "kind"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "name",
+        "assets",
+        "interfaces",
+        "attachments"
+      ],
+      "additionalProperties": false
+    },
+    "input/tracing.yaml": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "confirmedPathCount": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "confirmedPathCount"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "input/model.json": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "companyName": {
+              "type": "string"
+            },
+            "answerLists": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "inlineDelimiters": {
+              "type": "object",
+              "properties": {
+                "cmOpen": {
+                  "type": "string"
+                },
+                "cmClose": {
+                  "type": "string"
+                },
+                "assumptionOpen": {
+                  "type": "string"
+                },
+                "assumptionClose": {
+                  "type": "string"
+                },
+                "atSep": {
+                  "type": "string"
+                },
+                "colonSep": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "cmOpen",
+                "cmClose",
+                "assumptionOpen",
+                "assumptionClose",
+                "atSep",
+                "colonSep"
+              ],
+              "additionalProperties": false
+            },
+            "lifetimeOptions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tolerableThreshold": {
+              "type": "number"
+            },
+            "nonNegotiable": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "attackStepCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "damageScenarioCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "companyName",
+            "answerLists",
+            "inlineDelimiters",
+            "lifetimeOptions",
+            "tolerableThreshold"
+          ],
+          "additionalProperties": false
+        },
+        "damageCategories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "damageLevels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "damageCriteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "damageLevelId": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "category",
+              "name",
+              "damageLevelId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "rapFactors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "enum": [
+                  "ET",
+                  "EX",
+                  "KT",
+                  "WO",
+                  "EQ"
+                ]
+              }
+            },
+            "required": [
+              "key"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "rapFactorOptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factorKey": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "factorKey",
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "rapClasses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "threshold": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "name",
+              "threshold"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "riskValues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "riskMatrixCells": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "damageLevelId": {
+                "type": "string"
+              },
+              "rapClassId": {
+                "type": "string"
+              },
+              "riskValueId": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "damageLevelId",
+              "rapClassId",
+              "riskValueId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "stakeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "riskTreatmentOptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "strideMappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "org_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "status",
+        "settings",
+        "damageCategories",
+        "damageLevels",
+        "damageCriteria",
+        "rapFactors",
+        "rapFactorOptions",
+        "rapClasses",
+        "riskValues",
+        "riskMatrixCells",
+        "stakeholders",
+        "riskTreatmentOptions",
+        "strideMappings",
+        "org_id"
+      ],
+      "additionalProperties": false
+    },
+    "input/catalogs/questions.json": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "questions"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "indentation": {
+                "type": "number"
+              },
+              "isQuestion": {
+                "type": "boolean"
+              },
+              "a1Options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "a2Config": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "infoTexts": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "inactiveOn": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "questionCode": {
+                      "type": "string"
+                    },
+                    "answer1": {
+                      "type": "string"
+                    },
+                    "answer2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "questionCode",
+                    "answer1"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "sort": {
+                "type": "number"
+              },
+              "frameworkControlIds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "catalogId": {
+                      "type": "string"
+                    },
+                    "controlId": {
+                      "type": "string"
+                    },
+                    "coverage": {
+                      "type": "string",
+                      "enum": [
+                        "full",
+                        "partial"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "catalogId",
+                    "controlId"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "code",
+              "text",
+              "indentation",
+              "isQuestion",
+              "a1Options",
+              "a2Config",
+              "infoTexts",
+              "inactiveOn",
+              "sort"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "status",
+        "modelVersion",
+        "elements"
+      ],
+      "additionalProperties": false
+    },
+    "input/catalogs/damageScenarios.json": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "damage_scenarios"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "questionCode": {
+                "type": "string"
+              },
+              "textPrefix": {
+                "type": "string"
+              },
+              "textSuffix": {
+                "type": "string"
+              },
+              "providesCriterion": {
+                "type": "string"
+              },
+              "matchAnswer1": {
+                "type": "string"
+              },
+              "matchAnswer2": {
+                "type": "string"
+              },
+              "explicitCriterion": {
+                "type": "string"
+              },
+              "explicitLevel": {
+                "type": "number"
+              },
+              "explicitExplanation": {
+                "type": "string"
+              },
+              "strideCode": {
+                "type": "string"
+              },
+              "unknownSubjectText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "questionCode",
+              "textPrefix",
+              "textSuffix",
+              "providesCriterion",
+              "matchAnswer1"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "status",
+        "modelVersion",
+        "elements"
+      ],
+      "additionalProperties": false
+    },
+    "input/catalogs/attackSteps.json": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "attack_steps"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "prerequisiteCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "questionCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "factorEstimates": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "requiredAnswersRaw": {
+                "type": "string"
+              },
+              "requiredAnswers": {
+                "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "comment": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "name",
+              "prerequisiteCodes",
+              "questionCodes",
+              "factorEstimates",
+              "requiredAnswersRaw",
+              "requiredAnswers",
+              "comment"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "status",
+        "modelVersion",
+        "elements"
+      ],
+      "additionalProperties": false
+    },
+    "input/catalogs/assumptions.json": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "assumptions"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "requirements": {
+                "type": "string"
+              },
+              "stakeholderName": {
+                "type": "string"
+              },
+              "activatingAnswers": {
+                "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "activatingAnswersRaw": {
+                "type": "string"
+              },
+              "mitigatedStepCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dsts": {
+                "description": "Engine-owned: damage-scenario transformations. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "factorContributions": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "reference": {
+                "type": "string"
+              },
+              "frameworkControlIds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "catalogId": {
+                      "type": "string"
+                    },
+                    "controlId": {
+                      "type": "string"
+                    },
+                    "coverage": {
+                      "type": "string",
+                      "enum": [
+                        "full",
+                        "partial"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "catalogId",
+                    "controlId"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "tier": {
+                "description": "Engine-owned: the condition tier. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              }
+            },
+            "required": [
+              "code",
+              "name",
+              "description",
+              "requirements",
+              "stakeholderName",
+              "activatingAnswers",
+              "activatingAnswersRaw",
+              "mitigatedStepCodes",
+              "dsts",
+              "factorContributions",
+              "reference"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "status",
+        "modelVersion",
+        "elements"
+      ],
+      "additionalProperties": false
+    },
+    "input/catalogs/countermeasures.json": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "countermeasures"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "requirements": {
+                "type": "string"
+              },
+              "stakeholderName": {
+                "type": "string"
+              },
+              "activatingAnswers": {
+                "description": "Engine-owned: the answer-pattern expression the raw string parses to. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "activatingAnswersRaw": {
+                "type": "string"
+              },
+              "mitigatedStepCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dsts": {
+                "description": "Engine-owned: damage-scenario transformations. Shape documented in docs/engine.md and pinned by the engine's golden tests."
+              },
+              "factorContributions": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "reference": {
+                "type": "string"
+              },
+              "frameworkControlIds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "catalogId": {
+                      "type": "string"
+                    },
+                    "controlId": {
+                      "type": "string"
+                    },
+                    "coverage": {
+                      "type": "string",
+                      "enum": [
+                        "full",
+                        "partial"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "catalogId",
+                    "controlId"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "prerequisiteCodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "code",
+              "name",
+              "description",
+              "requirements",
+              "stakeholderName",
+              "activatingAnswers",
+              "activatingAnswersRaw",
+              "mitigatedStepCodes",
+              "dsts",
+              "factorContributions",
+              "reference",
+              "prerequisiteCodes"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "status",
+        "modelVersion",
+        "elements"
+      ],
+      "additionalProperties": false
+    },
+    "input/frameworks.json": {
+      "type": "object",
+      "properties": {
+        "descriptors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          },
+          "description": "Framework descriptors, as `framework-file` describes them."
+        },
+        "controls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          },
+          "description": "Framework controls, as `framework-file` describes them."
+        }
+      },
+      "required": [
+        "descriptors",
+        "controls"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "input/answers.yaml",
+    "input/mitigations.yaml",
+    "input/treatments.yaml",
+    "input/qi-acceptances.yaml",
+    "input/condition-handovers.yaml",
+    "input/toe.yaml",
+    "input/tracing.yaml",
+    "input/model.json",
+    "input/catalogs/questions.json",
+    "input/catalogs/damageScenarios.json",
+    "input/catalogs/attackSteps.json",
+    "input/catalogs/assumptions.json",
+    "input/catalogs/countermeasures.json"
+  ],
+  "additionalProperties": false
+}

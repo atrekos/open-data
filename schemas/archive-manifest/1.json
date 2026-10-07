@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.atrekos.com/schemas/archive-manifest/1.json",
+  "title": "Atrekos archive manifest",
+  "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+  "type": "object",
+  "properties": {
+    "archiveSchemaVersion": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    },
+    "engineVersion": {
+      "type": "string"
+    },
+    "inputHash": {
+      "type": "string"
+    },
+    "exportedAt": {
+      "type": "string"
+    },
+    "pinnedVersions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "version"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidenceStatus": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "working-copy"
+      ]
+    },
+    "approvedAt": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "archiveSchemaVersion",
+    "engineVersion",
+    "inputHash",
+    "exportedAt",
+    "pinnedVersions",
+    "evidenceStatus",
+    "files"
+  ],
+  "additionalProperties": false
+}
