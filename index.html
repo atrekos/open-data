@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open schemas · Atrekos</title>
+<meta name="description" content="Open JSON Schemas for the files Atrekos writes and reads. Shape only: no framework text, no conformity.">
+<style>
+:root {
+  --atk-paper: #F5F3EE;
+  --atk-surface: #ECE9E1;
+  --atk-hairline: #CFCAC0;
+  --atk-graphite: #625F57;
+  --atk-ink: #1A1916;
+  --atk-verdigris: #2D6A5F;
+  --atk-ground: #161512;
+  --atk-ground-surface: #1F1E1A;
+  --atk-ground-hairline: #3A3831;
+  --atk-ground-graphite: #A29E93;
+  --atk-ground-ink: #ECE9E1;
+  --atk-verdigris-light: #7FBFB1;
+  --tracking-eyebrow: 0.12em;
+  --background: var(--atk-paper);
+  --foreground: var(--atk-ink);
+  --primary: var(--atk-verdigris);
+  --primary-foreground: var(--atk-paper);
+  --muted-foreground: var(--atk-graphite);
+  --border: var(--atk-hairline);
+  --ring: var(--atk-verdigris);
+  --link: var(--atk-verdigris);
+  --surface-raised: var(--atk-surface);
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  --text-h1: 34px;
+  --lh-h1: 40px;
+  --text-h2: 26px;
+  --lh-h2: 32px;
+  --text-body: 16px;
+  --lh-body: 24px;
+  --text-small: 14px;
+  --lh-small: 20px;
+  --text-xs: 12px;
+  --lh-xs: 16px;
+  --text-mono: 13px;
+  --lh-mono: 20px;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --tracking-tight: -0.015em;
+  --measure: 68ch;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --border-width: 1px;
+  --h-row: 44px;
+  --w-content: 1040px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--atk-ground);
+    --foreground: var(--atk-ground-ink);
+    --primary: var(--atk-verdigris-light);
+    --primary-foreground: var(--atk-ground);
+    --muted-foreground: var(--atk-ground-graphite);
+    --border: var(--atk-ground-hairline);
+    --ring: var(--atk-verdigris-light);
+    --link: var(--atk-verdigris-light);
+    --surface-raised: var(--atk-ground-surface);
+  }
+}
+:root { color-scheme: light dark; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-feature-settings: 'tnum' 1;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration: none; text-underline-offset: 3px; }
+a:hover, a:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+code { font-family: var(--font-mono); font-size: 0.92em; }
+::selection { background: var(--primary); color: var(--primary-foreground); }
+.wrap { max-width: var(--w-content); margin: 0 auto; padding: 0 var(--space-4); }
+.bar { border-bottom: var(--border-width) solid var(--border); }
+.bar .wrap { display: flex; align-items: center; min-height: 56px; }
+.mark { display: inline-flex; align-items: center; min-height: var(--h-row); }
+.mark svg { display: block; height: 24px; width: auto; stroke: var(--primary); }
+main { padding-top: var(--space-6); padding-bottom: var(--space-7); }
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: var(--lh-xs);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+h1 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-h1);
+  line-height: var(--lh-h1);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+h2 {
+  margin: var(--space-7) 0 var(--space-4);
+  font-size: var(--text-h2);
+  line-height: var(--lh-h2);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+p { margin: 0 0 var(--space-3); max-width: var(--measure); }
+table { width: 100%; border-collapse: collapse; font-size: var(--text-small); line-height: var(--lh-small); }
+caption { text-align: left; padding-bottom: var(--space-2); color: var(--muted-foreground); }
+th, td { text-align: left; vertical-align: top; padding: var(--space-3) var(--space-3) var(--space-3) 0; border-bottom: var(--border-width) solid var(--border); }
+thead th { background: var(--surface-raised); font-weight: var(--weight-medium); padding-left: var(--space-3); border-top: var(--border-width) solid var(--border); }
+tbody td:first-child { padding-left: var(--space-3); }
+tbody tr { min-height: var(--h-row); }
+td .id { display: block; margin-top: var(--space-1); font-family: var(--font-mono); font-size: var(--text-mono); line-height: var(--lh-mono); color: var(--muted-foreground); overflow-wrap: anywhere; }
+td.version, td.covers { font-family: var(--font-mono); font-size: var(--text-mono); }
+td.schema a { display: inline-block; min-height: var(--space-5); font-weight: var(--weight-medium); }
+.after-table { margin-top: var(--space-3); font-size: var(--text-small); }
+footer { border-top: var(--border-width) solid var(--border); padding-top: var(--space-5); padding-bottom: var(--space-7); }
+footer p { font-size: var(--text-small); line-height: var(--lh-small); color: var(--muted-foreground); }
+footer .links { display: flex; flex-wrap: wrap; gap: var(--space-4); margin: var(--space-3) 0; font-size: var(--text-small); }
+footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
+@media (min-width: 640px) {
+  .wrap { padding: 0 var(--space-5); }
+}
+@media (max-width: 639px) {
+  thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { padding: var(--space-3) 0; border-bottom: var(--border-width) solid var(--border); }
+  td { border-bottom: 0; padding: var(--space-1) 0; overflow-wrap: anywhere; }
+  tbody td:first-child { padding-left: 0; }
+  td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--text-xs);
+    line-height: var(--lh-xs);
+    color: var(--muted-foreground);
+  }
+  td.schema::before { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="https://atrekos.com"><svg role="img" aria-label="Atrekos" viewBox="0 14 420 86" fill="none" stroke-width="10" stroke-linejoin="miter" stroke-linecap="butt"><path d="M3 45 H41"></path><path d="M41 24 V100"></path><path d="M41 67 H13 L5 75 V87 L13 95 H41"></path><path d="M41 61 L57 45 H72"></path><path d="M100 14 V100" stroke-width="3"></path><g transform="translate(124 0)"><path d="M3 45 H41"></path><path d="M41 24 V100"></path><path d="M41 67 H13 L5 75 V87 L13 95 H41"></path><path d="M41 61 L57 45 H72"></path><path d="M87 70 H123 V53 L115 45 H95 L87 53 V87 L95 95 H123"></path><path d="M143 14 V100"></path><path d="M178 42 L143 77"></path><path d="M158 62 L182 100"></path><path d="M205 45 H225 L233 53 V87 L225 95 H205 L197 87 V53 Z"></path><path d="M291 45 H261 L253 53 V62 L261 70 H281 L289 78 V87 L281 95 H251"></path></g></svg></a>
+  </div>
+</header>
+<main class="wrap">
+  <p class="eyebrow">Open data</p>
+  <h1>Open schemas</h1>
+  <p>JSON Schemas (draft 2020-12) for the files Atrekos writes and reads, generated from the product's own type definitions.</p>
+  <p>The schemas describe shape only. They carry no framework text and confer no conformity: a document that validates against a schema is well formed, not compliant with anything.</p>
+  <h2>Schemas</h2>
+  <table>
+    <caption>Open Atrekos schemas</caption>
+    <thead>
+      <tr><th scope="col">Schema</th><th scope="col">Version</th><th scope="col">Covers</th><th scope="col">What it describes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-manifest/1.json">archive-manifest</a><code class="id">https://data.atrekos.com/schemas/archive-manifest/1.json</code></td>
+        <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 1</td>
+        <td class="what" data-label="What it describes"><code>manifest.json</code> of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-provenance/1.json">archive-provenance</a><code class="id">https://data.atrekos.com/schemas/archive-provenance/1.json</code></td>
+        <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 1</td>
+        <td class="what" data-label="What it describes"><code>provenance.json</code> of an assessment archive: the only file that carries internal identifiers, the approval and the snapshot generations. Deleting it leaves the rest of the archive verifiable.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-input/1.json">archive-input</a><code class="id">https://data.atrekos.com/schemas/archive-input/1.json</code></td>
+        <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 1</td>
+        <td class="what" data-label="What it describes">The <code>input/</code> directory of an assessment archive as one object keyed by file path, YAML files parsed: answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/engine-result/0.3.json">engine-result</a><code class="id">https://data.atrekos.com/schemas/engine-result/0.3.json</code></td>
+        <td class="version" data-label="Version">0.3</td>
+        <td class="covers" data-label="Covers">engineVersion 0.3.x</td>
+        <td class="what" data-label="What it describes">The engine result (<code>output/engine-result.json</code>, the API <code>result</code> body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/engine-result/0.2.json">engine-result</a><code class="id">https://data.atrekos.com/schemas/engine-result/0.2.json</code></td>
+        <td class="version" data-label="Version">0.2</td>
+        <td class="covers" data-label="Covers">engineVersion 0.2.0 (retired)</td>
+        <td class="what" data-label="What it describes">The engine result as written by engineVersion 0.2.0, before frameworks became catalogue data: it carries one projection per hard-coded standard. A frozen description for readers of older archives; it is never produced any more.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/json-export/1.0.json">json-export</a><code class="id">https://data.atrekos.com/schemas/json-export/1.0.json</code></td>
+        <td class="version" data-label="Version">1.0</td>
+        <td class="covers" data-label="Covers">JsonExportShape version &quot;1.0&quot;</td>
+        <td class="what" data-label="What it describes">The JSON export (<code>?format=json</code> and the archive's export): the engine's <code>JsonExportShape</code>.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/pack-artifact/3.json">pack-artifact</a><code class="id">https://data.atrekos.com/schemas/pack-artifact/3.json</code></td>
+        <td class="version" data-label="Version">3</td>
+        <td class="covers" data-label="Covers">artifactVersion 3</td>
+        <td class="what" data-label="What it describes">A provisioning artifact: a pack, a model snapshot, five catalogue versions, and the frameworks the pack's revision assigns by label and content digest. Envelope versions 1 and 2 are refused by the loader and are not offered.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/framework-file/1.json">framework-file</a><code class="id">https://data.atrekos.com/schemas/framework-file/1.json</code></td>
+        <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">framework files (all versions)</td>
+        <td class="what" data-label="What it describes">A framework library file: one descriptor and its controls. This schema is the shape level (VX-schema). The rules beyond shape stay in the application and run on upload: VX1 unique control ids, VX2 parents that exist and no cycles, VX3 declared levels, VX4 declared attribute values, VX5 relations that resolve, VX6 binding coverage, VX7 the text policy and its allowed processing.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/atrekos-stix-extension/1.json">atrekos-stix-extension</a><code class="id">https://data.atrekos.com/schemas/atrekos-stix-extension/1.json</code></td>
+        <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">STIX 2.1 pack exports</td>
+        <td class="what" data-label="What it describes">The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="after-table"><a href="schemas/index.json">schemas/index.json</a></p>
+  <h2>Examples</h2>
+  <p>Worked examples of these formats are reserved for a later release. Nothing is available here yet.</p>
+</main>
+<footer class="wrap">
+  <p>The schemas describe shape only. They carry no framework text and do not change the licence a framework
+file or an export carries. Atrekos is not affiliated with the bodies whose frameworks it can hold.</p>
+  <p class="links"><a href="https://atrekos.com">Atrekos</a><a href="https://github.com/atrekos/open-data">Source repository</a></p>
+  <p class="generated">This page is generated from <code>schemas/index.json</code>; do not edit it.</p>
+</footer>
+</body>
+</html>
