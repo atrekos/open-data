@@ -46,7 +46,6 @@
   --weight-medium: 500;
   --weight-semibold: 600;
   --tracking-tight: -0.015em;
-  --measure: 68ch;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -117,7 +116,7 @@ h2 {
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-tight);
 }
-p { margin: 0 0 var(--space-3); max-width: var(--measure); }
+p { margin: 0 0 var(--space-3); }
 table { width: 100%; border-collapse: collapse; font-size: var(--text-small); line-height: var(--lh-small); }
 caption { text-align: left; padding-bottom: var(--space-2); color: var(--muted-foreground); }
 th, td { text-align: left; vertical-align: top; padding: var(--space-3) var(--space-3) var(--space-3) 0; border-bottom: var(--border-width) solid var(--border); }
@@ -161,7 +160,7 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
 <main class="wrap">
   <p class="eyebrow">Open data</p>
   <h1>Open schemas</h1>
-  <p>JSON Schemas (draft 2020-12) for the files Atrekos writes and reads, generated from the product's own type definitions.</p>
+  <p>JSON Schemas for the files Atrekos writes and reads, generated from the product's own type definitions.</p>
   <p>The schemas describe shape only. They carry no framework text and confer no conformity: a document that validates against a schema is well formed, not compliant with anything.</p>
   <h2>Schemas</h2>
   <table>
@@ -170,6 +169,24 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
       <tr><th scope="col">Schema</th><th scope="col">Version</th><th scope="col">Covers</th><th scope="col">What it describes</th></tr>
     </thead>
     <tbody>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-manifest/2.json">archive-manifest</a><code class="id">https://data.atrekos.com/schemas/archive-manifest/2.json</code></td>
+        <td class="version" data-label="Version">2</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 2</td>
+        <td class="what" data-label="What it describes"><code>manifest.json</code> of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-provenance/2.json">archive-provenance</a><code class="id">https://data.atrekos.com/schemas/archive-provenance/2.json</code></td>
+        <td class="version" data-label="Version">2</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 2</td>
+        <td class="what" data-label="What it describes"><code>provenance.json</code> of an assessment archive: the only file that carries internal identifiers, the approval and the snapshot generations. Deleting it leaves the rest of the archive verifiable.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-input/2.json">archive-input</a><code class="id">https://data.atrekos.com/schemas/archive-input/2.json</code></td>
+        <td class="version" data-label="Version">2</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 2</td>
+        <td class="what" data-label="What it describes">The <code>input/</code> directory of an assessment archive as one object keyed by file path, YAML files parsed: answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.</td>
+      </tr>
       <tr>
         <td class="schema" data-label="Schema"><a href="schemas/archive-manifest/1.json">archive-manifest</a><code class="id">https://data.atrekos.com/schemas/archive-manifest/1.json</code></td>
         <td class="version" data-label="Version">1</td>
@@ -189,6 +206,18 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
         <td class="what" data-label="What it describes">The <code>input/</code> directory of an assessment archive as one object keyed by file path, YAML files parsed: answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.</td>
       </tr>
       <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/engine-result/0.5.json">engine-result</a><code class="id">https://data.atrekos.com/schemas/engine-result/0.5.json</code></td>
+        <td class="version" data-label="Version">0.5</td>
+        <td class="covers" data-label="Covers">engineVersion 0.5.x</td>
+        <td class="what" data-label="What it describes">The engine result (<code>output/engine-result.json</code>, the API <code>result</code> body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/engine-result/0.4.json">engine-result</a><code class="id">https://data.atrekos.com/schemas/engine-result/0.4.json</code></td>
+        <td class="version" data-label="Version">0.4</td>
+        <td class="covers" data-label="Covers">engineVersion 0.4.x</td>
+        <td class="what" data-label="What it describes">The engine result (<code>output/engine-result.json</code>, the API <code>result</code> body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.</td>
+      </tr>
+      <tr>
         <td class="schema" data-label="Schema"><a href="schemas/engine-result/0.3.json">engine-result</a><code class="id">https://data.atrekos.com/schemas/engine-result/0.3.json</code></td>
         <td class="version" data-label="Version">0.3</td>
         <td class="covers" data-label="Covers">engineVersion 0.3.x</td>
@@ -199,6 +228,18 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
         <td class="version" data-label="Version">0.2</td>
         <td class="covers" data-label="Covers">engineVersion 0.2.0 (retired)</td>
         <td class="what" data-label="What it describes">The engine result as written by engineVersion 0.2.0, before frameworks became catalogue data: it carries one projection per hard-coded standard. A frozen description for readers of older archives; it is never produced any more.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/json-export/1.2.json">json-export</a><code class="id">https://data.atrekos.com/schemas/json-export/1.2.json</code></td>
+        <td class="version" data-label="Version">1.2</td>
+        <td class="covers" data-label="Covers">JsonExportShape version &quot;1.2&quot;</td>
+        <td class="what" data-label="What it describes">The JSON export (<code>?format=json</code> and the archive's export): the engine's <code>JsonExportShape</code>.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/json-export/1.1.json">json-export</a><code class="id">https://data.atrekos.com/schemas/json-export/1.1.json</code></td>
+        <td class="version" data-label="Version">1.1</td>
+        <td class="covers" data-label="Covers">JsonExportShape version &quot;1.1&quot;</td>
+        <td class="what" data-label="What it describes">The JSON export (<code>?format=json</code> and the archive's export): the engine's <code>JsonExportShape</code>.</td>
       </tr>
       <tr>
         <td class="schema" data-label="Schema"><a href="schemas/json-export/1.0.json">json-export</a><code class="id">https://data.atrekos.com/schemas/json-export/1.0.json</code></td>
@@ -213,6 +254,18 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
         <td class="what" data-label="What it describes">A provisioning artifact: a pack, a model snapshot, five catalogue versions, and the frameworks the pack's revision assigns by label and content digest. Envelope versions 1 and 2 are refused by the loader and are not offered.</td>
       </tr>
       <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/pack-artifact/4.json">pack-artifact</a><code class="id">https://data.atrekos.com/schemas/pack-artifact/4.json</code></td>
+        <td class="version" data-label="Version">4</td>
+        <td class="covers" data-label="Covers">artifactVersion 4</td>
+        <td class="what" data-label="What it describes">A provisioning artifact like version 3, whose model may also record an attack-potential option's engine key, definition, reference level and deviation rationale, and each factor's next ordinal. It is written only when it records one of them; otherwise the artifact is version 3.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/pack-artifact/5.json">pack-artifact</a><code class="id">https://data.atrekos.com/schemas/pack-artifact/5.json</code></td>
+        <td class="version" data-label="Version">5</td>
+        <td class="covers" data-label="Covers">artifactVersion 5</td>
+        <td class="what" data-label="What it describes">A provisioning artifact like version 4, in which an attack step's estimate and a countermeasure's or assumption's contribution refer to an attack-potential option by its engine key (not a label and a copied number), every option carries its key, and each factor records its next ordinal. It is the only version written; versions 3 and 4 are read through a converter.</td>
+      </tr>
+      <tr>
         <td class="schema" data-label="Schema"><a href="schemas/framework-file/1.json">framework-file</a><code class="id">https://data.atrekos.com/schemas/framework-file/1.json</code></td>
         <td class="version" data-label="Version">1</td>
         <td class="covers" data-label="Covers">framework files (all versions)</td>
@@ -221,6 +274,12 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
       <tr>
         <td class="schema" data-label="Schema"><a href="schemas/atrekos-stix-extension/1.json">atrekos-stix-extension</a><code class="id">https://data.atrekos.com/schemas/atrekos-stix-extension/1.json</code></td>
         <td class="version" data-label="Version">1</td>
+        <td class="covers" data-label="Covers">STIX 2.1 pack exports made before #1608</td>
+        <td class="what" data-label="What it describes">The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/atrekos-stix-extension/2.json">atrekos-stix-extension</a><code class="id">https://data.atrekos.com/schemas/atrekos-stix-extension/2.json</code></td>
+        <td class="version" data-label="Version">2</td>
         <td class="covers" data-label="Covers">STIX 2.1 pack exports</td>
         <td class="what" data-label="What it describes">The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.</td>
       </tr>
