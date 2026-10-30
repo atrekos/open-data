@@ -1,0 +1,173 @@
+{
+  "archiveSchemaVersion": 5,
+  "engineVersion": "0.5.3",
+  "inputHash": "7bda1bf4aa5a0c9e",
+  "exportedAt": "2026-10-26T16:34:50.796Z",
+  "pinnedVersions": [
+    {
+      "label": "Model Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Questions Catalog Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Damage Scenarios Catalog Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Attack Steps Catalog Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Assumptions Catalog Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Countermeasures Catalog Version",
+      "version": "1.0"
+    },
+    {
+      "label": "Cyber Resilience Act (Regulation (EU) 2024/2847): Annex I Part I, Annex I Part II, Annex II",
+      "version": "1.0"
+    },
+    {
+      "label": "ISA/IEC 62443-4-2",
+      "version": "1.0"
+    },
+    {
+      "label": "Radio Equipment Directive 2014/53/EU, Article 3(3)(d), (e): EN 18031-1, -2",
+      "version": "1.0"
+    }
+  ],
+  "evidenceStatus": "approved",
+  "approvedAt": "2026-10-26T16:34:43.651Z",
+  "files": [
+    {
+      "path": "input/answers.yaml",
+      "sha256": "5b4b5e9485874daa02413c26bb7ff39269f9c0d7a6b914e875991c7fbea61361",
+      "bytes": 8284
+    },
+    {
+      "path": "input/catalogs/assumptions.json",
+      "sha256": "51d6b343dd0ba60f2496ead6b95619a7aa87e7db4170c1400a7dd231f1cf7689",
+      "bytes": 62650
+    },
+    {
+      "path": "input/catalogs/attackSteps.json",
+      "sha256": "bc06a746a516ae5fca61258c9eb1e6de911066cccfb61c870dee80abce5caa52",
+      "bytes": 39599
+    },
+    {
+      "path": "input/catalogs/countermeasures.json",
+      "sha256": "6d14ca8882f170e03185e5ce1f1f6e3387309f5e5e17449505e7c2ca29902202",
+      "bytes": 110246
+    },
+    {
+      "path": "input/catalogs/damageScenarios.json",
+      "sha256": "dcfd3c3e2258ee1293b433a28813f3e574470b12b70ffd1e93b1fa5e47bcba78",
+      "bytes": 9455
+    },
+    {
+      "path": "input/catalogs/questions.json",
+      "sha256": "3eb51e2d22b4087533f420124de72f1b6c331921c2d8fa30779e0e082665d228",
+      "bytes": 98913
+    },
+    {
+      "path": "input/condition-handovers.yaml",
+      "sha256": "ed8d0ca34a1edfab8f49a3b466d38c4e684efd6dca7d5f87af592b515a9fdeb2",
+      "bytes": 169
+    },
+    {
+      "path": "input/frameworks.json",
+      "sha256": "9e60404324dfe741e590ec216ac6e623406edd0ad1f91abdf6f826999c059a78",
+      "bytes": 145399
+    },
+    {
+      "path": "input/mitigations.yaml",
+      "sha256": "98477736752b009dea84fe5363412aa61cbd49b18e29a32ec42c883c3ee9923f",
+      "bytes": 3571
+    },
+    {
+      "path": "input/model.json",
+      "sha256": "c015149719597d49008ab6163543b29f8eb70b4a9ae44a8954f918adf5e7bb9b",
+      "bytes": 10918
+    },
+    {
+      "path": "input/qi-acceptances.yaml",
+      "sha256": "667f0c23afee3cb0af1f22f4b2edc1253024e4e49812252b4b9fb8a310495399",
+      "bytes": 191
+    },
+    {
+      "path": "input/toe.yaml",
+      "sha256": "4b6a284adb5db21449d4f4cad88269c8b081b183f7f1eb2bedbf5fc9a02bb398",
+      "bytes": 13818
+    },
+    {
+      "path": "input/tracing.yaml",
+      "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "bytes": 5
+    },
+    {
+      "path": "input/treatments.yaml",
+      "sha256": "1d810bf79818a57f39b942120a6434231cc378e313c212499a6e733c36ef73d0",
+      "bytes": 72828
+    },
+    {
+      "path": "LICENSE-CATALOG.md",
+      "sha256": "580f13d1848bb1d9a28dcbd32c47437a1693a052d730b53238744af545167f55",
+      "bytes": 2052
+    },
+    {
+      "path": "output/engine-result.json",
+      "sha256": "de0463f2c68987a29512fc6888a585c3a8b7b4f47e84e6dcd32d29039704c4f6",
+      "bytes": 921289
+    },
+    {
+      "path": "output/reports/assessment-report.pdf",
+      "sha256": "b0f152e949571960745be1e6128c66388a7dffa32eaec9650c3774895789d2de",
+      "bytes": 2189857
+    },
+    {
+      "path": "output/reports/external/cra.pdf",
+      "sha256": "88952a50df16c13e30fbe67a972056a5f3c54a9f7f70ef7e37dba012a0e3be2c",
+      "bytes": 357121
+    },
+    {
+      "path": "output/reports/external/iec-62443-4-2.pdf",
+      "sha256": "0581f056803357075f13a1f0c5b8137c6d3df235b75cdef967ab9d6cc615045c",
+      "bytes": 1462838
+    },
+    {
+      "path": "output/reports/external/red.pdf",
+      "sha256": "d7e9b4ed4cd920bad14651f3c4fa1a77a07d36f88d61b06e84b0af47888f5d99",
+      "bytes": 1048859
+    },
+    {
+      "path": "output/reports/result-summary.pdf",
+      "sha256": "519fb48b557e2515ac749b0f8b412c6e3bd66fd6e30466092ae7c5ed8cc8e110",
+      "bytes": 199225
+    },
+    {
+      "path": "output/traceability.xlsx",
+      "sha256": "ad969b7fcd093902862da441a631ee0c8d5352e208dcb39f95f3b90b8adf35db",
+      "bytes": 132985
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "798dcce75bbeb9e7f84eb190593cb409964eda5c27cb0c4aaa6da65439fc0dba",
+      "bytes": 2937
+    },
+    {
+      "path": "README.md",
+      "sha256": "19c2c661f52873a147262f51d24dd895af1ca55c41be5de93900531f83f52cb5",
+      "bytes": 3103
+    },
+    {
+      "path": "regenerate.mjs",
+      "sha256": "b6f54d839d596739b478535bdf20b5689ac70a840cc015d40b98f98d66630fe1",
+      "bytes": 36195
+    }
+  ]
+}

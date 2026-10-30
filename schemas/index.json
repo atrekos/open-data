@@ -5,6 +5,102 @@
   "schemas": [
     {
       "name": "archive-manifest",
+      "version": "6",
+      "$id": "https://data.atrekos.com/schemas/archive-manifest/6.json",
+      "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+      "covers": "archiveSchemaVersion 6",
+      "path": "schemas/archive-manifest/6.json"
+    },
+    {
+      "name": "archive-provenance",
+      "version": "6",
+      "$id": "https://data.atrekos.com/schemas/archive-provenance/6.json",
+      "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers (with `localKeys`, the map from each local key the rest of the archive uses to its identifier), the approval, the snapshot generations and `pdfsWithDatabaseId`, the frozen PDFs that print the assessment id. Deleting it leaves the rest of the archive verifiable.",
+      "covers": "archiveSchemaVersion 6",
+      "path": "schemas/archive-provenance/6.json"
+    },
+    {
+      "name": "archive-input",
+      "version": "6",
+      "$id": "https://data.atrekos.com/schemas/archive-input/6.json",
+      "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+      "covers": "archiveSchemaVersion 6",
+      "path": "schemas/archive-input/6.json"
+    },
+    {
+      "name": "archive-manifest",
+      "version": "5",
+      "$id": "https://data.atrekos.com/schemas/archive-manifest/5.json",
+      "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+      "covers": "archiveSchemaVersion 5",
+      "path": "schemas/archive-manifest/5.json"
+    },
+    {
+      "name": "archive-provenance",
+      "version": "5",
+      "$id": "https://data.atrekos.com/schemas/archive-provenance/5.json",
+      "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers (with `localKeys`, the map from each local key the rest of the archive uses to its identifier), the approval, the snapshot generations and `pdfsWithDatabaseId`, the frozen PDFs that print the assessment id. Deleting it leaves the rest of the archive verifiable.",
+      "covers": "archiveSchemaVersion 5",
+      "path": "schemas/archive-provenance/5.json"
+    },
+    {
+      "name": "archive-input",
+      "version": "5",
+      "$id": "https://data.atrekos.com/schemas/archive-input/5.json",
+      "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+      "covers": "archiveSchemaVersion 5",
+      "path": "schemas/archive-input/5.json"
+    },
+    {
+      "name": "archive-manifest",
+      "version": "4",
+      "$id": "https://data.atrekos.com/schemas/archive-manifest/4.json",
+      "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+      "covers": "archiveSchemaVersion 4",
+      "path": "schemas/archive-manifest/4.json"
+    },
+    {
+      "name": "archive-provenance",
+      "version": "4",
+      "$id": "https://data.atrekos.com/schemas/archive-provenance/4.json",
+      "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers (with `localKeys`, the map from each local key the rest of the archive uses to its identifier), the approval, the snapshot generations and `pdfsWithDatabaseId`, the frozen PDFs that print the assessment id. Deleting it leaves the rest of the archive verifiable.",
+      "covers": "archiveSchemaVersion 4",
+      "path": "schemas/archive-provenance/4.json"
+    },
+    {
+      "name": "archive-input",
+      "version": "4",
+      "$id": "https://data.atrekos.com/schemas/archive-input/4.json",
+      "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+      "covers": "archiveSchemaVersion 4",
+      "path": "schemas/archive-input/4.json"
+    },
+    {
+      "name": "archive-manifest",
+      "version": "3",
+      "$id": "https://data.atrekos.com/schemas/archive-manifest/3.json",
+      "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+      "covers": "archiveSchemaVersion 3",
+      "path": "schemas/archive-manifest/3.json"
+    },
+    {
+      "name": "archive-provenance",
+      "version": "3",
+      "$id": "https://data.atrekos.com/schemas/archive-provenance/3.json",
+      "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers (with `localKeys`, the map from each local key the rest of the archive uses to its identifier), the approval and the snapshot generations. Deleting it leaves the rest of the archive verifiable.",
+      "covers": "archiveSchemaVersion 3",
+      "path": "schemas/archive-provenance/3.json"
+    },
+    {
+      "name": "archive-input",
+      "version": "3",
+      "$id": "https://data.atrekos.com/schemas/archive-input/3.json",
+      "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+      "covers": "archiveSchemaVersion 3",
+      "path": "schemas/archive-input/3.json"
+    },
+    {
+      "name": "archive-manifest",
       "version": "2",
       "$id": "https://data.atrekos.com/schemas/archive-manifest/2.json",
       "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
@@ -53,6 +149,22 @@
     },
     {
       "name": "engine-result",
+      "version": "0.7",
+      "$id": "https://data.atrekos.com/schemas/engine-result/0.7.json",
+      "description": "The engine result (`output/engine-result.json`, the API `result` body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.",
+      "covers": "engineVersion 0.7.x",
+      "path": "schemas/engine-result/0.7.json"
+    },
+    {
+      "name": "engine-result",
+      "version": "0.6",
+      "$id": "https://data.atrekos.com/schemas/engine-result/0.6.json",
+      "description": "The engine result (`output/engine-result.json`, the API `result` body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.",
+      "covers": "engineVersion 0.6.x",
+      "path": "schemas/engine-result/0.6.json"
+    },
+    {
+      "name": "engine-result",
       "version": "0.5",
       "$id": "https://data.atrekos.com/schemas/engine-result/0.5.json",
       "description": "The engine result (`output/engine-result.json`, the API `result` body): initial and residual risks, treatments, quality indicators, tracing, and the report projections including one projection per pinned framework. The projections carry an outcome and a verdict per control; framework text appears only as the framework's own text policy allows.",
@@ -82,6 +194,22 @@
       "description": "The engine result as written by engineVersion 0.2.0, before frameworks became catalogue data: it carries one projection per hard-coded standard. A frozen description for readers of older archives; it is never produced any more.",
       "covers": "engineVersion 0.2.0 (retired)",
       "path": "schemas/engine-result/0.2.json"
+    },
+    {
+      "name": "json-export",
+      "version": "1.4",
+      "$id": "https://data.atrekos.com/schemas/json-export/1.4.json",
+      "description": "The JSON export (`?format=json` and the archive's export): the engine's `JsonExportShape`.",
+      "covers": "JsonExportShape version \"1.4\"",
+      "path": "schemas/json-export/1.4.json"
+    },
+    {
+      "name": "json-export",
+      "version": "1.3",
+      "$id": "https://data.atrekos.com/schemas/json-export/1.3.json",
+      "description": "The JSON export (`?format=json` and the archive's export): the engine's `JsonExportShape`.",
+      "covers": "JsonExportShape version \"1.3\"",
+      "path": "schemas/json-export/1.3.json"
     },
     {
       "name": "json-export",
@@ -132,6 +260,22 @@
       "path": "schemas/pack-artifact/5.json"
     },
     {
+      "name": "pack-artifact",
+      "version": "6",
+      "$id": "https://data.atrekos.com/schemas/pack-artifact/6.json",
+      "description": "A provisioning artifact like version 5, in which an assumption or a countermeasure may also carry a `comment`: why it is rated as it is. It is the only version written; versions 3, 4 and 5 are read.",
+      "covers": "artifactVersion 6",
+      "path": "schemas/pack-artifact/6.json"
+    },
+    {
+      "name": "pack-artifact",
+      "version": "7",
+      "$id": "https://data.atrekos.com/schemas/pack-artifact/7.json",
+      "description": "A provisioning artifact like version 6, in which an attack step may also carry `frameworkControlIds`: the framework controls it is bound to, as an assumption or a countermeasure does. It is the only version written; versions 3 to 6 are read.",
+      "covers": "artifactVersion 7",
+      "path": "schemas/pack-artifact/7.json"
+    },
+    {
       "name": "framework-file",
       "version": "1",
       "$id": "https://data.atrekos.com/schemas/framework-file/1.json",
@@ -152,8 +296,32 @@
       "version": "2",
       "$id": "https://data.atrekos.com/schemas/atrekos-stix-extension/2.json",
       "description": "The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.",
-      "covers": "STIX 2.1 pack exports",
+      "covers": "STIX 2.1 pack exports made before #1732 M4",
       "path": "schemas/atrekos-stix-extension/2.json"
+    },
+    {
+      "name": "atrekos-stix-extension",
+      "version": "3",
+      "$id": "https://data.atrekos.com/schemas/atrekos-stix-extension/3.json",
+      "description": "The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.",
+      "covers": "STIX 2.1 pack exports made before #1732 M5",
+      "path": "schemas/atrekos-stix-extension/3.json"
+    },
+    {
+      "name": "atrekos-stix-extension",
+      "version": "4",
+      "$id": "https://data.atrekos.com/schemas/atrekos-stix-extension/4.json",
+      "description": "The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.",
+      "covers": "STIX 2.1 pack exports made before #1974 M2",
+      "path": "schemas/atrekos-stix-extension/4.json"
+    },
+    {
+      "name": "atrekos-stix-extension",
+      "version": "5",
+      "$id": "https://data.atrekos.com/schemas/atrekos-stix-extension/5.json",
+      "description": "The property extension a STIX 2.1 pack export carries (#776 M4): the whole attack step or countermeasure on its attack-pattern or course-of-action, and on the identity that stands for the pack its questions, damage scenarios, assumptions, licence, provenance and the lossy-projection marker. The pack artifact, not the STIX bundle, is canonical.",
+      "covers": "STIX 2.1 pack exports",
+      "path": "schemas/atrekos-stix-extension/5.json"
     }
   ]
 }

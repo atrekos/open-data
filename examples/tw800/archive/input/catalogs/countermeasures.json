@@ -1,0 +1,3096 @@
+{
+  "kind": "countermeasures",
+  "version": "1.0",
+  "status": "published",
+  "modelVersion": "1.0",
+  "notes": "#679: CRA Annex I point (1) and the obligations inside letters (b), (c), (d), (f), (h), (l) and (m): each countermeasure bound to the obligations it serves. #722: CRA Annex I l.2 and m.2 served by new countermeasures C36 (selective recording) and C37 (secure data transfer), bound in annex-i-sub-items.ts 2026-09-22 binding review: fourteen countermeasure→attack-step bindings added (CM1, CM6, CM10, CM11, CM19, CM24, C20) after a three-reviewer review of model-ranked candidates — vault 11-Stealth-Mode/14-Jev-Countermeasure-Ranker-Spike §Results. #973: names the assessing organisation with the organisation token (FRD-M2 §1).",
+  "elements": [
+    {
+      "code": "C0",
+      "name": "CR 7.8 - Control system component inventory",
+      "description": "The component can report a list of its installed hardware, firmware and software parts with their versions, so that an owner can tell which published vulnerabilities affect it and whether an update was applied. It protects against unknown or outdated parts running unnoticed. Evidence: a documented command, interface or export that lists parts and versions, checked against the shipped build.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.8",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.8"
+        }
+      ]
+    },
+    {
+      "code": "DR1",
+      "name": "Required product documentation",
+      "description": "The component shall be provided with all required documentation.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "CRA Annex II",
+      "comment": "All documentation required by the CRA is available for the product and provided to customers buying the product.",
+      "prerequisiteCodes": []
+    },
+    {
+      "code": "C1",
+      "name": "CCSC 1: Support of essential functions",
+      "description": "Security measures on the component must not stop it from performing its essential functions, such as safety or control functions, when a security mechanism acts or fails. It protects the availability of what the product exists to do. Evidence: an analysis naming the essential functions, and tests showing that authentication, logging and resource limits do not block them, including when those mechanisms fail.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-3-3 CCSC 1",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        }
+      ]
+    },
+    {
+      "code": "C2",
+      "name": "CCSC 2: Compensating countermeasures",
+      "description": "Where the component cannot meet a security requirement by itself, the gap is closed by a documented measure outside it, such as network isolation or an access gateway, and the remaining risk is stated. It limits the impact of an incident when a built-in control is missing. Evidence: the list of unmet requirements, the compensating measure for each, and installation guidance telling the owner what to put in place.",
+      "requirements": "QA3[Yes|Yes], QA4[Yes|Yes], QA5[Yes|Yes], QA15[No], QA16[No]",
+      "stakeholderName": "QA3 Does the product have a point-to-point connection to another device? [Yes]\n» Is the connected device typically considered as trustworthy? [Yes],\nQA4 Does the product have a direct connection to a local network? [Yes]\n» Are the devices in the local network considered as trustworthy according to the intended use of the product? [Yes],\nQA5 Does the product support wireless connections? [Yes]\n» Is the access to the wireless connection restricted and are the devices the product communicates with considered as trustworthy? [Yes],\nQA15 Is the product typically installed in an operational environment with public access? [No],\nQA16 Are the product's physical connections (such as attached bus cables) typically installed in an environment with public access? [No]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA3",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA4",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA5",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA15",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA16",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA3[Yes|Yes], QA4[Yes|Yes], QA5[Yes|Yes], QA15[No], QA16[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-3-3 CCSC 2",
+      "comment": "Note that compensating countermeasures are typically linked to specific assumptions resulting from answers to the questionnaire. These assumptions must be communicated clearly to the party responsible for implementing the compensating countermeasures -- typically the customer.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        }
+      ]
+    },
+    {
+      "code": "C3",
+      "name": "CCSC 3: Least privilege",
+      "description": "Every user, process and service on the component runs with only the rights its task needs, and elevated rights are granted explicitly and for as short a time as possible. It limits what an attacker or a faulty process can do after gaining a foothold. Evidence: a role and permission model, default accounts without administrative rights, and services that do not run as a privileged user.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS22"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS6"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS10"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-3-3 CCSC 3",
+      "comment": "Allows customers to apply the principle of least privilege, preventing workers from disabling safety measures on purpose.",
+      "prerequisiteCodes": [
+        "A38"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        }
+      ]
+    },
+    {
+      "code": "C4",
+      "name": "CR 1.1 – Human user identification and authentication",
+      "description": "The component identifies and authenticates every human user, on every interface through which a person can reach it, before granting access. It protects against use of the component by people it does not know. Evidence: an inventory of human-accessible interfaces, each requiring authentication, with no unauthenticated service or maintenance access.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.1",
+      "prerequisiteCodes": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C28"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.1"
+        }
+      ]
+    },
+    {
+      "code": "C5",
+      "name": "CR 1.3 – Account management",
+      "description": "Authorised administrators can create, change, disable and remove user accounts, so that access follows people joining, changing roles and leaving. It protects against forgotten, shared or orphaned accounts remaining usable. Evidence: account management functions on the component or through a central directory, and a procedure for removing accounts that are no longer needed.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.3",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.3"
+        }
+      ]
+    },
+    {
+      "code": "C6",
+      "name": "CR 1.4 – Identifier management",
+      "description": "Identifiers for users, groups, roles and devices are managed so that each is unique and is assigned, changed and retired in a controlled way. It protects accountability: every action can be traced to one identity. Evidence: uniqueness enforced when an identity is created, and no reuse of a retired identifier without review.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.4",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.4"
+        }
+      ]
+    },
+    {
+      "code": "C7",
+      "name": "CR 1.12 – System use notification",
+      "description": "Before a person signs in, the component can show a configurable notice stating the conditions of use, for example that access is restricted and monitored. It deters misuse and gives monitoring a stated basis. Evidence: a configurable notice shown on interactive access interfaces before authentication.",
+      "requirements": "QA8[Yes|*], QA11a[Yes|*], QA17[Yes|*]",
+      "stakeholderName": "QA8 Does the product offer a configuration interface? [Yes]\n» Is the configuration interface protected against unwanted write access? [*],\nQA11a Can the product's software be updated over an interface? [Yes]\n» Does the software originate from a trustworthy source (e.g., ACME Security's backend, potentially over multiple communication media)? [*],\nQA17 Does the product have debug / development interfaces (e.g., JTAG, root access over ssh)? [Yes]\n» Is network access to the debug interface(s) possible? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA8",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11a",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA17",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA8[Yes|*], QA11a[Yes|*], QA17[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.12",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.12"
+        }
+      ]
+    },
+    {
+      "code": "C8",
+      "name": "CR 2.1 – Authorization enforcement",
+      "description": "After authentication, the component checks for every action that the user or process holds the permission for it, based on assigned roles or rights. It protects functions and data from use beyond a user’s authority. Evidence: one permission model applied on all interfaces, and tests showing that a user without the right is refused.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 2.1",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 2.1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:ACM-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:ACM-2"
+        }
+      ]
+    },
+    {
+      "code": "C9",
+      "name": "CR 2.2 – Wireless use control",
+      "description": "Where the component offers wireless interfaces, their use can be authorised, restricted and switched off, and only permitted wireless connections are accepted. It limits the attack surface a wireless link adds. Evidence: settings to disable or restrict each wireless interface, authorisation of connecting parties, and a secure default.",
+      "requirements": "QA5[Yes|*], QA6[Yes]",
+      "stakeholderName": "QA5 Does the product support wireless connections? [Yes]\n» Is the access to the wireless connection restricted and are the devices the product communicates with considered as trustworthy? [*],\nQA6 Does the product have a direct connection to a mobile network / the Internet? [Yes]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA6",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA5[Yes|*], QA6[Yes]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 2.2",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "l"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 2.2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:ACM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:ACM-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:ACM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:ACM-2"
+        }
+      ]
+    },
+    {
+      "code": "C10",
+      "name": "CR 2.8 – Auditable events",
+      "description": "The component records security-relevant events, such as sign-ins, failed access attempts, configuration changes and errors in security functions, with enough detail to know what happened, when and by whom. It makes incidents detectable and investigable. Evidence: the list of recorded event types, sample records showing time, source, type and outcome, and a way to retrieve or forward them.",
+      "requirements": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "stakeholderName": "QA2 Does the product connect two networks to each other (e.g., as a gateway)? [Yes]\n» Please select the kind of connectivity: [*],\nQA6 Does the product have a direct connection to a mobile network / the Internet? [Yes],\nQA14 Is the product typically installed in a physically accessible position? [Yes]\n & QA15 Is the product typically installed in an operational environment with public access? [Yes]\n» Can an attacker plausibly tamper with the hardware without being detected? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA6",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "Yes",
+                "a2": null
+              },
+              {
+                "question": "QA15",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 2.8",
+      "prerequisiteCodes": [
+        "C11",
+        "C12"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "l.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 2.8"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:LGM-1"
+        }
+      ]
+    },
+    {
+      "code": "C11",
+      "name": "CR 2.10 – Response to audit processing failures",
+      "description": "When recording security events fails, for example because storage is full, the component alerts the operator and reacts in a defined way without stopping its essential functions. It protects against incidents going unrecorded without anyone knowing. Evidence: documented behaviour on logging failure, the alert it raises, and a test that fills or disconnects the log target.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 2.10",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 2.10"
+        }
+      ]
+    },
+    {
+      "code": "C12",
+      "name": "SRS 2.11 – Timestamps",
+      "description": "Security event records carry timestamps from a clock that can be synchronised with a trusted time source, so that events can be ordered and correlated across devices. It keeps logs usable as evidence. Evidence: timestamps in the records, configurable time synchronisation, and protection of the clock setting against unauthorised change.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 2.11",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "l.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 2.11"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:LGM-4"
+        }
+      ]
+    },
+    {
+      "code": "C13",
+      "name": "CR 3.3 – Security functionality verification",
+      "description": "The component supports checking that its security functions work as intended, during testing, maintenance or operation. It protects against security controls that are silently broken or disabled. Evidence: a self-test or verification procedure for the security functions, and documentation of how and when to run it.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 3.3",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.3"
+        }
+      ]
+    },
+    {
+      "code": "C14",
+      "name": "CR 3.4 – Software and information integrity",
+      "description": "The component detects unauthorised changes to its software, configuration and other important information, and reports them. It protects against manipulated firmware or settings going unnoticed. Evidence: integrity checks such as signatures or checksums on software and configuration, and a report or alarm when a check fails.",
+      "requirements": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "stakeholderName": "QA2 Does the product connect two networks to each other (e.g., as a gateway)? [Yes]\n» Please select the kind of connectivity: [*],\nQA6 Does the product have a direct connection to a mobile network / the Internet? [Yes],\nQA14 Is the product typically installed in a physically accessible position? [Yes]\n & QA15 Is the product typically installed in an operational environment with public access? [Yes]\n» Can an attacker plausibly tamper with the hardware without being detected? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA6",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "Yes",
+                "a2": null
+              },
+              {
+                "question": "QA15",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 3.4",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.4"
+        }
+      ]
+    },
+    {
+      "code": "C15",
+      "name": "CR 3.5 – Input validation",
+      "description": "The component checks the format, length and content of every input from users, networks and connected systems before using it, and rejects what does not conform. It protects against injection, overflow and malformed-input attacks. Evidence: validation at every external interface, and robustness or fuzz testing results.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [
+        "AS12",
+        "AS17"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.03"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 3.5",
+      "comment": " <= one week: The attacker needs a few days to find inputs that circumvent the input validation\nExpert: The attacker needs to understand that input validation is operational and how to circumvent it\nSensitive: The attacker needs to understand how the product validates its inputs",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.5"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-6"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-6"
+        }
+      ]
+    },
+    {
+      "code": "C16",
+      "name": "CR 3.6 – Deterministic output",
+      "description": "When the component cannot continue normal operation, for example after an attack or a fault, its outputs go to a predefined state instead of behaving unpredictably. It protects connected processes and equipment from uncontrolled behaviour. Evidence: a defined fail state for each output, and tests that trigger loss of communication and internal faults.",
+      "requirements": "QI7[Yes|*], QI14[Yes|*]",
+      "stakeholderName": "QI7 Is the availability of the product relevant for its operational environment? [Yes]\n» What is the worst case effect on the operational environment for the intended use of the product? [*],\nQI14 Can a manipulated product affect the operation of its operational environment? [Yes]\n» What is the worst case effect on the operational environment for the intended use of the product? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI7[Yes|*], QI14[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 3.6",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.6"
+        }
+      ]
+    },
+    {
+      "code": "C17",
+      "name": "CR 4.2 – Information persistence",
+      "description": "Sensitive information such as credentials, keys and configuration can be erased from the component so that it cannot be recovered, before the component is reused, sent for repair or disposed of. It protects confidential data from leaving with the hardware. Evidence: a documented erase function covering all storage that holds sensitive data, and a check that the data cannot be recovered afterwards.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS30",
+        "AS41"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 4.2",
+      "comment": "None: After using the factory reset, extracting customer-specific information from the device is no longer possible",
+      "prerequisiteCodes": [
+        "C1"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "m.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 4.2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:DLM-1"
+        }
+      ]
+    },
+    {
+      "code": "C18",
+      "name": "CR 4.3 – Use of cryptography",
+      "description": "Where the component uses cryptography, it uses algorithms, key lengths and protocols currently considered secure, and handles keys securely from generation to destruction. It protects every confidentiality and integrity measure that depends on cryptography from weak or broken mechanisms. Evidence: an inventory of cryptographic mechanisms with algorithms and key sizes, how keys are generated and stored, and a way to replace an algorithm that becomes weak.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 4.3",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "b"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 4.3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:CRY-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:CCK-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:CCK-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:CRY-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:CCK-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:CCK-2"
+        }
+      ]
+    },
+    {
+      "code": "C19",
+      "name": "CR 5.1 – Network segmentation",
+      "description": "The component supports operation in a segmented network, keeping control traffic apart from other traffic, for example through separate interfaces or network zones. It limits how far an attacker can move from one part of a network to another. Evidence: documentation of the component’s interfaces and traffic flows, and operation with segmentation in place.",
+      "requirements": "QA9[Yes]",
+      "stakeholderName": "QA9 Does the product have an IP stack (or another routable protocol)? [Yes]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA9",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA9[Yes]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 5.1",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 5.1"
+        }
+      ]
+    },
+    {
+      "code": "C20",
+      "name": "CR 7.1 – Denial of service protection",
+      "description": "The component keeps its essential functions working, if necessary in a reduced mode, while under a denial-of-service attack such as a flood of network traffic. It protects availability. Evidence: load and flooding tests showing that essential functions continue, and documentation of the reduced mode.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS4",
+        "AS14"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "replace",
+              "from": "DS6",
+              "to": "DS18"
+            },
+            {
+              "kind": "replace",
+              "from": "DS7",
+              "to": "DS18"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 7.1",
+      "comment": "Denial of service protection limits the effects of an active DoS attack and ensures that the product can recover after the attack. It makes it more difficult for an attacker to effectively run a denial of service attack against the product.",
+      "prerequisiteCodes": [
+        "C22"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "h.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:RLM-1"
+        }
+      ]
+    },
+    {
+      "code": "C21",
+      "name": "CR 7.1 RE 1 Manage communication load from component",
+      "description": "The component limits the amount of network traffic it sends, so that a fault or a compromise cannot turn it into a source that floods other devices. It protects the availability of other devices and networks. Evidence: rate limits or traffic controls on outgoing communication, and tests under fault conditions.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS4"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "replace",
+              "from": "DS6",
+              "to": "DS18"
+            },
+            {
+              "kind": "replace",
+              "from": "DS7",
+              "to": "DS18"
+            },
+            {
+              "kind": "replace",
+              "from": "DS8",
+              "to": "DS18"
+            },
+            {
+              "kind": "replace",
+              "from": "DS9",
+              "to": "DS18"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.1 RE(1)",
+      "comment": "Managing the communication load limits the effects of an active DoS attack and ensures that the product can recover after the attack",
+      "prerequisiteCodes": [
+        "C20"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "h.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.1"
+        }
+      ]
+    },
+    {
+      "code": "C22",
+      "name": "CR 7.2 – Resource management",
+      "description": "The component limits how much memory, processing time, storage and how many connections one function or user can consume, so that exhausting a resource does not stop its security and essential functions. It protects availability. Evidence: configured resource limits, and tests that exhaust one resource while essential functions continue.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.2",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "h.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:RLM-1"
+        }
+      ]
+    },
+    {
+      "code": "C23",
+      "name": "CR 7.6 – Network and security configuration settings",
+      "description": "The component’s network and security settings can be configured according to documented recommendations, and the active settings can be read out for review. It protects against insecure or unknown configurations. Evidence: a configuration guide with recommended settings, and an interface or export showing the active configuration.",
+      "requirements": "QA8[Yes|*]",
+      "stakeholderName": "QA8 Does the product offer a configuration interface? [Yes]\n» Is the configuration interface protected against unwanted write access? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA8",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA8[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.6",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.6"
+        }
+      ]
+    },
+    {
+      "code": "C24",
+      "name": "CR 7.7 – Least functionality",
+      "description": "Functions, ports, protocols and services the intended use does not need are removed or disabled, and only necessary ones can be enabled. It reduces the attack surface. Evidence: the list of open ports and running services compared with the documented need, and defaults with unused services switched off.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.7",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.7"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-5"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-5"
+        }
+      ]
+    },
+    {
+      "code": "C25",
+      "name": "SAR 3.2 / EDR 3.2 / HDR 3.2 / NDR 3.2 – Protection from malicious code",
+      "description": "The component, or the platform it runs on, prevents, detects or limits the effect of malicious code, for example by running only signed or allow-listed software, or by malware scanning where the platform supports it. It protects against infection and its spread. Evidence: the mechanism chosen for each component type, and a test showing that unauthorised code is refused or detected.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 SAR 3.2,ISA/IEC 62443-4-2 EDR 3.2,ISA/IEC 62443-4-2 HDR 3.2,ISA/IEC 62443-4-2 NDR 3.2",
+      "comment": "Depending on the type of product, the following requirements apply:\n\nSAR 3.2 – Protection from malicious code\nThe application product supplier shall qualify and document which protection from malicious code mechanisms are compatible with the application and note any special configuration requirements.\n\nEDR 3.2 – Protection from malicious code\nThe embedded device shall provide the capability to protect from installation and execution of unauthorized software.\n\nHDR 3.2 – Protection from malicious code\nThere shall be mechanisms on host devices that are qualified by the IACS product supplier to provide protection from malicious code. The IACS product supplier shall document any special configuration requirements related to protection from malicious code.\n\nNDR 3.2 – Protection from malicious code\nThe network device shall provide for protection from malicious code.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "SAR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.2"
+        }
+      ]
+    },
+    {
+      "code": "C26",
+      "name": "EDR 2.13 / HDR 2.13 / NDR 2.13 – Use of physical diagnostic and test interfaces",
+      "description": "Physical diagnostic and test interfaces, such as JTAG, serial consoles or test pads, are protected against unauthorised use, for example by disabling them in delivered units or requiring authentication. It protects against someone with physical access reading or changing the device. Evidence: an inventory of physical interfaces, their state in delivered units, and the access control on those that remain usable.",
+      "requirements": "QA17[Yes|*]",
+      "stakeholderName": "QA17 Does the product have debug / development interfaces (e.g., JTAG, root access over ssh)? [Yes]\n» Is network access to the debug interface(s) possible? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA17",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA17[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 EDR 2.13,ISA/IEC 62443-4-2 HDR 2.13,ISA/IEC 62443-4-2 NDR 2.13",
+      "comment": "Depending on the type of product, the following requirements apply:\n\nEDR 2.13 – Use of physical diagnostic and test interfaces\nEmbedded devices shall protect against unauthorized use of the physical factory diagnostic and test interface(s) (e.g. JTAG debugging).\n\nHDR 2.13 – Use of physical diagnostic and test interfaces\nHost devices shall protect against unauthorized use of the physical factory diagnostic and test interface(s) (e.g. JTAG debugging).\n\nNDR 2.13 – Use of physical diagnostic and test interfaces\nNetwork devices shall protect against unauthorized use of the physical factory diagnostic and test interface(s) (e.g. JTAG debugging).",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 2.13"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 2.13"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 2.13"
+        }
+      ]
+    },
+    {
+      "code": "C27",
+      "name": "EDR 3.10 / HDR 3.10 / NDR 3.10 – Support for updates",
+      "description": "The component can be updated to fix vulnerabilities, and updates can be installed in a controlled way throughout its supported life. It makes vulnerabilities found after release fixable in the field. Evidence: an update mechanism, a documented support period, and a process for delivering security updates.",
+      "requirements": "QA11b[Yes]",
+      "stakeholderName": "QA11b Are software updates in the field (regularly or event-based) planned? [Yes]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11b",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA11b[Yes]",
+      "mitigatedStepCodes": [
+        "AS40"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ISA/IEC 62443-4-2 EDR 3.10,ISA/IEC 62443-4-2 HDR 3.10,ISA/IEC 62443-4-2 NDR 3.10",
+      "comment": "Depending on the type of product, the following requirements apply:\n\nEDR 3.10 – Support for updates\nThe embedded device shall support the ability to be updated and upgraded.\n\nHDR 3.10 – Support for updates\nHost devices shall support the ability to be updated and upgraded.\n\nNDR 3.10 – Support for updates\nNetwork devices shall support the ability to be updated and upgraded.\n\nAS40 specifically targets systems that do not receive updates. Consequently, this countermeasure removes the Window of Opportunity for AS40, but does not prevent reliably against vulnerabilities in general.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "c.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.10"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.10"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.10"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SUM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SUM-1"
+        }
+      ]
+    },
+    {
+      "code": "C28",
+      "name": "SRS 1.5 – Authenticator management",
+      "description": "Passwords, keys, certificates and other authenticators are managed securely: default values must be changed on first use, secrets are stored protected, and authenticators can be changed or revoked. It protects against stolen, guessed or default credentials. Evidence: no shared default credentials, protected storage of secrets, and functions to change and revoke authenticators.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.5",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.5"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:AUM-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:AUM-4"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:AUM-5-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:AUM-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:AUM-4"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:AUM-5-1"
+        }
+      ]
+    },
+    {
+      "code": "C29",
+      "name": "SRS 4.1 – Information confidentiality",
+      "description": "Information that needs protection, whether stored on the component or transmitted by it, is kept confidential, typically through encryption and access control. It protects sensitive data against disclosure. Evidence: identification of the confidential data, the protection applied at rest and in transit, and a check that no unprotected copies exist.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS5"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 4.1",
+      "comment": "Decades: Given state-of-the-art protocols, cryptographic algorithms, and parameters, an attacker cannot access transmitted data within a reasonable time frame.\n\nNote that \"to protect the confidentiality of information at rest for which explicit read authorization is supported\" does not imply encrypted memory or hardware security (this is modeled in another countermeasure).",
+      "prerequisiteCodes": [
+        "C18"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 4.1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SCM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SCM-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SSM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SSM-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SCM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SCM-3"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SSM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SSM-3"
+        }
+      ]
+    },
+    {
+      "code": "C30a",
+      "name": "CR 7.3 – Control system backup",
+      "description": "The configuration and other information needed to restore the component can be backed up, and the backup is protected and can be verified. It makes recovery after a failure or an incident possible. Evidence: a backup function or procedure, protection of backup files, and a successful restore test.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.3",
+      "comment": "Backups allow the product to quickly become operational again after an incident",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "b"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.3"
+        }
+      ]
+    },
+    {
+      "code": "C30",
+      "name": "SRS 7.4 – Control system recovery and reconstitution",
+      "description": "After a disruption or failure, the component can be returned to a known secure state, including its software, configuration and security settings. It protects the availability of its functions after an incident. Evidence: a documented recovery procedure, and a test that recovers the component to a secure configuration.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS13",
+        "AS23",
+        "AS25"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "replace",
+              "from": "DS6",
+              "to": "DS17"
+            },
+            {
+              "kind": "replace",
+              "from": "DS7",
+              "to": "DS17"
+            },
+            {
+              "kind": "replace",
+              "from": "DS8",
+              "to": "DS17"
+            },
+            {
+              "kind": "replace",
+              "from": "DS9",
+              "to": "DS17"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.4",
+      "comment": "Recovery and reconstitution allows the product to quickly become operational again after an incident",
+      "prerequisiteCodes": [
+        "C30a"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "b.2"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.4"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:RLM-1"
+        }
+      ]
+    },
+    {
+      "code": "C31",
+      "name": "CR 1.10 – Authenticator feedback",
+      "description": "While a person enters a password or other secret, the component hides it, for example by showing placeholder characters, and failure messages do not reveal which part of a sign-in was wrong. It protects secrets from being observed or guessed. Evidence: masked input on every sign-in interface, and generic failure messages.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 1.10",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.10"
+        }
+      ]
+    },
+    {
+      "code": "C32",
+      "name": "SRS 1.11 - Unsuccessful login attempts",
+      "description": "The component limits repeated failed sign-in attempts, for example by locking the account or delaying further attempts after a configurable number of failures, and records them. It protects against password guessing. Evidence: a configurable threshold and response, and a test showing that repeated failures trigger it.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS29"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 1.11",
+      "comment": "Decades: This countermeasure increases the time required for a successful brute-force attack significantly.",
+      "prerequisiteCodes": [
+        "C31"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "d.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.11"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:AUM-6"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:AUM-6"
+        }
+      ]
+    },
+    {
+      "code": "C33",
+      "name": "SCR 1.1 - Processed personal data",
+      "description": "Where the product processes personal data, users are told what is processed, for what purpose and by whom; processing that needs consent asks for it, and consent can be withdrawn. It keeps the processing of personal data lawful and limited. Evidence: user-facing information on personal data, consent mechanisms where required, and a way to withdraw consent.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ETSI EN 303 645 V2.1.1 provisions 6-1 to 6-3",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        }
+      ]
+    },
+    {
+      "code": "C34",
+      "name": "SCR 1.2 - Telemetry data",
+      "description": "Telemetry the product collects is limited to what its stated purpose needs, and users are told what is collected and why. It prevents collection of data beyond what is necessary. Evidence: the list of telemetry fields with their purpose, and user-facing documentation of the collection.",
+      "requirements": "*",
+      "stakeholderName": "*",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ETSI EN 303 645 V2.1.1 provisions 6-4 and 6-5",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        }
+      ]
+    },
+    {
+      "code": "C35",
+      "name": "EDR 3.14 / HDR 3.14 / NDR 3.14 – Integrity of the boot process",
+      "description": "The component verifies the integrity of its firmware and software during start-up before running them, and does not start, or starts in a restricted mode, when a check fails. It protects against manipulated boot code. Evidence: a verified boot chain anchored in an unchangeable root of trust, and a test showing that modified boot code is refused.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS23"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.03",
+        "EQ": "rap.eq.02"
+      },
+      "reference": "ISA/IEC 62443-4-2 EDR 3.14,ISA/IEC 62443-4-2 HDR 3.14,ISA/IEC 62443-4-2 NDR 3.14",
+      "comment": "Circumventing a protected boot process without hardware protection is non-trivial, but possible.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.14"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.14"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.14"
+        }
+      ]
+    },
+    {
+      "code": "CM1",
+      "name": "SCR 2.1 - Device Firewall",
+      "description": "The component shall\n* be capable of filtering incoming and outgoing network traffic as well as information which is forwarded from one to another interface based on pre-defined rules.\n* be delivered in a known secure state that allows only traffic that is necessary for one of its functions.\n\nThe component should analyze packets at multiple layers (e.g. IP, TCP, UDP) and either allow or block traffic based on criteria like port number, protocol, and source/destination IP address.\n\nThe component should provide an interface to configure the firewall settings, including the removal of settings and the possibility to restore known secure settings.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS9",
+        "AS15",
+        "AS31",
+        "AS25"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.04"
+      },
+      "reference": "ISA/IEC 62443-4-2 NDR 1.13,ISA/IEC 62443-4-2 NDR 5.2,ISA/IEC 62443-4-2 NDR 5.2 RE(1)",
+      "comment": "<= one week: The attacker needs time to find exploitable features in the firewall's configuration\nExpert: The attacker requires understanding of network components\nRestricted: The attacker must obtain or probe the configuration\nDifficult: The attacker must find a way to circumvent the firewall or VLAN",
+      "prerequisiteCodes": [
+        "C19"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 1.13"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 5.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 5.2 RE(1)"
+        }
+      ]
+    },
+    {
+      "code": "CM2",
+      "name": "CRA-compliant SDL and vulnerability management",
+      "description": "The product's software is developed in compliance with the required activities according to the CRA. Vulnerability management ensures that exploitable vulnerabilities in the product are fixed in due time once discovered.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS3"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.06",
+        "EX": "rap.ex.04",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.04"
+      },
+      "reference": "CRA Annex I Part II",
+      "comment": "<= six months: The attacker must invest significant time to find a vulnerability, as easily detectable vulnerabilities are typically found and closed during development\nMultiple Experts: The attackers must understand how to find exploits and develop exploits in tested code\nRestricted: The attacker need knowledge about the product to find vulnerabilities. Note that this knowledge might be obtained by reverse engineering\nDifficult: The attacker must hit a time frame in which the vulnerability is discovered (potentially by the attacker) but not yet fixed.\n\nNote that this does not imply that products never have exploitable vulnerabilities. However, the RAP in this case reflects that due effort is taken to make exploitable vulnerabilities in the product as unlikely as reasonably possible.",
+      "prerequisiteCodes": [
+        "C14",
+        "C15",
+        "C25",
+        "C27"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "a"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "k"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-1"
+        }
+      ]
+    },
+    {
+      "code": "CM3",
+      "name": "SCR 2.8 - Obfuscation",
+      "description": "The component shall be made available with adequately obfuscated parts of software and configuration such that it maintains functionality while increasing the difficulty for users to understand or replicate the underlying logic and design.\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS32"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03"
+      },
+      "reference": "",
+      "comment": "Note that this protects intellectual property to a certain degree while also making reverse engineering attempts more difficult (in terms of the time required as well as the expertise needed).",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        }
+      ]
+    },
+    {
+      "code": "CM4",
+      "name": "SCR 2.2 - Hardware based Storage Encryption",
+      "description": "The component shall,\nprovide storage encryption with hardware security mechanisms to ensure the confidentiality and integrity of data at rest;\nadhere to industry-standard cryptographic algorithms and provide key management functionalities that adhere to best practices for secure storage of encryption keys as outlined in the \"Cryptographic algorithms and keylength in products\";\nThe implementation must ensure that encryption keys are stored securely within dedicated hardware modules only, such as Trusted Platform Modules (TPM) or Hardware Security Modules (HSM), to prevent unauthorized access and tampering.\nGenerally, the implementation of cryptography must follow the guideline on \"Cryptographic algorithms and keylength in products\";\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS24",
+        "AS30"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "Prevents an attacker from reading confidential information by data extraction from the storage medium. This requires hardware security to store the secret key securely, as otherwise, an attacker can simply extract the key from memory and then decrypt the data\n\nNone: The attacker can only extract encrypted data from the hard disk. Note that the attacker might attack the key stored in hardware to decrypt the data. Consequently, this control requires hardware protection mechanisms for the cryptographic material",
+      "prerequisiteCodes": [
+        "C29"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        }
+      ]
+    },
+    {
+      "code": "CM5",
+      "name": "SCR 2.3 - Password based authentication (human)",
+      "description": "Components shall,\nprovide authentication with username and password as an authentication method for all human user accounts;\n\nenforce password complexity rules (if provided);\nallow for password change for all human user accounts;\nComponents may,\nprovide the component owner the possibility to define password complexity rules for human users; including a minimum password length;",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "NIST SP 800-63B",
+      "comment": "None: Given a secure password, guessing the password within a reasonable time frame is highly unlikely",
+      "prerequisiteCodes": [
+        "C4",
+        "A19"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM6",
+      "name": "SCR 2.4 - Authentication with certificates (human)",
+      "description": "Components shall,\nprovide authentication with certificates as an authentication method for all human user accounts;\n\nprovide the capability to add and remove certificates to individual human user accounts;\nauthenticate human users only with certificates signed by Certificate Authorities that are configured as trusted;\nsupport integration into enrollment, renewal, and revocation of certificates processes of a pki (if applicable);\nvalidate certificates upon each authentication attempt;\ndetermine valid certificates by checking the certificate's validity period, revocation status, and the authenticity of the issuing CA;\nstore certificates securely, adhering to the crypto policy;",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16",
+        "AS29"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 1.8",
+      "comment": "None: Without access to the private key for the certificate, the attacker cannot authenticate successfully",
+      "prerequisiteCodes": [
+        "C4",
+        "C18"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.8"
+        }
+      ]
+    },
+    {
+      "code": "CM7",
+      "name": "SCR 2.5 - Secure boot",
+      "description": "Component shall\n* provide an immutable source of trust leveraging hardware-based security and;\n* enforce authentication of\n   - mutable code by the immutable source on every boot;\n   - the bootloader;\n* use either a public key or a hash of a public key;\n* support deactivation of public keys whose private key has been leaked or misused and activation\nof a spare public key\n\nComponent should\n* provision sufficient space for keys;\n* support renewal of secure boot keys.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS23"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.06",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.01",
+        "WO": "rap.wo.04",
+        "EQ": "rap.eq.02"
+      },
+      "reference": "ISA/IEC 62443-4-2 EDR 3.14,ISA/IEC 62443-4-2 HDR 3.14,ISA/IEC 62443-4-2 NDR 3.14,ISA/IEC 62443-4-2 EDR 3.14 RE(1),ISA/IEC 62443-4-2 HDR 3.14 RE(1),ISA/IEC 62443-4-2 NDR 3.14 RE(1)",
+      "comment": "\nThe attacker needs significant time and knowledge to attack secure boot, as well as access to the attacked hardware.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.14"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.14 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.14"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.14 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.14"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.14 RE(1)"
+        }
+      ]
+    },
+    {
+      "code": "CM8",
+      "name": "SCR 2.7 - Close debug interfaces",
+      "description": "* The component shall be made available without any usable debug functionalities;\n* If debug functionalities are meant to be activatable in the field, the procedure to do so shall require appropriate authorization.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS25",
+        "AS26"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ETSI EN 303 645 V2.1.1 provision 5.6-4",
+      "comment": "As the debug interfaces are physically closed, accessing them is not plausible",
+      "prerequisiteCodes": [
+        "C26"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        }
+      ]
+    },
+    {
+      "code": "CM10",
+      "name": "SCR 2.6 - Secure channel with product authentication",
+      "description": "The component shall\n* have the capability to establish a secure channel to safeguard the integrity, authenticity and the confidentiality of transmitted data;\n* authenticate itself to the communication partner.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS6",
+        "AS5",
+        "AS34"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "RFC 8446 (TLS 1.3)",
+      "comment": "The product communicates over a secure channel where the product is authenticated and the channel ensures the integrity and the confidentiality of the outgoing data.\n\nGiven state-of-the-art protocols, cryptographic algorithms, and parameters, an attacker cannot access transmitted data within a reasonable time frame",
+      "prerequisiteCodes": [
+        "C1",
+        "C18"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "m.2"
+        }
+      ]
+    },
+    {
+      "code": "CM11",
+      "name": "SCR 2.9 - Secure channel with communication partner authentication",
+      "description": "The component shall\n* have the capability to provide a secure channel to safeguard the integrity and the confidentiality of data received;\n* accept data only from authenticated communication partners.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS7",
+        "AS19",
+        "AS34",
+        "AS36",
+        "AS5",
+        "AS15",
+        "AS17",
+        "AS20",
+        "AS25"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "ISA/IEC 62443-4-2 NDR 1.13",
+      "comment": "Given state-of-the-art protocols, cryptographic algorithms, and parameters, an attacker cannot access transmitted data within a reasonable time frame",
+      "prerequisiteCodes": [
+        "C1",
+        "C18"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 1.13"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "m.2"
+        }
+      ]
+    },
+    {
+      "code": "CM12",
+      "name": "Secure update: RE1 Update authenticity and integrity\n\nEDR 3.10 / HDR 3.10 / NDR 3.10 – Support for updates",
+      "description": "Before installing an update, the component verifies that it comes from the manufacturer and has not been altered, for example by checking a digital signature, and rejects an update that fails the check. It protects against installing manipulated or counterfeit software. Evidence: signed update packages, verification on the device before installation, and a test showing that an altered or unsigned package is refused.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS18"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "ISA/IEC 62443-4-2 EDR 3.10 RE(1),ISA/IEC 62443-4-2 HDR 3.10 RE(1),ISA/IEC 62443-4-2 NDR 3.10 RE(1)",
+      "comment": "Given state-of-the-art cryptography and parameters, an attacker cannot successfully provide a manipulated software update without the receiving party noticing it",
+      "prerequisiteCodes": [
+        "C1",
+        "C27"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "c.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.10"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.10 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.10"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.10 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.10"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.10 RE(1)"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:SUM-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:SUM-2"
+        }
+      ]
+    },
+    {
+      "code": "CM14",
+      "name": "SCR 2.10 - Password-based authentication (machine)",
+      "description": "Components shall\n* provide an authentication mechanism based on a password for all machine-to-machine access;\n* allow for password change used for the machine-to-machine access by accordingly privileged users;\n\nunless excluded by a compulsory state of the art specification.\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: Given a secure password, guessing the password within a reasonable time frame is highly unlikely",
+      "prerequisiteCodes": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C28",
+        "A19"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM15",
+      "name": "SCR 2.16 - Authentication with certificates (machine)",
+      "description": "Components shall\n* provide authentication with certificates as an authentication method for all machine user accounts;\n* provide the capability to add and remove certificates to individual machine user accounts;\n* authenticate machine users only with certificates signed by Certificate Authorities that are configured as trusted;\n* support integration into enrollment, renewal, and revocation of certificates processes of a pki (if applicable);\n* validate certificates upon each authentication attempt;\n* determine valid certificates by checking the certificate's validity period, revocation status, and the authenticity of the issuing CA;\n* store certificates securely, adhering to the crypto policy.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 1.8",
+      "comment": "None: Without access to the private key for the certificate, the attacker cannot authenticate successfully",
+      "prerequisiteCodes": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C18",
+        "C28"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 1.8"
+        }
+      ]
+    },
+    {
+      "code": "CM16",
+      "name": "SCR 2.14 - Password-based authentication at debug interfaces",
+      "description": "Components shall\n* provide authentication with a password as an authentication method for all debug interfaces;\n* allow for password change for the password associated with the debug interfaces;\n* provide the user with a second factor to approve any access for all debug interfaces;\n* The authentication method provided by the component may require an username;\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS25",
+        "AS26"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "",
+      "comment": "Decades: Given a secure password, guessing the password within a reasonable time frame is highly unlikely",
+      "prerequisiteCodes": [
+        "C4",
+        "C26",
+        "A19"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM17",
+      "name": "SCR 2.13 - Public key-based authentication at debug interfaces",
+      "description": "The component shall\n* provide authentication based on public key as an authentication method for all debug interfaces;\n* provide the capability to add and remove keys related to those debug interfaces;\n* authenticate humans only with keys signed by certificate authorities that are configured as trusted;\n* support integration into enrollment, renewal, and revocation of key processes of a pki;\n* validate keys upon each authentication attempt;\n* determine valid keys by checking at least the key's validity period, revocation status, and the authenticity of the issuing CA;\n* store key pairs securely, adhering to the crypto policy;\n* provide the user with a second factor to approve any access for all active debug interfaces.\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS25",
+        "AS26"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.11"
+      },
+      "reference": "",
+      "comment": "Decades: Without access to the private key for the certificate, the attacker cannot authenticate successfully",
+      "prerequisiteCodes": [
+        "C4",
+        "C26",
+        "A20"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM18",
+      "name": "SCR 2.15 - Patents",
+      "description": "The component shall\n* be made available only if a patent has been filed for the essential parts of the intellectual property contained in it or;\n* be made available only under an appropriate license, or both;\n\nIt is a commercial measure and has no CRA Annex I mapping.\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS32"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "replace",
+              "from": "DS3",
+              "to": "DS19"
+            },
+            {
+              "kind": "replace",
+              "from": "DS12",
+              "to": "DS19"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Patents do not prevent leakage of intellectual property, but they can prevent its abuse by competitors",
+      "prerequisiteCodes": []
+    },
+    {
+      "code": "CM19",
+      "name": "SDR 2.13 - No processing of external data",
+      "description": "The product shall be designed to prevent attacks by external communication partners after commissioning by not processing any data from external sources on applicable interfaces\n \nExample:\nThe product has an interface for initial setup and configuration which is disabled as part of the commissioning process.\n\nNo external standard defines this measure.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS17",
+        "AS15",
+        "AS29",
+        "AS36"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "The product does not process data from an external communication partner and consequently cannot be attacked by the communication partner (except for attacking vulnerabilities / configuration interfaces, which are covered by attacks not affected by this countermeasure)",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        }
+      ]
+    },
+    {
+      "code": "CM20",
+      "name": "SCR 2.11 - Secure Wi-Fi",
+      "description": "The component shall allow configurations in which a known secure Wi-Fi standard is used.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS2"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "ISA/IEC 62443-4-2 NDR 1.6",
+      "comment": "A secure Wi-Fi channel protects against attacks on the product's wireless communication, using, e.g., WPA3",
+      "prerequisiteCodes": [
+        "C9"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 1.6"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:ACM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:ACM-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:AUM-1-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:ACM-1"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:ACM-2"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:AUM-1-1"
+        }
+      ]
+    },
+    {
+      "code": "CM21",
+      "name": "SCR 2.12 - Trusted Execution Environment (TEE)",
+      "description": "The component shall\n* support hardware-based isolation to run trusted and untrusted code in separate environments;\n* have the capability to provide cryptographic proof that its execution environment is untampered;\n* only include cryptographic modules within the TEE that are compliant with FIPS 140-2 or equivalent.\n\nThe TEE should be isolated from the main operating system, with access controlled by hardware-level security mechanisms.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS3",
+        "AS39",
+        "AS44"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "GlobalPlatform TEE System Architecture",
+      "comment": "Protection in hardware prevents attackers from accessing data in the TEE",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        }
+      ]
+    },
+    {
+      "code": "CM22",
+      "name": "SCR 2.18 - Isolation using virtualization or containers",
+      "description": "Virtual machines or software containers are used to isolate processes from each other",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS3",
+        "AS39",
+        "AS44"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.06",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "reference": "ISA/IEC 62443-4-2 SAR 3.2,ISA/IEC 62443-4-2 EDR 3.2,ISA/IEC 62443-4-2 HDR 3.2,ISA/IEC 62443-4-2 NDR 3.2,ISA/IEC 62443-4-2 CR 3.4",
+      "comment": "The attack needs to find and exploit a software vulnerability first, then escape from the virtual system / the container to attack the target software.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "SAR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.2"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.4"
+        }
+      ]
+    },
+    {
+      "code": "CM23",
+      "name": "Hardware exchange",
+      "description": "Exchanging a vulnerable product with a secure product protects against incidents exploiting the vulnerability\n\nNo external standard defines this measure.",
+      "requirements": "QA11b[No|Yes]",
+      "stakeholderName": "QA11b Are software updates in the field (regularly or event-based) planned? [No]\n» Will the product be exchanged to handle vulnerabilities or security incidents? [Yes]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11b",
+                "a1": "No",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA11b[No|Yes]",
+      "mitigatedStepCodes": [
+        "AS40"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "AS40 specifically targets systems that do not receive updates. Consequently, this countermeasure removes the Window of Opportunity for AS40, but does not prevent reliably against vulnerabilities in general.",
+      "prerequisiteCodes": [],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "c"
+        }
+      ]
+    },
+    {
+      "code": "CM24",
+      "name": "SSH with universal key",
+      "description": "Remote access over SSH where the key or secret is shared among several devices, for example across a product family. The protocol encrypts the session and resists replay, but a secret extracted from one device opens every device that shares it. Evidence: the SSH configuration, how the shared secret is provisioned and protected, and a plan for replacing it when one device is compromised.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16",
+        "AS5"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.02",
+        "EQ": "rap.eq.02"
+      },
+      "reference": "RFC 4251 to RFC 4254 (SSH)",
+      "comment": "The attacker needs to extract the universal key from a single device to then spoof a legitimate client.",
+      "prerequisiteCodes": [
+        "CM5"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM25",
+      "name": "SSH with individual key",
+      "description": "Remote access over SSH with a key or secret unique to each device. The protocol encrypts the session and resists replay, and a secret extracted from one device opens no other. Evidence: per-device key generation or provisioning, protected key storage, and the SSH configuration.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "WO": "rap.wo.04"
+      },
+      "reference": "RFC 4251 to RFC 4254 (SSH)",
+      "comment": "The attacker must wait for the legitimate user to access the ssh server on the product for the first time (after that, the public key of the product is stored on the client and a man-in-the-middle attack is noticed).",
+      "prerequisiteCodes": [
+        "CM5"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM26",
+      "name": "Oauth2",
+      "description": "Access to the product’s services is authorised with OAuth 2.0, so that clients receive limited, revocable tokens instead of user credentials. It protects credentials and limits what a client can do. Evidence: the authorisation server configuration, token lifetimes and scopes, and TLS on every token exchange.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "RFC 6749 (OAuth 2.0)",
+      "comment": "State of the art identity management.",
+      "prerequisiteCodes": [
+        "CM5"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM27",
+      "name": "LDAP over TLS",
+      "description": "Authentication against a central directory uses LDAP protected by TLS, so that credentials and directory data are encrypted in transit and the directory server is authenticated. It protects credentials and supports central account management. Evidence: TLS enforced on every directory connection, server certificate validation, and no fallback to unencrypted LDAP.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "RFC 4513 (LDAP authentication and TLS)",
+      "prerequisiteCodes": [
+        "CM5",
+        "CM11"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM28",
+      "name": "OpenID Connect",
+      "description": "Users sign in through an OpenID Connect identity provider, so that authentication is handled centrally and the product receives a verified identity token instead of handling passwords itself. It protects credentials and supports central account management. Evidence: the identity provider configuration, validation of issuer, audience, signature and expiry of each token, and TLS on every exchange.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "OpenID Connect Core 1.0",
+      "comment": "State of the art identity management. Requires a trustworthy trust anchor to be secure (e.g., certificate from a well-managed PKI).",
+      "prerequisiteCodes": [
+        "CM5"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ]
+    },
+    {
+      "code": "CM29",
+      "name": "Safety product",
+      "description": "As the product is designed as a safety product, a loss of availability of the product cannot cause harm to people\n\nNo external standard defines this measure.",
+      "requirements": "QI6[No|Yes]",
+      "stakeholderName": "QI6 Can a loss of availability of the product (or its communication) endanger the health of people?\n(Consider how the operational environment reacts to a loss of availability of the product.) [No]\n» Is the product a safety product? [Yes]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI6",
+                "a1": "No",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI6[No|Yes]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "prerequisiteCodes": []
+    },
+    {
+      "code": "C36",
+      "name": "Selective recording of internal activity",
+      "description": "The product lets the user opt out of the recording and monitoring of internal activity, or select which of it is recorded, including access to or modification of data, services or functions. Where the intended use forbids switching recording off (for example, safety-related recording in industrial or rail use), the product documents that restriction in the user documentation instead of offering the opt-out. Evidence: the user documentation showing the opt-out or the documented restriction, and the set of recording categories the user can select.",
+      "requirements": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "stakeholderName": "QA2 Does the product connect two networks to each other (e.g., as a gateway)? [Yes]\n» Please select the kind of connectivity: [*],\nQA6 Does the product have a direct connection to a mobile network / the Internet? [Yes],\nQA14 Is the product typically installed in a physically accessible position? [Yes]\n & QA15 Is the product typically installed in an operational environment with public access? [Yes]\n» Can an attacker plausibly tamper with the hardware without being detected? [*]",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA6",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "Yes",
+                "a2": null
+              },
+              {
+                "question": "QA15",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA2[Yes|*], QA6[Yes], QA14[Yes] & QA15[Yes|*]",
+      "mitigatedStepCodes": [
+        "AS24",
+        "AS39"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "Common Criteria FAU_SEL.1",
+      "prerequisiteCodes": [
+        "C10"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "l.2"
+        }
+      ]
+    },
+    {
+      "code": "CM30",
+      "name": "Explicit access request approval for untrusted networks",
+      "description": "The component shall provide the capability to deny access requests received via untrusted networks unless explicitly approved by an assigned role (e.g., asset-owner approval workflow before a remote session is established).",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS13",
+        "AS15",
+        "AS36"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.04"
+      },
+      "reference": "ISA/IEC 62443-4-2 NDR 1.13 RE(1)",
+      "prerequisiteCodes": [
+        "C8"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 1.13 RE(1)"
+        }
+      ]
+    },
+    {
+      "code": "CM37",
+      "name": "SCR 2.25 - Physical tamper detection, active monitoring and notification",
+      "description": "The component shall\n* actively monitor its physical diagnostic and test interfaces and report attempts to access them;\n* detect physical tampering with the enclosure or components and notify a configurable set of recipients (e.g., log entry, alarm output or network message).",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS21",
+        "AS22",
+        "AS26"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "EX": "rap.ex.03",
+        "WO": "rap.wo.04",
+        "EQ": "rap.eq.02"
+      },
+      "reference": "ISA/IEC 62443-4-2 EDR 2.13 RE(1),ISA/IEC 62443-4-2 HDR 2.13 RE(1),ISA/IEC 62443-4-2 NDR 2.13 RE(1),ISA/IEC 62443-4-2 EDR 3.11 RE(1),ISA/IEC 62443-4-2 HDR 3.11 RE(1),ISA/IEC 62443-4-2 NDR 3.11 RE(1)",
+      "prerequisiteCodes": [
+        "C26"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.2"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "l.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 2.13 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 2.13 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 2.13 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "EDR 3.11 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "HDR 3.11 RE(1)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "NDR 3.11 RE(1)"
+        }
+      ]
+    },
+    {
+      "code": "CM39",
+      "name": "SCR 2.27 - Continuous security monitoring and integrity alerting",
+      "description": "The component shall\n* continuously monitor security mechanisms and security events using commonly accepted industry practices to detect, characterize and report security breaches;\n* automatically notify a configurable set of recipients upon detection of an unauthorized change or integrity violation.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS45"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "EX": "rap.ex.03",
+        "WO": "rap.wo.04"
+      },
+      "reference": "ISA/IEC 62443-4-2 CR 6.2,ISA/IEC 62443-4-2 CR 3.4 RE(2)",
+      "prerequisiteCodes": [
+        "C10"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.2"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "l.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 3.4 RE(2)"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 6.2"
+        }
+      ]
+    },
+    {
+      "code": "CM45",
+      "name": "SCR 2.33 - Backup integrity verification",
+      "description": "The component shall validate the integrity of backed-up information (e.g., via checksums or cryptographic signatures) prior to the initiation of a restore of that information.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS17"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.3 RE(1)",
+      "prerequisiteCodes": [
+        "C30a"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "h.1"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.3 RE(1)"
+        }
+      ]
+    },
+    {
+      "code": "CM46",
+      "name": "SCR 2.34 - Machine-readable security configuration reporting",
+      "description": "The component shall provide the capability to generate a report listing the currently deployed security settings in a machine-readable format.",
+      "requirements": "",
+      "stakeholderName": "",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS16",
+        "AS45"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "ISA/IEC 62443-4-2 CR 7.6 RE(1)",
+      "prerequisiteCodes": [
+        "C23"
+      ],
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "l"
+        },
+        {
+          "catalogId": "iec-62443-4-2",
+          "controlId": "CR 7.6 RE(1)"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-1:GEC-4"
+        },
+        {
+          "coverage": "partial",
+          "catalogId": "red",
+          "controlId": "en-18031-2:GEC-4"
+        }
+      ]
+    }
+  ]
+}

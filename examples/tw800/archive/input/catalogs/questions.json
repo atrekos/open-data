@@ -1,0 +1,2341 @@
+{
+  "kind": "questions",
+  "version": "1.0",
+  "status": "published",
+  "modelVersion": "1.0",
+  "notes": "Gap-closure M7: adds the vulnerability-handling section (CRA Annex I Part II). #973: names the assessing organisation with the organisation token (FRD-M2 §1).",
+  "elements": [
+    {
+      "code": "H1",
+      "text": "Impact Rating",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 1
+    },
+    {
+      "code": "H1.1",
+      "text": "Worst case impact for loss of confidentiality",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 2
+    },
+    {
+      "code": "H1.1.1",
+      "text": "Personal data",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 3
+    },
+    {
+      "code": "QI1",
+      "text": "Does the product have / support cameras or other sensors that can potentially identify people? (Regarding \"supporting a camera / sensor\": only answer with Yes if attaching a camera / sensor is in the intended or foreseeable use of the product.)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Can you argue that the product cannot identify people in its operational environment?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Can you argue that the product cannot identify people in its operational environment?",
+        "No": "",
+        "Yes|Yes": "Please provide a rationale:",
+        "Yes|No": ""
+      },
+      "inactiveOn": [],
+      "sort": 4
+    },
+    {
+      "code": "QI2",
+      "text": "Does the product process personal data?\nExamples: address labels",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)"
+          ],
+          "label": "What is the criticality of the processed data?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the processed data?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation (e.g., user name, business e-mail address, business phone number). Please list the affected data:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances (e.g., home address, bank account number, credit card details, private phone number, work history). Please list the affected data:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened (e.g., health data, biometric data, racial or ethnic origin, political opinions, religious beliefs). Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 5
+    },
+    {
+      "code": "H1.1.2",
+      "text": "Intellectual property",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 6
+    },
+    {
+      "code": "QI3",
+      "text": "Does the product contain ACME Security's or your customers' intellectual property?\nNote: Only IP which is part of / accessible by the firmware / software in the product is in scope of this question. Gaining access to optical and mechanical IP are not covered by this question (and the cybersecurity risk analysis)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)"
+          ],
+          "label": "What is the criticality of the intellectual property?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the intellectual property?",
+        "No": "",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected data:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected data:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 7
+    },
+    {
+      "code": "H1.1.3",
+      "text": "Financial and legal",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 8
+    },
+    {
+      "code": "QI4",
+      "text": "Is ACME Security (typically) obliged to keep the processed / stored data (including third-party IP) confidential by contract or law? (Note that this concerns individual obligations, not the standard product warranty).",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage"
+          ],
+          "label": "What is the typical / expected value of direct loss, fines for infringements of laws, or violations of contracts?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the typical / expected value of direct loss, fines for infringements of laws, or violations of contracts?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected data:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected data:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected data:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 9
+    },
+    {
+      "code": "QI5",
+      "text": "Does the product contain credentials / cryptographic keys that allow access to sensitive data or to systems in the product's operational environment? (Note: this includes cryptographic data introduced by the customer.)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst-case criticality of the data that can be accessed with these credentials / cryptographic keys?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst-case criticality of the data that can be accessed with these credentials / cryptographic keys?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 10
+    },
+    {
+      "code": "QI5b",
+      "text": "Is the device meant to store user data (e.g., customer's applications and configurations)? Credentials and cryptographic keys, including those the customer introduces, are covered by the question above.",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the criticality of such user data? As the data may not be in scope of the delivery, consider a reasonable use case."
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of such user data? As the data may not be in scope of the delivery, consider a reasonable use case.",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 11
+    },
+    {
+      "code": "H1.2",
+      "text": "Worst case impact for loss of availability",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 12
+    },
+    {
+      "code": "H1.2.1",
+      "text": "Safety",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 13
+    },
+    {
+      "code": "QI6",
+      "text": "Can a loss of availability of the product (or its communication) endanger the health of people?\n(Consider how the operational environment reacts to a loss of availability of the product.)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury"
+          ],
+          "label": "What is the worst case severity of the injury for the intended use of the product?"
+        },
+        "No": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the product a safety product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case severity of the injury for the intended use of the product?",
+        "No": "Is the product a safety product?",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please provide a rationale:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please provide a rationale:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please provide a rationale:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please provide a rationale:",
+        "No|Yes": "",
+        "No|No": ""
+      },
+      "inactiveOn": [],
+      "sort": 14
+    },
+    {
+      "code": "H1.2.2",
+      "text": "Function and availability",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 15
+    },
+    {
+      "code": "QI7",
+      "text": "Is the availability of the product relevant for its operational environment?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case effect on the operational environment for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case effect on the operational environment for the intended use of the product?",
+        "No": "",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please explain the expected effects:",
+        "Yes|Service required": "Disturbance of function, service required. Please explain the expected effects:",
+        "Yes|Major disturbance": "Major disturbance of function. Please explain the expected effects:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please explain the expected effects:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please explain the expected effects:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please explain the expected effects:"
+      },
+      "inactiveOn": [],
+      "sort": 16
+    },
+    {
+      "code": "H1.2.3",
+      "text": "Financial and legal",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 17
+    },
+    {
+      "code": "QI8",
+      "text": "Can a loss of availability allow an attacker access to assets of the customer (including physical access not detected by ACME Security's product)? Example: The product is used for access control.",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage"
+          ],
+          "label": "What is the worst case value of these assets for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case value of these assets for the intended use of the product?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please characterize the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please characterize the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please characterize the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please characterize the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 18
+    },
+    {
+      "code": "QI9",
+      "text": "Can a loss of availability cause contract-related fines (e.g., based on a service level agreement)?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage"
+          ],
+          "label": "What is the typical / expected value of the fines for contract violation?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the typical / expected value of the fines for contract violation?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please describe the reason of the contract violation:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please describe the reason of the contract violation:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please describe the reason of the contract violation:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please describe the reason of the contract violation:"
+      },
+      "inactiveOn": [],
+      "sort": 19
+    },
+    {
+      "code": "H1.3",
+      "text": "Worst case impact for loss of integrity",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 20
+    },
+    {
+      "code": "H1.3.1",
+      "text": "Safety",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 21
+    },
+    {
+      "code": "QI10",
+      "text": "Can a manipulated product (or its communication) endanger the health of people? Also consider cases where the product is used against its intended use or misconfigured!",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury"
+          ],
+          "label": "What is the worst case severity of the injury for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case severity of the injury for the intended use of the product?",
+        "No": "",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please provide a rationale:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please provide a rationale:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please provide a rationale:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please provide a rationale:"
+      },
+      "inactiveOn": [],
+      "sort": 22
+    },
+    {
+      "code": "H1.3.2",
+      "text": "Personal data / IP",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 23
+    },
+    {
+      "code": "QI11",
+      "text": "Can a manipulated product disclose personal data to an attacker? Also consider cases where the product is used against its intended use or misconfigured!",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)"
+          ],
+          "label": "What is the criticality of the disclosed data?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the disclosed data?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation (e.g., user name, business e-mail address, business phone number). Please list the affected data:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances (e.g., home address, bank account number, credit card details, private phone number, work history). Please list the affected data:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened (e.g., health data, biometric data, racial or ethnic origin, political opinions, religious beliefs). Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 24
+    },
+    {
+      "code": "QI12",
+      "text": "Can a manipulated product disclose intellectual property to an attacker? Also consider cases where the product is used against its intended use or misconfigured!\n\nNote that this includes both ACME Security's and your customers' IP.",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)"
+          ],
+          "label": "What is the criticality of the disclosed data?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the disclosed data?",
+        "No": "",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected data:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected data:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 25
+    },
+    {
+      "code": "QI13",
+      "text": "Can a manipulated product disclose credentials / cryptographic material to an attacker? Also consider cases where the product does not disclose the material but misuses its access to other systems! (E.g., product contains access credentials to store data on a server.)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the criticality of the disclosed data / what are the consequences of the malicious access?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the disclosed data / what are the consequences of the malicious access?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected data:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected data:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected data:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected data:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected data:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected data:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected data:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected data:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected data:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected data:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected data:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected data:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected data:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected data:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected data:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected data:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected data:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected data:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected data:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected data:"
+      },
+      "inactiveOn": [],
+      "sort": 26
+    },
+    {
+      "code": "QI13b",
+      "text": "Can a manipulated product disclose the user data it stores?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the criticality of the disclosed data / what are the consequences of the malicious access?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the criticality of the disclosed data / what are the consequences of the malicious access?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected data:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected data:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected data:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected data:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected data:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected data:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected data:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected data:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected data:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected data:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected data:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected data:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected data:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected data:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected data:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected data:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected data:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected data:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected data:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected data:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QI5b",
+          "answer1": "No"
+        }
+      ],
+      "sort": 27
+    },
+    {
+      "code": "H1.3.3",
+      "text": "Function and availability",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 28
+    },
+    {
+      "code": "QI14",
+      "text": "Can a manipulated product affect the operation of its operational environment?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case effect on the operational environment for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case effect on the operational environment for the intended use of the product?",
+        "No": "",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please explain the expected effects:",
+        "Yes|Service required": "Disturbance of function, service required. Please explain the expected effects:",
+        "Yes|Major disturbance": "Major disturbance of function. Please explain the expected effects:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please explain the expected effects:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please explain the expected effects:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please explain the expected effects:"
+      },
+      "inactiveOn": [],
+      "sort": 29
+    },
+    {
+      "code": "H1.3.4",
+      "text": "Financial and legal",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 30
+    },
+    {
+      "code": "QI15",
+      "text": "Can a manipulated product allow an attacker access to assets of the customer or allow the attacker to attack the customer's network?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case damage caused by the manipulation for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case damage caused by the manipulation for the intended use of the product?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please characterize the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please characterize the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please characterize the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please characterize the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please characterize the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please characterize the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please characterize the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please characterize the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please characterize the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please characterize the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 31
+    },
+    {
+      "code": "QI16",
+      "text": "Can a manipulated product cause contract-related / legal fines? (Note that this concerns individual obligations, not the standard product warranty).",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage"
+          ],
+          "label": "What is the typical / expected value of the fines for contract / legal violation?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the typical / expected value of the fines for contract / legal violation?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please describe the reason of the contract violation:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please describe the reason of the contract violation:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please describe the reason of the contract violation:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please describe the reason of the contract violation:"
+      },
+      "inactiveOn": [],
+      "sort": 32
+    },
+    {
+      "code": "H1.4",
+      "text": "Authentication, authorisation and accountability",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 33
+    },
+    {
+      "code": "H1.4.1",
+      "text": "Spoofing and unauthenticated messages",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 34
+    },
+    {
+      "code": "QIE1",
+      "text": "Can the product receive and/or send unauthenticated messages/commands (e.g., from unauthenticated protocols) that can endanger the health of people?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury"
+          ],
+          "label": "What is the worst case severity of the injury for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case severity of the injury for the intended use of the product?",
+        "No": "",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please provide a rationale:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please provide a rationale:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please provide a rationale:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please provide a rationale:"
+      },
+      "inactiveOn": [],
+      "sort": 35
+    },
+    {
+      "code": "QIE2",
+      "text": "Does the product support authentication at any level (e.g., RADIUS, logins, JWTs, session cookies, MAC Authentication Bypass)?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst-case damage that unauthenticated access can cause to the product or to the authenticated services?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst-case damage that unauthenticated access can cause to the product or to the authenticated services?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 36
+    },
+    {
+      "code": "QIE3",
+      "text": "Can unauthenticated messages from/to the product affect the operational environment (e.g., from/to a CAN bus)?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case effect on the operational environment for the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case effect on the operational environment for the intended use of the product?",
+        "No": "",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please explain the expected effects:",
+        "Yes|Service required": "Disturbance of function, service required. Please explain the expected effects:",
+        "Yes|Major disturbance": "Major disturbance of function. Please explain the expected effects:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please explain the expected effects:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please explain the expected effects:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please explain the expected effects:"
+      },
+      "inactiveOn": [],
+      "sort": 37
+    },
+    {
+      "code": "H1.4.2",
+      "text": "Unauthorised access",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 38
+    },
+    {
+      "code": "QIE4",
+      "text": "Can the product internals (e.g., firmware/OS, file system) be accessed without authentication? Consider all interfaces and answer \"yes\" if there is at least one way to gain unauthenticated access to the product.",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst-case damage that access to those interfaces can cause?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst-case damage that access to those interfaces can cause?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 39
+    },
+    {
+      "code": "QIE5",
+      "text": "Can a user or an attacker reach functions at firmware/OS level without an authorisation scheme being enforced by default?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case impact of an unauthorized access or operation on the firmware/OS?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case impact of an unauthorized access or operation on the firmware/OS?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 40
+    },
+    {
+      "code": "QIE6",
+      "text": "Can a user or an attacker reach functions at application level without an authorisation scheme being enforced by default?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the worst case impact of an unauthorized access or operation on the application?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the worst case impact of an unauthorized access or operation on the application?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [],
+      "sort": 41
+    },
+    {
+      "code": "H1.4.3",
+      "text": "Logging and accountability",
+      "indentation": 3,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 42
+    },
+    {
+      "code": "QIE7",
+      "text": "Does the product not maintain any log or would the logged information be insufficient for diagnostic purposes?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {
+        "Yes": "",
+        "No": ""
+      },
+      "inactiveOn": [],
+      "sort": 43
+    },
+    {
+      "code": "QIE7b",
+      "text": "Does the product maintain security logs?",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Personal data (low)",
+            "Personal data (significant)",
+            "Personal data (ruinous)",
+            "IP (slightly innovative)",
+            "IP (moderately innovative)",
+            "IP (highly innovative)",
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage",
+            "Potentially dangerous situation",
+            "Light or moderate injury",
+            "Severe injury (survival probable)",
+            "Life-threatening injury",
+            "Disturbance",
+            "Service required",
+            "Major disturbance",
+            "Environmental damage",
+            "Critical disturbance (destruction)",
+            "Critical environmental damage"
+          ],
+          "label": "What is the expected damage caused by manipulated security logs?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the expected damage caused by manipulated security logs?",
+        "No": "",
+        "Yes|Personal data (low)": "It is possible that the person affected will be negatively affected in his or her social status or economic situation. Please list the affected assets:",
+        "Yes|Personal data (significant)": "The person affected can be significantly impaired in his or her social status or economic circumstances. Please list the affected assets:",
+        "Yes|Personal data (ruinous)": "The person affected can be ruinously impaired in his social status and economic circumstances. The freedom of the person concerned is threatened. Please list the affected assets:",
+        "Yes|IP (slightly innovative)": "Loss of general idea how product works or low impact on markets (little innovation / very small market). Please list the affected assets:",
+        "Yes|IP (moderately innovative)": "Relevant aspects of system is comprehensible or moderate impact on markets (some innovation in the product / medium size market). Please list the affected assets:",
+        "Yes|IP (highly innovative)": "Can be copied / technology available or high impact on markets (highly innovative product / high-volume market). Please list the affected assets:",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please list the affected assets:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please list the affected assets:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please list the affected assets:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please list the affected assets:",
+        "Yes|Potentially dangerous situation": "Potentially dangerous situation. Please list the affected assets:",
+        "Yes|Light or moderate injury": "Light or moderate injury. Please list the affected assets:",
+        "Yes|Severe injury (survival probable)": "Severe injury (survival probable). Please list the affected assets:",
+        "Yes|Life-threatening injury": "Life-threatening injury. Please list the affected assets:",
+        "Yes|Disturbance": "Minor disturbance, customer can quickly fix issue himself (e.g. reset). Please list the affected assets:",
+        "Yes|Service required": "Disturbance of function, service required. Please list the affected assets:",
+        "Yes|Major disturbance": "Major disturbance of function. Please list the affected assets:",
+        "Yes|Environmental damage": "Singular incident with limited environmental damage. Please list the affected assets:",
+        "Yes|Critical disturbance (destruction)": "Destruction of plant, severe damage to assets or operational environment, critical disturbance of function. Please list the affected assets:",
+        "Yes|Critical environmental damage": "Environmental damages that accumulate to critical impact over time as well as critical damages that happen in a single incident. Please list the affected assets:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QIE7",
+          "answer1": "Yes"
+        }
+      ],
+      "sort": 44
+    },
+    {
+      "code": "QIE8",
+      "text": "Do the operations or data exchanges performed on or by the product require traceability for contractual agreements or regulatory compliance? (e.g., post mortem analysis or forensics)",
+      "indentation": 6,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Low financial damage",
+            "Medium financial damage",
+            "High financial damage",
+            "Critical financial damage"
+          ],
+          "label": "What is the expected damage caused by the impossibility to trace back accountability?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "What is the expected damage caused by the impossibility to trace back accountability?",
+        "No": "",
+        "Yes|Low financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (low volume). Please describe the reason of the contract violation:",
+        "Yes|Medium financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (medium volume). Please describe the reason of the contract violation:",
+        "Yes|High financial damage": "Direct loss, fines for infringements of laws, or violations of contracts (high volume). Please describe the reason of the contract violation:",
+        "Yes|Critical financial damage": "Loss of freedom for employees, direct loss, fines for infringements of laws, or violations of contracts (critical volume). Please describe the reason of the contract violation:"
+      },
+      "inactiveOn": [],
+      "sort": 45
+    },
+    {
+      "code": "H2",
+      "text": "Required Attack Potential",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 46
+    },
+    {
+      "code": "QA1",
+      "text": "Does the product have any connectivity?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {
+        "Yes": "",
+        "No": ""
+      },
+      "inactiveOn": [],
+      "sort": 47
+    },
+    {
+      "code": "QA2",
+      "text": "Does the product connect two networks to each other (e.g., as a gateway)?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Local network gateway",
+            "Internet-facing gateway"
+          ],
+          "label": "Please select the kind of connectivity:"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Please select the kind of connectivity:",
+        "No": "",
+        "Yes|Local network gateway": "",
+        "Yes|Internet-facing gateway": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 48
+    },
+    {
+      "code": "H2.1",
+      "text": "Physical communication",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 49
+    },
+    {
+      "code": "QA3",
+      "text": "Does the product have a point-to-point connection to another device?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the connected device typically considered as trustworthy?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is the connected device typically considered as trustworthy?",
+        "No": "",
+        "Yes|Yes": "Please name the party responsible for the trusted device:",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 50
+    },
+    {
+      "code": "QA4",
+      "text": "Does the product have a direct connection to a local network?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Are the devices in the local network considered as trustworthy according to the intended use of the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Are the devices in the local network considered as trustworthy according to the intended use of the product?",
+        "No": "",
+        "Yes|Yes": "Please name the party responsible for the trusted network:",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 51
+    },
+    {
+      "code": "QA5",
+      "text": "Does the product support wireless connections?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the access to the wireless connection restricted and are the devices the product communicates with considered as trustworthy?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is the access to the wireless connection restricted and are the devices the product communicates with considered as trustworthy?",
+        "No": "",
+        "Yes|Yes": "Please describe the wireless technologies and the device's role in the network (client / access point / …)  as well as the party responsible for the trusted network:",
+        "Yes|No": "Please describe the wireless technologies and the device's role in the network (client / access point / …):"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 52
+    },
+    {
+      "code": "QA6",
+      "text": "Does the product have a direct connection to a mobile network / the Internet?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "",
+        "Yes|*": "Please describe the network technologies in use:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 53
+    },
+    {
+      "code": "H2.2",
+      "text": "Logical communication",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 54
+    },
+    {
+      "code": "QA7",
+      "text": "Does the product offer services to other entities on the network?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {
+        "Yes": "",
+        "No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 55
+    },
+    {
+      "code": "QA8",
+      "text": "Does the product offer a configuration interface?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the configuration interface protected against unwanted write access?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is the configuration interface protected against unwanted write access?",
+        "No": "",
+        "Yes|Yes": "Please describe the kind of protection and the parties allowed to access the configuration interface:",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 56
+    },
+    {
+      "code": "QA9",
+      "text": "Does the product have an IP stack (or another routable protocol)?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "",
+        "Yes|*": "Please name the supported protocols:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        },
+        {
+          "questionCode": "QA7",
+          "answer1": "No"
+        }
+      ],
+      "sort": 57
+    },
+    {
+      "code": "QA10a",
+      "text": "Does the product communicate with an external system locally (e.g., a USB stick, an SD card, an RFID tag)?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the external system considered as trustworthy? In case of several systems, consider the worst case."
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is the external system considered as trustworthy? In case of several systems, consider the worst case.",
+        "No": "",
+        "Yes|Yes": "Please describe the interactions and the exchanged data:",
+        "Yes|No": "Please describe the interactions and the exchanged data:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 58
+    },
+    {
+      "code": "QA10b",
+      "text": "Does the product communicate with an external system on the Internet (e.g., an untrusted 3rd party backend, a vendor cloud service, a vendor server system)?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is the external system considered as trustworthy? In case of several systems, consider the worst case."
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is the external system considered as trustworthy? In case of several systems, consider the worst case.",
+        "No": "",
+        "Yes|Yes": "Please describe the interactions and the exchanged data:",
+        "Yes|No": "Please describe the interactions and the exchanged data:"
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 59
+    },
+    {
+      "code": "QA11a",
+      "text": "Can the product's software be updated over an interface?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Does the software originate from a trustworthy source (e.g., ACME Security's backend, potentially over multiple communication media)?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Does the software originate from a trustworthy source (e.g., ACME Security's backend, potentially over multiple communication media)?",
+        "No": "",
+        "Yes|Yes": "Who is the trustworthy party creating and providing the updates?",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 60
+    },
+    {
+      "code": "QA11b",
+      "text": "Are software updates in the field (regularly or event-based) planned?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "No": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Will the product be exchanged to handle vulnerabilities or security incidents?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "Will the product be exchanged to handle vulnerabilities or security incidents?",
+        "No|Yes": "",
+        "No|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 61
+    },
+    {
+      "code": "QA12",
+      "text": "Does the product have a logical connection to a local network over a gateway?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Are the local network and the gateway considered as trustworthy?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Are the local network and the gateway considered as trustworthy?",
+        "No": "",
+        "Yes|Yes": "Who is responsible for the secure operation of the network?",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 62
+    },
+    {
+      "code": "QA13",
+      "text": "Does the product have a logical connection to a wireless network over a gateway?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Are the wireless network and the gateway considered as trustworthy?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Are the wireless network and the gateway considered as trustworthy?",
+        "No": "",
+        "Yes|Yes": "Who is responsible for the secure operation of the network?",
+        "Yes|No": ""
+      },
+      "inactiveOn": [
+        {
+          "questionCode": "QA1",
+          "answer1": "No"
+        }
+      ],
+      "sort": 63
+    },
+    {
+      "code": "H2.3",
+      "text": "Hardware interfaces and accessibility",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 64
+    },
+    {
+      "code": "QA14",
+      "text": "Is the product typically installed in a physically accessible position?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "No": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "",
+        "No|*": "Please describe how the product is protected from physical access:"
+      },
+      "inactiveOn": [],
+      "sort": 65
+    },
+    {
+      "code": "QA15",
+      "text": "Is the product typically installed in an operational environment with public access?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Can an attacker plausibly tamper with the hardware without being detected?"
+        },
+        "No": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "Can an attacker plausibly tamper with the hardware without being detected?",
+        "No": "",
+        "Yes|Yes": "",
+        "Yes|No": "Please explain why this is not plausible:",
+        "No|*": "Please name the parties with access:"
+      },
+      "inactiveOn": [],
+      "sort": 66
+    },
+    {
+      "code": "QA16",
+      "text": "Are the product's physical connections (such as attached bus cables) typically installed in an environment with public access?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "No": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "",
+        "No|*": "Please name the parties with access:"
+      },
+      "inactiveOn": [],
+      "sort": 67
+    },
+    {
+      "code": "QA17",
+      "text": "Does the product have debug / development interfaces (e.g., JTAG, root access over ssh)?",
+      "indentation": 3,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Is network access to the debug interface(s) possible?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Is network access to the debug interface(s) possible?",
+        "No": "",
+        "Yes|Yes": "",
+        "Yes|No": ""
+      },
+      "inactiveOn": [],
+      "sort": 68
+    },
+    {
+      "code": "QA18",
+      "text": "Is the product produced in a secure environment?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [],
+          "label": ""
+        }
+      },
+      "infoTexts": {
+        "Yes": "",
+        "No": "",
+        "Yes|*": "Please provide details on the secure production environment:"
+      },
+      "inactiveOn": [],
+      "sort": 69
+    },
+    {
+      "code": "QA19",
+      "text": "Are the supply chain partners trustworthy and protected against attacks?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No",
+        "N/A"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "label": "Will the supplier provide regular updates for the product?"
+        }
+      },
+      "infoTexts": {
+        "Yes": "Will the supplier provide regular updates for the product?",
+        "No": "",
+        "N/A": "",
+        "Yes|Yes": "Please provide details on the trustworthy supplier:",
+        "Yes|No": "Please provide details on the trustworthy supplier:"
+      },
+      "inactiveOn": [],
+      "sort": 70
+    },
+    {
+      "code": "QA20",
+      "text": "What is the product's expected lifetime?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "0 - 5 years",
+        "5 - 10 years",
+        "10 - 20 years",
+        "20+ years"
+      ],
+      "a2Config": {},
+      "infoTexts": {
+        "0 - 5 years": "",
+        "5 - 10 years": "",
+        "10 - 20 years": "",
+        "20+ years": ""
+      },
+      "inactiveOn": [],
+      "sort": 71
+    },
+    {
+      "code": "QA21",
+      "text": "What is the product's planned support duration?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "0 - 5 years",
+        "5 - 10 years",
+        "10 - 20 years",
+        "20+ years"
+      ],
+      "a2Config": {},
+      "infoTexts": {
+        "0 - 5 years": "",
+        "5 - 10 years": "",
+        "10 - 20 years": "",
+        "20+ years": ""
+      },
+      "inactiveOn": [],
+      "sort": 72
+    },
+    {
+      "code": "HVH",
+      "text": "Vulnerability handling (CRA Annex I Part II)",
+      "indentation": 0,
+      "isQuestion": false,
+      "a1Options": [],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 73
+    },
+    {
+      "code": "QVH1",
+      "text": "Are vulnerabilities and components contained in the product identified and documented?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 74,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-1"
+        }
+      ]
+    },
+    {
+      "code": "QVH2",
+      "text": "Is a software bill of materials (SBOM) maintained in a commonly used, machine-readable format covering at least the top-level dependencies?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 75,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "II-6"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "P2-1"
+        }
+      ]
+    },
+    {
+      "code": "QVH3",
+      "text": "Are vulnerabilities addressed and remediated without delay, including by providing security updates?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 76,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-2"
+        }
+      ]
+    },
+    {
+      "code": "QVH4",
+      "text": "Where technically feasible, are security updates provided separately from functionality updates?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 77,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-2"
+        }
+      ]
+    },
+    {
+      "code": "QVH5",
+      "text": "Are effective and regular tests and reviews of the product security applied?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "Continuously (CI)",
+            "Monthly",
+            "Quarterly",
+            "Yearly",
+            "Per release"
+          ],
+          "label": "Testing cadence"
+        }
+      },
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 78,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-3"
+        }
+      ]
+    },
+    {
+      "code": "QVH6",
+      "text": "Once a security update is available, is information about the fixed vulnerabilities shared and publicly disclosed (description, affected products, impact, severity, remediation)?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 79,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-4"
+        }
+      ]
+    },
+    {
+      "code": "QVH7",
+      "text": "Is a policy on coordinated vulnerability disclosure in place, enforced and published?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 80,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-5"
+        }
+      ]
+    },
+    {
+      "code": "QVH8",
+      "text": "Is a contact address for reporting vulnerabilities (including in third-party components) provided and published?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 81,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "II-2"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "P2-6"
+        }
+      ]
+    },
+    {
+      "code": "QVH9",
+      "text": "Are updates distributed through a secure mechanism that protects their integrity and authenticity?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 82,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-7"
+        }
+      ]
+    },
+    {
+      "code": "QVH10",
+      "text": "Where applicable, are security updates installed in an automatic manner (with user notification)?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 83,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-7"
+        }
+      ]
+    },
+    {
+      "code": "QVH11",
+      "text": "Are security updates disseminated without delay and free of charge, accompanied by advisory messages?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {},
+      "infoTexts": {},
+      "inactiveOn": [],
+      "sort": 84,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "P2-8"
+        }
+      ]
+    },
+    {
+      "code": "QVH12",
+      "text": "Is a support period committed during which vulnerabilities are handled and security updates are provided?",
+      "indentation": 0,
+      "isQuestion": true,
+      "a1Options": [
+        "Yes",
+        "No"
+      ],
+      "a2Config": {
+        "Yes": {
+          "options": [
+            "1 year",
+            "2 years",
+            "3 years",
+            "5 years",
+            "7 years",
+            "10 years"
+          ],
+          "label": "Committed support period"
+        }
+      },
+      "infoTexts": {
+        "Yes": "The committed period is cross-checked against the assessment’s documented support duration."
+      },
+      "inactiveOn": [],
+      "sort": 85,
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "II-8"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "P2-8"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+- answer1: Yes
+  questionCode: QA1
+- answer1: Yes
+  answer2: No
+  questionCode: QA10a
+  rationale: SIM interfaces exchange subscriber/authentication data with the local modem. The serial console exchanges administration commands; variant-dependent RS232/RS485 and digital I/O may exchange field-equipment data or control signals. Optional interfaces and connected devices are not confirmed and are not assumed trustworthy. No USB or SD interface is inferred.
+- answer1: Yes
+  answer2: No
+  questionCode: QA10b
+  rationale: Remote VPN peers and control/management systems exchange operational traffic, routing information and VPN authentication material. Configured services may communicate with external AAA, DNS/DDNS, NTP, syslog, email and certificate/SCEP servers. Exact deployment and peer trust are unconfirmed, so external systems are treated as untrusted in the worst case.
+- answer1: Yes
+  answer2: No
+  questionCode: QA11a
+- answer1: No
+  answer2: No
+  questionCode: QA11b
+- answer1: Yes
+  answer2: No
+  questionCode: QA12
+- answer1: No
+  questionCode: QA13
+- answer1: Yes
+  questionCode: QA14
+- answer1: No
+  questionCode: QA15
+- answer1: No
+  questionCode: QA16
+- answer1: Yes
+  answer2: Yes
+  questionCode: QA17
+- answer1: No
+  questionCode: QA18
+- answer1: No
+  questionCode: QA19
+- answer1: Yes
+  answer2: Internet-facing gateway
+  questionCode: QA2
+- answer1: 5 - 10 years
+  questionCode: QA20
+- answer1: 5 - 10 years
+  questionCode: QA21
+- answer1: Yes
+  answer2: No
+  questionCode: QA3
+- answer1: Yes
+  answer2: No
+  questionCode: QA4
+- answer1: Yes
+  answer2: No
+  questionCode: QA5
+  rationale: Cellular modem/client connecting over 2G/3G/4G carrier networks; SIM/APN settings and VPN endpoints are configured by administrators. SMS management is also documented. Optional hardware variants provide Wi-Fi access point/client functions. Exact variant and deployed service restrictions are unconfirmed; carrier access control alone does not establish trustworthy communicating peers.
+- answer1: Yes
+  questionCode: QA6
+- answer1: Yes
+  questionCode: QA7
+- answer1: Yes
+  answer2: Yes
+  questionCode: QA8
+  rationale: WebUI/CLI configuration requires local administrator credentials or configured external AAA; standard accounts are read-only. Configurable service enablement, source-IP/port ACLs, HTTPS/SSH and inactivity timeouts restrict access. This is a documented mechanism, not confirmation of the deployed settings; default credentials must be changed and insecure/exposed services restricted.
+- answer1: Yes
+  questionCode: QA9
+- answer1: Yes
+  answer2: No
+  questionCode: QI1
+- answer1: Yes
+  answer2: Potentially dangerous situation
+  questionCode: QI10
+  rationale: "Assessment scenario: malicious routing, firewall or VPN changes, or altered operational traffic, could prevent correct monitoring/control or contribute to unsafe field operation. The potentially dangerous rating reflects the existing substation use case and foreseeable misconfiguration. Downstream command validation, independent safety safeguards and redundancy are unconfirmed; fatal injury is not established by the manuals."
+- answer1: Yes
+  answer2: Personal data (significant)
+  questionCode: QI11
+  rationale: A compromised router may expose account-linked identifiers, logs, packet captures and customer traffic. Network cameras are foreseeable connected equipment and can carry identifiable images. Significant impact assumes such images or other personal payload are accessible following compromise; actual data categories, scale and deployed encryption require confirmation.
+- answer1: Yes
+  answer2: IP (slightly innovative)
+  questionCode: QI12
+  rationale: Embedded router firmware and uploaded application code; potentially customer network/configuration information carried in backups or diagnostics. The rating assumes conventional routing/security logic rather than a demonstrated highly innovative algorithm or substantial proprietary process data. Owner validation is needed for actual IP value.
+- answer1: Yes
+  answer2: Major disturbance
+  questionCode: QI13
+  rationale: VPN certificates/private keys, pre-shared secrets, local administrator passwords and external-service/AAA credentials. Disclosure or misuse could give access to router configuration and operational networks, disrupt routing/VPN links or support further attacks on IED/RTU and remote management/control systems. Major disturbance is the retained deployment assumption; no fatal injury or plant destruction claim is inferred.
+- answer1: Yes
+  answer2: Major disturbance
+  questionCode: QI14
+- answer1: Yes
+  answer2: Major disturbance
+  questionCode: QI15
+- answer1: No
+  questionCode: QI16
+- answer1: Yes
+  answer2: Personal data (significant)
+  questionCode: QI2
+  rationale: The router processes account/network identifiers, logs, credentials and transported customer traffic or diagnostic packet captures. Network cameras are foreseeable connected equipment, so identifiable images may be carried and exposed if the router is compromised. Significant personal-data impact is a conservative scenario assumption; actual payload, sensitivity, volume and retention are unconfirmed.
+- answer1: Yes
+  answer2: IP (slightly innovative)
+  questionCode: QI3
+  rationale: Embedded router firmware, protocol/security implementations and any uploaded application code. Conventional routing/VPN functionality is assumed to have limited innovation value; no high-value customer algorithm or proprietary process logic is evidenced. Exact commercial IP value requires owner confirmation.
+- answer1: No
+  questionCode: QI4
+- answer1: Yes
+  answer2: Major disturbance
+  questionCode: QI5
+  rationale: VPN keys/certificates and local or external-AAA credentials can grant access to router management and connected operational networks. Affected assets include router configuration, remote VPN/control systems and IED/RTU communications. Major disturbance assumes loss or misuse of this access disrupts field monitoring/control; fatal injury or plant destruction is not established by the manuals.
+- answer1: No
+  questionCode: QI5b
+- answer1: Yes
+  answer2: Potentially dangerous situation
+  questionCode: QI6
+  rationale: "Assessment scenario: interruption of IED/RTU monitoring/control communication can delay detection or response to unsafe field conditions. Potentially dangerous situation is an assumed deployment consequence; the router is not a safety function and independent interlocks, redundancy and fail-safe responses are unconfirmed. No life-threatening consequence is established by the manuals."
+- answer1: Yes
+  answer2: Major disturbance
+  questionCode: QI7
+- answer1: No
+  questionCode: QI8
+- answer1: No
+  questionCode: QI9
+- answer1: No
+  questionCode: QIE1
+- answer1: Yes
+  answer2: Personal data (low)
+  questionCode: QIE2
+  rationale: Router management credentials and session tokens (loal or external-AAA logins, RADIUS secrets, web/API sssions) could leak through unauthenticated access. Afected assets are these credentials and the account dentifiers they carry. Low personal-data impact is aconservative scenario assumption; no further persona data is evidenced on this path.
+- answer1: No
+  questionCode: QIE3
+- answer1: No
+  questionCode: QIE4
+- answer1: No
+  questionCode: QIE5
+- answer1: No
+  questionCode: QIE6
+- answer1: No
+  questionCode: QIE7
+- answer1: Yes
+  answer2: Disturbance
+  questionCode: QIE7b
+  rationale: Router security logs (authentication, configuration-cange and firewall/VPN events) could be manipulated s they are no longer trustworthy for diagnosis or incdent analysis. Affected assets are the security logsand the event history they provide. Disturbance assues the operator can restore trustworthy logging by rset or reconfiguration; no regulatory traceability rquirement is evidenced (QIE8 = No).
+- answer1: No
+  questionCode: QIE8
+- answer1: No
+  questionCode: QVH1
+- answer1: No
+  questionCode: QVH10
+- answer1: No
+  questionCode: QVH11
+- answer1: No
+  questionCode: QVH12
+- answer1: No
+  questionCode: QVH2
+- answer1: No
+  questionCode: QVH3
+- answer1: No
+  questionCode: QVH4
+- answer1: No
+  questionCode: QVH5
+- answer1: No
+  questionCode: QVH6
+- answer1: No
+  questionCode: QVH7
+- answer1: No
+  questionCode: QVH8
+- answer1: No
+  questionCode: QVH9

@@ -1,0 +1,42 @@
+{
+  "example": "tw800",
+  "generatedAt": "2026-10-26",
+  "engineVersion": "0.5.3",
+  "archiveSchemaVersion": 5,
+  "inputHash": "7bda1bf4aa5a0c9e",
+  "model": {
+    "version": "1.0"
+  },
+  "catalogues": {
+    "questions": {
+      "version": "1.0"
+    },
+    "damage-scenarios": {
+      "version": "1.0"
+    },
+    "attack-steps": {
+      "version": "1.0"
+    },
+    "assumptions": {
+      "version": "1.0"
+    },
+    "countermeasures": {
+      "version": "1.0"
+    }
+  },
+  "frameworks": [
+    {
+      "label": "Cyber Resilience Act (Regulation (EU) 2024/2847): Annex I Part I, Annex I Part II, Annex II",
+      "version": "1.0"
+    },
+    {
+      "label": "ISA/IEC 62443-4-2",
+      "version": "1.0"
+    },
+    {
+      "label": "Radio Equipment Directive 2014/53/EU, Article 3(3)(d), (e): EN 18031-1, -2",
+      "version": "1.0"
+    }
+  ],
+  "applicationCommit": "ed7f64a"
+}

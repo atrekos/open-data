@@ -1,0 +1,1834 @@
+{
+  "kind": "assumptions",
+  "version": "1.0",
+  "status": "published",
+  "modelVersion": "1.0",
+  "notes": "#679: CRA Annex I point (1) and the obligations inside letters (b), (c), (d), (f), (h), (l) and (m): each assumption bound to the obligations it serves. #720: every condition names who must fulfil it, and CRA Annex I (c)’s conditional obligations are carried by named parties where the product does not install updates itself (Recital 56): every assumption carries a tier, and A46/A47 carry (c). #973: names the assessing organisation with the organisation token (FRD-M2 §1).",
+  "elements": [
+    {
+      "code": "A1",
+      "name": "SDR 1.3 – Product cannot identify people",
+      "description": "The  sensor’s input field or the camera’s field of vision never includes areas where people are located or the products sensory capabilities are insufficient to identify people.",
+      "requirements": "The user documentation shall state that the sensor’s input field or the camera’s field of vision can not be positioned by the operator in a way that could create artifacts capable of identifying people.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI1",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI1[Yes|Yes]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A2",
+      "name": "SDR 1.4 – Privacy-compliant handling of camera data",
+      "description": "The camera data is handled in compliance to data protection regulations (e.g., GDPR) by the customer.",
+      "requirements": "The user documentation shall state\n* that the product does not have the capability to appropriately protect personal data and/or is not intended to handle personal data;\n* that the user shall ensure that data collected by the solution is handled in compliance with data protection regulations (e.g. GDPR, DSGVO).",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI1",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI1[Yes|No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A3",
+      "name": "SDR 1.2 – No handling of personal data",
+      "description": "The product is not intended to process personal data.",
+      "requirements": "The user documentation shall state\n* that the product does not have the capability to appropriately protect personal data and/or is not intended to handle personal data;\n* that the user shall ensure that data collected by the solution is handled in compliance with data protection regulations (e.g. GDPR, DSGVO).",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI2",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI2[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "g"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A4",
+      "name": "SDR 2.1 – No legal or contractual obligations for data confidentiality",
+      "description": "There are no legal or contractual obligations, with the possible exception of privacy-related issues, to keep the data processed / stored by the product confidential.",
+      "requirements": "The contractual document shall not contain obligations to protect confidentiality for data other than personally identifiable information, which is processed by the product.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI4",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI4[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Note that this assumption does not exclude damage scenarios for information disclosure, it just states that no immediate damages arise from a violation of laws or contracts. Also note that privacy is handled on its own.",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        }
+      ],
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A5",
+      "name": "SDR 1.5 – Product is not used for safety-relevant use cases on its own",
+      "description": "The product is not intended for use in safety-relevant use cases on its own. Consequently, using the product in safety-relevant use cases happens at the customer's responsibility.",
+      "requirements": "The user documentation shall state that the product does not provide functional safety on its own and that any use of the product in safety-relevant applications requires external safety measures under the customer’s responsibility.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI6",
+                "a1": "No",
+                "a2": "No"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI10",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI6[No|No], QI10[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A6",
+      "name": "SDR 1.6 – Product not relevant for availability of operational environment",
+      "description": "If the product stops working / malfunctions, then no other components / processes in its operational environment are affected.",
+      "requirements": "The user documentation shall state that the product must not be used in such a way that the loss of availability negatively impacts its operational environment.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI7[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A7-8",
+      "name": "SDR 1.78 – Limited damage in case of loss of availability or integrity",
+      "description": "If the product stops working, then the damages to its operational environment are at most: no upper limit is assumed.",
+      "requirements": "The user documentation shall state that the product must be integrated in such a way that a loss of availability or integrity does not result in a high criticality impact on the customer's operational environment.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Service required"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Service required"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Service required"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Service required"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Service required"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Service required"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Service required"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Service required"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Major disturbance"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Environmental damage"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI7",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              },
+              {
+                "question": "QI14",
+                "a1": "Yes",
+                "a2": "Critical disturbance (destruction)"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI7[Yes|Service required] & QI14[Yes|Service required], QI7[Yes|Service required] & QI14[Yes|Major disturbance], QI7[Yes|Service required] & QI14[Yes|Environmental damage], QI7[Yes|Service required] & QI14[Yes|Critical disturbance (destruction)], QI7[Yes|Major disturbance] & QI14[Yes|Service required], QI7[Yes|Major disturbance] & QI14[Yes|Major disturbance], QI7[Yes|Major disturbance] & QI14[Yes|Environmental damage], QI7[Yes|Major disturbance] & QI14[Yes|Critical disturbance (destruction)], QI7[Yes|Environmental damage] & QI14[Yes|Service required], QI7[Yes|Environmental damage] & QI14[Yes|Major disturbance], QI7[Yes|Environmental damage] & QI14[Yes|Environmental damage], QI7[Yes|Environmental damage] & QI14[Yes|Critical disturbance (destruction)], QI7[Yes|Critical disturbance (destruction)] & QI14[Yes|Service required], QI7[Yes|Critical disturbance (destruction)] & QI14[Yes|Major disturbance], QI7[Yes|Critical disturbance (destruction)] & QI14[Yes|Environmental damage], QI7[Yes|Critical disturbance (destruction)] & QI14[Yes|Critical disturbance (destruction)]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "The risk assessment of the product in its operational environment according to its intended use assumes an upper limit for the potential damages. In particular, this means that integrators need to consider additional measures to limit the potential damage in case the product fails or acts maliciously. To ensure this is being adhered to by the customer or integrator, a clear statement in the installation instructions is necessary.",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A9",
+      "name": "SDR 1.9 – Not used for access control",
+      "description": "The product is not used to prevent / control access to assets.",
+      "requirements": "The user documentation shall state\nthat using the product outside of the specified applications may impose cybersecurity risks to the product and its operational environment",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI8",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI8[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "operator"
+    },
+    {
+      "code": "A10",
+      "name": "SDR 2.2 – No contractual obligations regarding product availability",
+      "description": "There are no contract-related fines if the product stops working at the customer's site.",
+      "requirements": "The contractual document shall not contain compensations in the case that the solution's availability is affected by a cybersecurity incident.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI9",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI9[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A11",
+      "name": "SDR 2.3 – No legal or contractual obligations for product integrity",
+      "description": "There are no legal or contractual fines if the product gets manipulated.",
+      "requirements": "The contractual document shall not contain contractual fines in the case that the solution's integrity gets affected in the event of solution tampering.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI16",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI16[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A12",
+      "name": "SDR 1.10 – Device operates in trustworthy operational environment",
+      "description": "The device's operational environment is trustworthy and not compromised by an attacker.",
+      "requirements": "The user documentation shall state that the customer must ensure a secure operational environment for the device including a continuous assessment for indicators of compromise.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA4",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA5",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA12",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA13",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA4[Yes|Yes], QA5[Yes|Yes], QA12[Yes|Yes], QA13[Yes|Yes]",
+      "mitigatedStepCodes": [
+        "AS1"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: As the operational environment is trustworthy, no attacks are expected to originate from there",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A13",
+      "name": "SDR 1.11 – Trustworthy communication partner",
+      "description": "The device's communication partner is trustworthy and not compromised by an attacker.",
+      "requirements": "The user documentation shall state that the customer must ensure the trustworthiness and integrity of the device's communication partners.",
+      "stakeholderName": "Other (see comment)",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA3",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10a",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA3[Yes|Yes], QA10a[Yes|Yes], QA10b[Yes|Yes]",
+      "mitigatedStepCodes": [
+        "AS28"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "The responsible party depends on whether the trusted communication partner is operated by ACME Security, the customer, or another party. Please list all responsible parties in the documentation.\n\nThe communication partner is considered as trustworthy and currently not considered as the origin of attacks",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        }
+      ],
+      "tier": "integrator"
+    },
+    {
+      "code": "A14",
+      "name": "SDR 1.12 – Product inaccessible",
+      "description": "The product is installed in a physically inaccessible place. It is difficult for an attacker to gain physical access to the product.",
+      "requirements": "The user documentation shall state that the product is intended to be installed in a place with protection measures preventing physical access.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA14[No]",
+      "mitigatedStepCodes": [
+        "AS21"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.04"
+      },
+      "reference": "",
+      "comment": "Difficult: As the product is not easily accessible, gaining access to it is difficult",
+      "tier": "integrator"
+    },
+    {
+      "code": "A15",
+      "name": "SDR 1.13 – Area with restricted access",
+      "description": "The area where the product is located is protected against unauthorized access.",
+      "requirements": "The user documentation shall state that the customer must ensure that the area where the product is located is protected against unauthorized physical access.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA15",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA15[No]",
+      "mitigatedStepCodes": [
+        "AS21"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: As access to the area is restricted, physical access by unauthorized entities is not relevant for the analysis",
+      "tier": "operator"
+    },
+    {
+      "code": "A16",
+      "name": "SDR 1.14 – Communication media located in restricted access area",
+      "description": "The area where the product's communication media are located is protected against unauthorized access.",
+      "requirements": "The user documentation shall state that the customer must ensure that the area where the product's communication media are located is protected against unauthorized physical access.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA16",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA16[No]",
+      "mitigatedStepCodes": [
+        "AS27"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: As access to the area is restricted, physical access by unauthorized entities is not relevant for the analysis",
+      "tier": "integrator"
+    },
+    {
+      "code": "A17",
+      "name": "SDR 2.4 – Secure production",
+      "description": "ACME Security's products are produced in a secure operational environment.",
+      "requirements": "ACME Security's product shall be produced in a secure operational environment.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA18",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA18[Yes]",
+      "mitigatedStepCodes": [
+        "AS37"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: ACME Security's production environment is protected against attacks",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A18",
+      "name": "SDR 2.5 – Secure supply chain",
+      "description": "ACME Security's suppliers are trustworthy and their products are not manipulated. The suppliers provide updates when needed.",
+      "requirements": "The procurement process of external software and hardware components for the solution shall contain checks and guarantees that ACME Security's suppliers are trustworthy and their products are not manipulated.\nThis should be done by the supplier complying with ACME Security's Cybersecurity supplier requirements or in the case of Open Source through the reputation, number of people, history of using the component, committing and other factors.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA19",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA19[Yes|Yes]",
+      "mitigatedStepCodes": [
+        "AS38"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: The supply chain partners are trustworthy and protected against attacks",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A19",
+      "name": "SDR 1.15 – Password security",
+      "description": "If the customer is allowed to define passwords, then the customer is responsible for creating secure passwords and for protecting them against unauthorized access.",
+      "requirements": "The user documentation shall state\nthat the customer must ensure adequate password strength and protection of those passwords against unauthorized access.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A20",
+      "name": "SDR 1.16 – Private key security",
+      "description": "If the customer owns a private key, then the customer is responsible for protecting it against unauthorized access.",
+      "requirements": "The user documentation shall state\nthat the customer shall ensure adequate protection for any private key related to the product owned by the customer against unauthorized access.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A21",
+      "name": "SDR 2.7 - Scope for customer-based attacks",
+      "description": "If the customer conducts attacks, then only selected damages are in scope of the analysis.",
+      "requirements": "The customer is not expected to take actions against the solution that impacts its security.\nIf the customer is expected to take actions against the product that impact its security, re-evaluate the risk-assessment.\n \nEvaluation of such kind should consider economic factors and damages to ACME Security.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [
+        "AS22"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS1"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS2"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS4"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS5"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS7"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS8"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS9"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS10"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS11"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS13"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS14"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS15"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS16"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Removes damage scenarios not plausible when the customer acts as an attacker.\n\nNote that safety-related aspects are not covered in this assumption, as people might wish to circumvent safety measures to \"optimize\" processes.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A22",
+      "name": "SDR 2.8 - No authentication over the IP stack possible",
+      "description": "The product does not offer any interface that requires authentication over the IP stack.",
+      "requirements": "The component shall be designed in a way\nthat no authentication shall be possible over the IP stack;",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS29"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS1"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS2"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS4"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS5"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS6"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS7"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS8"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS9"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS10"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS11"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS13"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS14"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS15"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS16"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "If the product does not offer an interface, then attacks abusing such an interface cannot occur.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A23",
+      "name": "SDR 2.9 - No configuration interface required",
+      "description": "The product does not offer a configuration interface, unlike required by CR 7.6 – Network and security configuration settings. For the given product, no such interface is required.",
+      "requirements": "The component shall be designed in a way\nthat the component shall not provide a configuration interface;",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA8",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA8[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A24",
+      "name": "SDR 1.21 - Product not storing secrets",
+      "description": "As the product does not store any credentials or cryptographic secrets, no such data can be extracted from the product or be misused by an attacker.",
+      "requirements": "The user documentation shall state that the product does not store any cryptographic secrets and such data can not be extracted from the product or misused by an attacker.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI5[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A25",
+      "name": "SDR 1.22 - The product does not communicate any confidential data to an external communication partner",
+      "description": "As the product does not communicate any confidential data to its external communication partner, the communication partner cannot abuse the received information by disclosing it.",
+      "requirements": "The user documentation shall state that the product does not send any confidential data to communication partners and therefore can not be extracted from communication of  the product or misused by an attacker.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS33"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS1"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS2"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS3"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS4"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS5"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "As no confidential data is communicated, the receiving entity cannot disclose any confidential data",
+      "tier": "operator"
+    },
+    {
+      "code": "A26",
+      "name": "SDR 1.23 - The product does not send any sensitive data to communication partners over the Internet or a mobile network",
+      "description": "As the product does not send any sensitive data (i.e., data that must be confidential or authentic) to an external communication partner, attacks on external communication partners via the link to ACME Security's product are not in scope for the analysis.",
+      "requirements": "The user documentation shall state that the product does not send any sensitive data to communication partners over the Internet or a mobile network.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS34"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "None: See the description",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A27",
+      "name": "SDR 1.24 - The product does not receive any sensitive data (except updates / configuration / debug communication) from external communication partners over the Internet or a mobile network",
+      "description": "As the product does not receive any sensitive data (except updates / configuration / debug communication, as these are covered separately), attacks on received data are not plausible. Sensitive data includes any data that must be confidential or authentic.",
+      "requirements": "The user documentation shall state that the product does not receive any sensitive data from external communication partners via the Internet or mobile network, except for data related to updates, configuration, or debug communication.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS36"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "As no sensitive data is exchanged, no damages can occur.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A28",
+      "name": "SDR 1.25 - The product does not transmit confidential cryptographic material (such as passwords)",
+      "description": "As the product does not transmit confidential cryptographic material, eavesdropping on its communication cannot disclose confidential cryptographic material.",
+      "requirements": "The user documentation shall state that the product does not transmit confidential cryptographic material (such as passwords, private keys, or other sensitive information) over networks or any other communication channels.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS5"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS5"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "As no cryptographic material is transmitted, no such data can be misused by eavesdropping on transmissions",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A29",
+      "name": "SDR 1.26 - The customer ensures that a loss of wireless communication with the product is manageable",
+      "description": "The product cannot ensure that the wireless communication network is available. Consequently, the operational environment must ensure the availability of the wireless infrastructure or offer compensating countermeasures if the wireless communication network is not available.",
+      "requirements": "The user documentation shall state that the customer ensures the loss of wireless communication with the product is manageable.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS8"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS7"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS9"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "As the customer is prepared to handle outages of wireless communication, the loss of wireless communication does not cause significant disturbances in the product's operational environment",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "i"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A30",
+      "name": "SDR 1.19 - Physical destruction",
+      "description": "Vandalism or other forms of physical destruction of the product are not in scope of this analysis.",
+      "requirements": "The user documentation shall state that the product is incapable of protecting its functionality against violent acts with massive physical force.",
+      "stakeholderName": "Other (see comment)",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Scope definition - physical vandalism cannot be managed by the product's cybersecurity, but must be handled by compensating countermeasures, such as physical access control or monitoring.",
+      "tier": "operator"
+    },
+    {
+      "code": "A32",
+      "name": "SDR 1.27 - The product has no access to personal data",
+      "description": "Even if the product is manipulated and used against its intended purpose, it cannot disclose personal data to an attacker as the product has no access to personal data.",
+      "requirements": "The user documentation shall state\nthat the product has no access to personal data. The product is designed to operate without collecting, storing, or processing any personal information.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI11",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI11[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "operator"
+    },
+    {
+      "code": "A33",
+      "name": "SDR 1.28 - The product cannot affect the availability of its operational environment",
+      "description": "Even a compromised product cannot affect the availability of its operational environment.",
+      "requirements": "The user documentation shall state\nthat the product cannot affect the availability of its operational environment;",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI14",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI14[No]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "operator"
+    },
+    {
+      "code": "A34",
+      "name": "SDR 2.10 - The product is delivered with a secure by default configuration",
+      "description": "The product's configuration is secure by default. If user generated passwords are required, then the user is prompted to change the password on first use. The secure defaults are restored by a factory reset, if applicable.",
+      "requirements": "The technical documentation and production steps documentation shall ensure and document that the product is delivered in a known-secure state.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "activatingAnswersRaw": "*",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "b.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "b.2"
+        }
+      ],
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A35",
+      "name": "Attack path not applicable or not plausible",
+      "description": "This assumption is assigned in cases where an attack path (derived from the answers to the questionnaire) is not applicable or not plausible at closer inspection. Note that this requires a rationale in the comment when applied.",
+      "requirements": "",
+      "stakeholderName": "Other (see comment)",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Applied selectively by the security expert conducting the analysis, given a good rationale.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A36",
+      "name": "SDR 1.18 - Well-protected trustworthy wireless network",
+      "description": "The wireless network used over a gateway is trustworthy and sufficiently protected against attacks that would allow attackers to access this network.",
+      "requirements": "The user documentation shall state that the product is intended to be operated only with connections to a trustworthy and sufficiently protected wireless network whose provision and secure operation of networks is the sole responsibility of the customer.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA13",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA13[Yes|Yes]",
+      "mitigatedStepCodes": [
+        "AS2"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "Prevents attackers from accessing the trusted wireless network the product uses over a gateway. Note that this network is not part of the product.",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "d.1"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "e"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "f.1"
+        }
+      ],
+      "tier": "integrator"
+    },
+    {
+      "code": "A37",
+      "name": "SDR 2.6 - Limited accessibility of short-range wireless communication",
+      "description": "Short-range wireless communication (such as RFID) cannot be accessed easily. Consequently, it is hard for an attacker to eavesdrop on the communication or to manipulate transmissions.",
+      "requirements": "The component shall be designed in a way that all available wireless interfaces are only suitable for short-range communication (less than 10m) either by their nature or by reducing signal strength.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS5",
+        "AS6"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.04"
+      },
+      "reference": "",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A38",
+      "name": "SDR 1.20 - Least privilege for provided credentials",
+      "description": "As the credentials stored on the product are exclusively used for the intended purpose, the resulting damages are at most: \n\nThe customer applies the principle of least privilege to access rights allowing changes to the product or its configuration:\nApplying the principle of least privilege to access rights that allow changes to the product (including its configuration), the customer prevents workers from disabling safety measures. It is up to the customer to ensure that the privileged persons act responsibly and that they do not disable safety measures.",
+      "requirements": "The user documentation shall state that the customer ensures the implementation of least privilege when providing credentials.",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5",
+                "a1": "*",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI5[*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Note that the effects of this are modeled in countermeasure C3, as the product must offer the functionality to apply the principle of least privilege.\n\nNote that a device with no credentials fulfills this requirement.",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "j"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A39",
+      "name": "SDR 2.11 - The customer is trusted not to extract ACME Security's IP",
+      "description": "Customers buying the product are trusted not to extract ACME Security's intellectual property from the product. Note that this implies that the product cannot be bought freely by any party, but only by selected customers.",
+      "requirements": "Customers buying the product are trusted not to extract ACME Security's intellectual property from the product. This is only valid if the product cannot be bought freely by any party, but only by selected customers.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS22"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS3"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS12"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "If this assumption is assigned to AS22 in the Mitigation sheet, then all attack paths with AS22 as attack preparation ignore IP-related damages.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A41",
+      "name": "SDR 1.29 - Loss of external connectivity (Internet, mobile network) only leads to quality-related issues",
+      "description": "If the product's Internet connectivity / connection over a mobile network is lost, then only quality-related damages occur, but no safety-related damages or damages regarding the product's core functionality and its operational environment happen.",
+      "requirements": "The user documentation shall state that the product continues to function even in the event of a loss of external connectivity (e.g., Internet or mobile network), but may experience quality-related issues. These could include reduced performance, delays, or degraded service in certain features that rely on real-time connectivity. The reliability of the system and core functionalities that do not depend on external connections remain unaffected.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS35"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS6"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS7"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS8"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "This differentiates loss of availability for the product from loss of availability of the product's external communication.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A42",
+      "name": "SDR 1.1 – List all network traffic",
+      "description": "The customer buying the product can understand the intended communication of the product.",
+      "requirements": "The user documentation shall contain a list of all intended network connections together with an appropriate high-level description including its associated use case and destination.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA1",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA1[Yes]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "comment": "Note that providing an empty list is a valid option if the product is not supposed to communicate over a network.",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A43",
+      "name": "SDR 1.17 - Sensing capabilities",
+      "description": "The customer buying the product can understand the sensing capabilities of the product.",
+      "requirements": "The user documentation shall list all external sensing capabilities of the device in an accessible way that is clear and transparent.",
+      "stakeholderName": "ACME Security",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI1",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QI1[Yes|*]",
+      "mitigatedStepCodes": [],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "manufacturer"
+    },
+    {
+      "code": "A44",
+      "name": "SDR 1.30 - Network monitoring",
+      "description": "The customer monitors relevant networks and manages network outages, including denial-of-service attacks on networks.",
+      "requirements": "",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "activatingAnswersRaw": "",
+      "mitigatedStepCodes": [
+        "AS14"
+      ],
+      "dsts": [
+        {
+          "ops": [
+            {
+              "kind": "remove",
+              "ds": "DS7"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS9"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS17"
+            },
+            {
+              "kind": "remove",
+              "ds": "DS18"
+            }
+          ]
+        }
+      ],
+      "factorContributions": {},
+      "reference": "",
+      "tier": "operator"
+    },
+    {
+      "code": "A45",
+      "name": "SDR 2.12 - Physical tampering with the product not plausible",
+      "description": "As the product is in a (temporarily) physically accessible but monitored or well-observed environment, it is not plausible that an attacker can tamper with the product's hardware without being detected.",
+      "requirements": "",
+      "stakeholderName": "Customer",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA15",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA15[Yes|No]",
+      "mitigatedStepCodes": [
+        "AS21"
+      ],
+      "dsts": [],
+      "factorContributions": {
+        "WO": "rap.wo.05"
+      },
+      "reference": "",
+      "comment": "This assumes that the attacker needs more time to execute the attack than available in a well-observed environment.",
+      "tier": "operator"
+    },
+    {
+      "code": "A46",
+      "name": "SDR 3.1 - Security updates are installed under the operator’s patch management",
+      "description": "Security updates are not installed by the product on its own. The operator schedules them under its own patch management, decides when a release is installed, and may postpone one it cannot take yet — which is what a professional or industrial environment requires and what CRA Annex I (c) allows to be arranged elsewhere where automatic installation is not expected (Recital 56). The operator keeps a process that installs security updates within a defined period of their release.",
+      "requirements": "The operator documents the patch process for the product: who watches for releases, how quickly a security update is installed, and how a postponement is recorded and closed.",
+      "stakeholderName": "Operator",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11b",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA11b[Yes]",
+      "mitigatedStepCodes": [
+        "AS3",
+        "AS40"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "CRA Annex I (1)(2)(c); Recital 56; IEC 62443-2-3",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "c.2"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "c.3"
+        },
+        {
+          "catalogId": "cra",
+          "controlId": "c.5"
+        }
+      ],
+      "tier": "operator"
+    },
+    {
+      "code": "A47",
+      "name": "SDR 3.2 - Update notifications reach the operator through the integrator",
+      "description": "The product does not notify its users of available security updates by itself. The integrator passes the vendor’s advisories and update notifications to the operator of each installation, so that the party who schedules the update learns that one exists. Where the integrator has handed the installation over, the obligation passes with it.",
+      "requirements": "The integrator keeps a list of the installations it delivered and a route for the vendor’s advisories to reach each operator.",
+      "stakeholderName": "Integrator",
+      "activatingAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11b",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "activatingAnswersRaw": "QA11b[Yes]",
+      "mitigatedStepCodes": [
+        "AS40"
+      ],
+      "dsts": [],
+      "factorContributions": {},
+      "reference": "CRA Annex I (1)(2)(c); Recital 56",
+      "frameworkControlIds": [
+        {
+          "catalogId": "cra",
+          "controlId": "c.4"
+        }
+      ],
+      "tier": "integrator"
+    }
+  ]
+}

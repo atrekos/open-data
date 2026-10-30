@@ -1,0 +1,312 @@
+{
+  "kind": "damage_scenarios",
+  "version": "1.0",
+  "status": "published",
+  "modelVersion": "1.0",
+  "notes": "#973: names the assessing organisation with the organisation token (FRD-M2 §1).",
+  "elements": [
+    {
+      "code": "DS1",
+      "questionCode": "QI1",
+      "textPrefix": "Disclosure of",
+      "textSuffix": "recorded by the product's cameras or sensors",
+      "providesCriterion": "",
+      "matchAnswer1": "",
+      "explicitCriterion": "Personal data (significant)",
+      "strideCode": "I"
+    },
+    {
+      "code": "DS2",
+      "questionCode": "QI2",
+      "textPrefix": "Disclosure of",
+      "textSuffix": "",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS3",
+      "questionCode": "QI3",
+      "textPrefix": "Disclosure of the organisation's",
+      "textSuffix": "",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "intellectual property"
+    },
+    {
+      "code": "DS4",
+      "questionCode": "QI4",
+      "textPrefix": "Fines for leaking data of another party (",
+      "textSuffix": ")",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Medium financial damage"
+    },
+    {
+      "code": "DS5",
+      "questionCode": "QI5",
+      "textPrefix": "Disclosure of cryptographic material causing loss of",
+      "textSuffix": "",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS6",
+      "questionCode": "QI6",
+      "textPrefix": "",
+      "textSuffix": "caused by unavailable product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "D",
+      "unknownSubjectText": "Light or moderate injury"
+    },
+    {
+      "code": "DS7",
+      "questionCode": "QI7",
+      "textPrefix": "",
+      "textSuffix": "caused by unavailable product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "D",
+      "unknownSubjectText": "Major disturbance"
+    },
+    {
+      "code": "DS8",
+      "questionCode": "QI8",
+      "textPrefix": "Loss of",
+      "textSuffix": "caused by unavailable product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "D",
+      "unknownSubjectText": "Medium financial damage"
+    },
+    {
+      "code": "DS9",
+      "questionCode": "QI9",
+      "textPrefix": "Contract-related fines of",
+      "textSuffix": "caused by unavailable product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "D",
+      "unknownSubjectText": "Medium financial damage"
+    },
+    {
+      "code": "DS10",
+      "questionCode": "QI10",
+      "textPrefix": "",
+      "textSuffix": "caused by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "T",
+      "unknownSubjectText": "Light or moderate injury"
+    },
+    {
+      "code": "DS11",
+      "questionCode": "QI11",
+      "textPrefix": "",
+      "textSuffix": "disclosed by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS12",
+      "questionCode": "QI12",
+      "textPrefix": "",
+      "textSuffix": "disclosed by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "IP (moderately innovative)"
+    },
+    {
+      "code": "DS13",
+      "questionCode": "QI13",
+      "textPrefix": "",
+      "textSuffix": "caused by a disclosure or misuse of cryptographic material by the manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS14",
+      "questionCode": "QI14",
+      "textPrefix": "",
+      "textSuffix": "caused by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "T",
+      "unknownSubjectText": "Major disturbance"
+    },
+    {
+      "code": "DS15",
+      "questionCode": "QI15",
+      "textPrefix": "",
+      "textSuffix": "caused by attacks on customer's assets by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "T",
+      "unknownSubjectText": "Medium financial damage"
+    },
+    {
+      "code": "DS16",
+      "questionCode": "QI16",
+      "textPrefix": "Fines of",
+      "textSuffix": "caused by manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "T",
+      "unknownSubjectText": "Medium financial damage"
+    },
+    {
+      "code": "DS17",
+      "questionCode": "",
+      "textPrefix": "Disturbance of function until restore (",
+      "textSuffix": ")",
+      "providesCriterion": "",
+      "matchAnswer1": "",
+      "explicitCriterion": "Service required",
+      "explicitExplanation": "Damage scenario for damage transformation: Restoring a system from a backup takes some time, but prevents longer downtimes",
+      "strideCode": "D"
+    },
+    {
+      "code": "DS18",
+      "questionCode": "",
+      "textPrefix": "Limited response of the product during DoS attack, recovery afterwards (",
+      "textSuffix": ")",
+      "providesCriterion": "",
+      "matchAnswer1": "",
+      "explicitCriterion": "Disturbance",
+      "explicitExplanation": "Damage scenario for damage transformation: The product is resistant against DoS attacks and recovers from the attack",
+      "strideCode": "D"
+    },
+    {
+      "code": "DS19",
+      "questionCode": "",
+      "textPrefix": "ACME Security can proof misuse of patented",
+      "textSuffix": "in the product",
+      "providesCriterion": "",
+      "matchAnswer1": "",
+      "explicitCriterion": "IP (slightly innovative)",
+      "explicitExplanation": "Damage scenario for damage transformation: Patents protect intellectual property",
+      "strideCode": "R"
+    },
+    {
+      "code": "DS5b",
+      "questionCode": "QI5b",
+      "textPrefix": "Disclosure of user data material causing loss of",
+      "textSuffix": "",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS13b",
+      "questionCode": "QI13b",
+      "textPrefix": "",
+      "textSuffix": "caused by a disclosure or misuse of user data by the manipulated product",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "I",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS20",
+      "questionCode": "QIE1",
+      "textPrefix": "",
+      "textSuffix": "caused by spoofed message",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "S",
+      "unknownSubjectText": "Light or moderate injury"
+    },
+    {
+      "code": "DS21",
+      "questionCode": "QIE2",
+      "textPrefix": "",
+      "textSuffix": "disclosed by spoofed message or impersonation",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "S",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS22",
+      "questionCode": "QIE3",
+      "textPrefix": "",
+      "textSuffix": "caused by spoofed message",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "S",
+      "unknownSubjectText": "Major disturbance"
+    },
+    {
+      "code": "DS23",
+      "questionCode": "QIE4",
+      "textPrefix": "",
+      "textSuffix": "caused by unauthenticated operations",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "S",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS24",
+      "questionCode": "QIE5",
+      "textPrefix": "",
+      "textSuffix": "caused by unauthorized access/operation at firmware/OS-level",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "E",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS25",
+      "questionCode": "QIE6",
+      "textPrefix": "",
+      "textSuffix": "caused by unauthorized access/operation at application-level",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "E",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS26",
+      "questionCode": "QIE7",
+      "textPrefix": "Maintenance and root-cause analysis hindered by insufficient diagnostic data and security logs",
+      "textSuffix": "",
+      "providesCriterion": "",
+      "matchAnswer1": "",
+      "explicitLevel": 3,
+      "strideCode": "R"
+    },
+    {
+      "code": "DS26b",
+      "questionCode": "QIE7b",
+      "textPrefix": "",
+      "textSuffix": "caused by manipulated logs",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "R",
+      "unknownSubjectText": "Personal data (significant)"
+    },
+    {
+      "code": "DS27",
+      "questionCode": "QIE8",
+      "textPrefix": "Fines of",
+      "textSuffix": "caused by the impossibility to trace accountability",
+      "providesCriterion": "x",
+      "matchAnswer1": "",
+      "strideCode": "R",
+      "unknownSubjectText": "Medium financial damage"
+    }
+  ]
+}

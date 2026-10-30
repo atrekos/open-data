@@ -1,0 +1,60 @@
+{
+  "assessmentId": "asm-1ed4813e-01d4-4d6a-86e3-c822aa8d2a14",
+  "orgId": "e103e68a-d2cc-4204-ae3b-b66498491d3f",
+  "productId": "prd-333b11a4-666f-415f-a2ae-5fb9f812e273",
+  "packRevisionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-pack-standard-rev-load-1.0",
+  "packRevisionLabel": "1.0",
+  "localKeys": {
+    "organisation": "e103e68a-d2cc-4204-ae3b-b66498491d3f",
+    "asset-1": "tas-333959cc-ada6-4b83-87c4-47916f33c0e6",
+    "asset-2": "tas-50785fe2-4935-4896-9146-b00aaddb44b1",
+    "asset-3": "tas-b716c31a-6a9c-436f-894b-8ed9c921af51",
+    "asset-4": "tas-1fffde16-ea41-4462-98c0-d04eff98ecc6",
+    "asset-5": "tas-06dd5b00-243a-4b45-8d44-b90400d3a1f0",
+    "asset-6": "tas-7bf3dfcf-7fad-4f30-8726-42fc3b6be82c",
+    "asset-7": "tas-d235c018-c4d5-4d6c-bd15-9bdfca29eb52",
+    "asset-8": "tas-f2ce731a-aa44-4d83-a6bf-4a88e93c1262",
+    "asset-9": "tas-0379a029-abe6-4173-84fa-52a141d35f26",
+    "interface-1": "tif-b753d257-7814-482a-acab-5ae26eb1ab38",
+    "interface-2": "tif-0c2547e8-f8a9-4fcd-acc4-cdb47b7fd4e5",
+    "interface-3": "tif-380a1629-5eed-45af-b42c-cafc3c0d3d93",
+    "interface-4": "tif-da968a6e-8f92-463b-8991-b99e1ec2ca65",
+    "interface-5": "tif-18673e22-39b2-47c1-ad3c-eea7fa942b5a",
+    "interface-6": "tif-42fa4f28-ca98-4688-b4a9-83b1bb0c2ef5",
+    "interface-7": "tif-094ccffb-ec39-4392-983b-4de27bf5a9f9",
+    "revision-1": "rev_c9ff90bc-0d26-416e-a349-0673983a7ea3"
+  },
+  "pdfsWithDatabaseId": [],
+  "cloneProvenance": null,
+  "pinnedVersionIds": {
+    "modelVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-model-1.0",
+    "questionsCatalogVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-cat-questions-1.0",
+    "dsCatalogVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-cat-damage_scenarios-1.0",
+    "stepsCatalogVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-cat-attack_steps-1.0",
+    "assumptionsCatalogVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-cat-assumptions-1.0",
+    "cmsCatalogVersionId": "e103e68a-d2cc-4204-ae3b-b66498491d3f-standard-cat-countermeasures-1.0"
+  },
+  "evidenceStatus": "approved",
+  "approval": {
+    "approverName": "Bob Example",
+    "approverRole": "assessor",
+    "rationale": "Reviewed the assessor’s answers, mitigations and treatments and the computed results; approved as the example assessment.",
+    "approvedAt": "2026-10-26T16:34:43.651Z",
+    "inputHash": "7bda1bf4aa5a0c9e"
+  },
+  "snapshotGenerations": [
+    {
+      "generation": 1,
+      "completedAt": "2026-10-26T16:34:43.651Z",
+      "snapshotIds": [
+        "snap-1e82e7bc-b970-49c6-acfd-b4f1a03c7823",
+        "snap-fc1747fc-1b5f-48ac-99ed-4f782ccba3ff",
+        "snap-69897710-f9fc-42b8-8df0-179e58928f65",
+        "snap-f0a130c2-aad2-4442-a908-c20978f68ae0",
+        "snap-2c7bf8b5-ff85-42b5-89c9-f23e4cc37f14",
+        "snap-8920931f-37b8-4fb0-a741-7c779b4ec26d",
+        "snap-339f1a36-e3f9-4aa4-9c88-27a5ba2d277a"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1530 @@
+{
+  "kind": "attack_steps",
+  "version": "1.0",
+  "status": "published",
+  "modelVersion": "1.0",
+  "notes": "#973: names the assessing organisation with the organisation token (FRD-M2 §1).",
+  "elements": [
+    {
+      "code": "AS1",
+      "name": "Getting access to a trusted operational environment",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA4[Yes|Yes], QA12[Yes|Yes], QA13[Yes|Yes]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA4",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA12",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA13",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS2",
+      "name": "Getting access to a wireless network",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.02"
+      },
+      "requiredAnswersRaw": "QA5[Yes|*], QA13[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA13",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Proficient: Without additional knowledge of the untrusted network, only some expertise might be required\nEasy: The attacker needs access to the wireless network (note that this does not include mobile networks / the Internet, as these are featured in another question)"
+    },
+    {
+      "code": "AS3",
+      "name": "Compromising the product using a software vulnerability",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS17",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE4",
+        "QIE5",
+        "QIE6"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Writing a functioning exploit typically requires a few weeks of preparation, expert knowledge and information regarding the targeted system (potentially gained with reverse engineering)"
+    },
+    {
+      "code": "AS4",
+      "name": "Interrupting the product with a denial of service attack",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI6",
+        "QI7",
+        "QI8",
+        "QI9"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Proficient: The attacker needs a basic understanding of denial of service attacks"
+    },
+    {
+      "code": "AS5",
+      "name": "Eavesdropping on the product's communication",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS12",
+        "AS13",
+        "AS27",
+        "AS34",
+        "AS36"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI2",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Proficient: The attacker needs a basic understanding of the transmission protocol and sniffing tools"
+    },
+    {
+      "code": "AS6",
+      "name": "Spoofing / tampering with the product's outgoing communication",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS13",
+        "AS27",
+        "AS34"
+      ],
+      "questionCodes": [
+        "QI10",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Spoofing or tampering with outgoing communication in a meaningful (malicious!) way typically requires a few days of preparation, expert knowledge and information regarding the targeted system (potentially gained with reverse engineering). Note that this is typically easier than writing an exploit for a software vulnerability"
+    },
+    {
+      "code": "AS7",
+      "name": "Spoofing / tampering with the product's incoming communication",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS27",
+        "AS28",
+        "AS36"
+      ],
+      "questionCodes": [
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE1",
+        "QIE2",
+        "QIE3"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Spoofing or tampering with incoming communication in a meaningful (malicious!) way typically requires a few days of preparation, expert knowledge and information regarding the targeted system (potentially gained with reverse engineering). Note that this is typically easier than writing an exploit for a software vulnerability"
+    },
+    {
+      "code": "AS8",
+      "name": "Disrupting the product's communication over the wireless network",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI6",
+        "QI7",
+        "QI8",
+        "QI9"
+      ],
+      "factorEstimates": {
+        "EQ": "rap.eq.02"
+      },
+      "requiredAnswersRaw": "QA5[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Specialized: Equipment to disrupt wireless transmissions"
+    },
+    {
+      "code": "AS9",
+      "name": "Attacking the product's internal gateway from the Internet",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI15"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.01",
+        "EX": "rap.ex.01",
+        "KT": "rap.kt.01",
+        "WO": "rap.wo.01",
+        "EQ": "rap.eq.01"
+      },
+      "requiredAnswersRaw": "QA2[Yes|Internet-facing gateway]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA2",
+                "a1": "Yes",
+                "a2": "Internet-facing gateway"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "In the worst case, the product has a known vulnerability with available exploit over the Internet. Note that this differs from finding and exploiting a software vulnerability in an embedded system, as this might be standard communication software with well-known parts"
+    },
+    {
+      "code": "AS10",
+      "name": "Attacking devices in the customer's network",
+      "prerequisiteCodes": [
+        "AS3",
+        "AS18"
+      ],
+      "questionCodes": [
+        "QI10",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "The effort is similar to AS3, but can potentially be conducted in less time"
+    },
+    {
+      "code": "AS11",
+      "name": "Denial of Service on the customer's network",
+      "prerequisiteCodes": [
+        "AS3",
+        "AS18"
+      ],
+      "questionCodes": [
+        "QI14"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Proficient: The attacker needs a basic understanding of denial of service attacks"
+    },
+    {
+      "code": "AS12",
+      "name": "Compromising an untrusted device that communicates directly with the product",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "QA3[Yes|No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA3",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Proficient: The attacker needs to understand how to use the compromised device to attack the product\nRestricted: The attacker needs knowledge of the attacked product"
+    },
+    {
+      "code": "AS13",
+      "name": "Attacking the product or its communication from an untrusted local network",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.02"
+      },
+      "requiredAnswersRaw": "QA4[Yes|No], QA12[Yes|No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA4",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA12",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Proficient: Without additional knowledge of the untrusted network, only some expertise might be required\nEasy: The attacker needs access to the local network (note that this does not include mobile networks / the Internet, as these are featured in another question)"
+    },
+    {
+      "code": "AS14",
+      "name": "Disrupting the product's communication over the local network",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS13",
+        "AS27"
+      ],
+      "questionCodes": [
+        "QI6",
+        "QI7",
+        "QI8",
+        "QI9"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Proficient: The attacker needs a basic understanding of denial of service attacks"
+    },
+    {
+      "code": "AS15",
+      "name": "Attacking the product from the Internet or a mobile network",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.01"
+      },
+      "requiredAnswersRaw": "QA6[Yes], QA10b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA6",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Depending on the software used to communicate over the Internet / mobile network, exploits might be easily applicable for attackers with basic knowledge"
+    },
+    {
+      "code": "AS16",
+      "name": "Manipulating the product's configuration via its configuration interface",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE4"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "QA8[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA8",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "The attacker needs some knowledge on how to (mis-) configure the product and basic hacking skills"
+    },
+    {
+      "code": "AS17",
+      "name": "Sending manipulated or malicious data to the product (from an untrusted source)",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI6",
+        "QI7",
+        "QI8",
+        "QI9",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "QA10a[Yes|No], QA10b[Yes|No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10a",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "<= one week: The attacker needs a few days to prepare the attack\nExpert: The attacker needs to understand how to construct malicious data for the targeted product\nRestricted: The attacker needs to know the targeted product"
+    },
+    {
+      "code": "AS18",
+      "name": "Abusing the software update functionality to manipulate the product",
+      "prerequisiteCodes": [
+        "AS19",
+        "AS20"
+      ],
+      "questionCodes": [
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "The attacker needs time, expertise and knowledge to provide a manipulated software update"
+    },
+    {
+      "code": "AS19",
+      "name": "Spoofing an entity sending a software update or manipulation of the update during transmission",
+      "prerequisiteCodes": [
+        "AS7"
+      ],
+      "questionCodes": [],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA11a[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11a",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS20",
+      "name": "Providing a malicious software update from an untrusted source",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA11a[Yes|No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA11a",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS21",
+      "name": "Gaining physical access to the product (3rd party)",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "WO": "rap.wo.02"
+      },
+      "requiredAnswersRaw": "QA14[Yes]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Easy: The attacker needs physical access to the product"
+    },
+    {
+      "code": "AS22",
+      "name": "Gaining physical access to the product (customer)",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "WO": "rap.wo.01"
+      },
+      "requiredAnswersRaw": "QA14[*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA14",
+                "a1": "*",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "The customer might attack the product before it is installed in the inaccessible place"
+    },
+    {
+      "code": "AS23",
+      "name": "Compromising the product with direct access to its persistent memory",
+      "prerequisiteCodes": [
+        "AS21",
+        "AS22"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.02",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "<= one week: The attacker needs a few days to develop the attack\nExpert: The attacker needs profound understanding of hardware manipulation\nRestricted: The attacker needs internal knowledge about the attacked system (including its memory layout, potentially obtained by reverse engineering)"
+    },
+    {
+      "code": "AS24",
+      "name": "Data extraction from the product's persistent memory",
+      "prerequisiteCodes": [
+        "AS21",
+        "AS22"
+      ],
+      "questionCodes": [
+        "QI2",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.03"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "Expert: The attacker needs skill to extract data (that can be analyzed later)\n\nThe other factors depend on the kind of memory that is being attacked"
+    },
+    {
+      "code": "AS25",
+      "name": "Accessing the product's debug interfaces remotely",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE4"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA17[Yes|Yes]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA17",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS26",
+      "name": "Accessing the product's physical debug interfaces",
+      "prerequisiteCodes": [
+        "AS21",
+        "AS22"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE4"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.02",
+        "EQ": "rap.eq.02"
+      },
+      "requiredAnswersRaw": "QA17[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA17",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "The attacker must understand how to access the debug interface (Proficient), where the interface can be accessed and how (Restricted), and the right hardware to do it (Specialized)."
+    },
+    {
+      "code": "AS27",
+      "name": "Getting physical access to the product's linked communication media (e.g., field buses)",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "WO": "rap.wo.02",
+        "EQ": "rap.eq.02"
+      },
+      "requiredAnswersRaw": "QA3[Yes|*], QA4[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA3",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA4",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "The attacker needs to access the communication medium physically with appropriate equipment"
+    },
+    {
+      "code": "AS28",
+      "name": "Getting access to a trusted entity",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA3[Yes|Yes], QA10a[Yes|Yes], QA10b[Yes|Yes]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA3",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10a",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "Yes"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Trusted entities encompass all entities considered as trustworthy and sufficiently protected against compromise by an attacker. Note the this attack step only becomes active if answers in the questionnaire match. This also activates assumption A13 SDR 1.11 – Trustworthy communication partner."
+    },
+    {
+      "code": "AS29",
+      "name": "Brute-forcing the authentication mechanism over IP",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16",
+        "QIE2"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA9[Yes]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA9",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS30",
+      "name": "Extracting information from a decommissioned or second-hand device's persistent memory",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI2",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.03"
+      },
+      "requiredAnswersRaw": "QI2[Yes|*], QI4[Yes|*], QI5[Yes|*], QI5b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI4",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Note: Attacks on ACME Security's IP are covered by other attacks\n\nProficient: The attacker needs basic understanding on how to extract data from a device\nModerate: The attacker needs to obtain the device"
+    },
+    {
+      "code": "AS31",
+      "name": "Attacking a customer network from another customer network via the product's internal gateway",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI15"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.01",
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.02",
+        "EQ": "rap.eq.01"
+      },
+      "requiredAnswersRaw": "QA2[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "<= one day: The exploit might already be available\nProficient: The attacker needs basic understanding of IACS\nRestricted: The attacker needs knowledge about the site, including an understanding of the different network segments\nEasy: The attacker needs access to a customer network\nStandard: Potentially only standard hardware required"
+    },
+    {
+      "code": "AS32",
+      "name": "Extracting or misusing ACME Security's IP",
+      "prerequisiteCodes": [
+        "AS3",
+        "AS5",
+        "AS7",
+        "AS16",
+        "AS18",
+        "AS23",
+        "AS24",
+        "AS25",
+        "AS26",
+        "AS29"
+      ],
+      "questionCodes": [
+        "QI3",
+        "QI12"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS33",
+      "name": "Disclosure of data by an untrusted entity receiving data from the product",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI1",
+        "QI2",
+        "QI3",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA10a[Yes|No], QA10b[Yes|No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10a",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "No"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS34",
+      "name": "Attacking the product's outgoing communication to an external communication partner over the Internet or a mobile network",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.01"
+      },
+      "requiredAnswersRaw": "QA10b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Proficient: The attacker needs knowledge of the attacked protocol. In case of web protocols (such as RESTful APIs etc.) this might be well-known to many\nUnnecessary / unlimited access: The attack can be conducted over the Internet or a mobile network"
+    },
+    {
+      "code": "AS35",
+      "name": "Disrupting the product's communication with an external entity (with communication over the Internet or a mobile network)",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI6",
+        "QI7",
+        "QI8",
+        "QI9"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA10b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "An attacker prevents the product from communicating with an external entity (over the Internet or a mobile network). Consequently, the product cannot fulfill any functionality that depends on communication with the external entity."
+    },
+    {
+      "code": "AS36",
+      "name": "Attacking the product's incoming communication from the Internet or a mobile network",
+      "prerequisiteCodes": [],
+      "questionCodes": [],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "WO": "rap.wo.01"
+      },
+      "requiredAnswersRaw": "QA10b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA10b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Proficient: The attacker needs knowledge of the attacked protocol. In case of web protocols (such as RESTful APIs etc.) this might be well-known to many\nUnnecessary / unlimited access: The attack can be conducted over the Internet or a mobile network"
+    },
+    {
+      "code": "AS37",
+      "name": "The product is manipulated during production and consequently behaves maliciously",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA18[*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA18",
+                "a1": "*",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS38",
+      "name": "Manipulated parts from the supply chain are integrated into the product, leading to the product behaving maliciously",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {},
+      "requiredAnswersRaw": "QA19[Yes|*], QA19[No]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA19",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QA19",
+                "a1": "No",
+                "a2": null
+              }
+            ]
+          }
+        ]
+      },
+      "comment": ""
+    },
+    {
+      "code": "AS39",
+      "name": "Data extraction from the product's volatile memory",
+      "prerequisiteCodes": [
+        "AS21",
+        "AS22"
+      ],
+      "questionCodes": [
+        "QI2",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.03",
+        "EQ": "rap.eq.03"
+      },
+      "requiredAnswersRaw": "",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": []
+      },
+      "comment": "<= one month: It takes time to create a suitable setup.\nExpert: Extracting data from volatile memory is difficult.\nRestricted: The attacker needs to understand the memory layout.\nModerate: The device must be removed and disassembled.\nBespoke: Non-standard equipment for the process."
+    },
+    {
+      "code": "AS40",
+      "name": "Abusing the lack of a software update functionality to exploit an unpatched vulnerability",
+      "prerequisiteCodes": [
+        "AS1",
+        "AS2",
+        "AS9",
+        "AS12",
+        "AS13",
+        "AS15",
+        "AS17",
+        "AS27",
+        "AS28"
+      ],
+      "questionCodes": [
+        "QI1",
+        "QI10",
+        "QI11",
+        "QI12",
+        "QI13",
+        "QI13b",
+        "QI14",
+        "QI15",
+        "QI16"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "*",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": []
+          }
+        ]
+      },
+      "comment": "Writing a functioning exploit typically requires a few weeks of preparation, expert knowledge and information regarding the targeted system (potentially gained with reverse engineering)"
+    },
+    {
+      "code": "AS41",
+      "name": "Extracting information from a decommissioned or second-hand device's RAM",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QI2",
+        "QI4",
+        "QI5",
+        "QI5b"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.06",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02",
+        "WO": "rap.wo.01",
+        "EQ": "rap.eq.02"
+      },
+      "requiredAnswersRaw": "QI2[Yes|*], QI4[Yes|*], QI5[Yes|*], QI5b[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI2",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI4",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QI5b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "<= six months: It takes a while to create a proper setup for reading out RAM of another device\nExpert: The attack is sophisticated\nRestricted: The attacker needs to know or reverse-engineer the memory layout to interpret the data\nUnnecessary / unlimited access: The attacker has full access to the device\nSpecialized: The attacker needs non-standard equipment for the attack"
+    },
+    {
+      "code": "AS44",
+      "name": "Escalating privileges across the operating-system and application boundary",
+      "prerequisiteCodes": [
+        "AS3",
+        "AS16"
+      ],
+      "questionCodes": [
+        "QIE5",
+        "QIE6"
+      ],
+      "factorEstimates": {
+        "ET": "rap.et.04",
+        "EX": "rap.ex.03",
+        "KT": "rap.kt.02"
+      },
+      "requiredAnswersRaw": "QIE5[Yes|*], QIE6[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QIE5",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QIE6",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Once an attacker holds an account or a foothold on the product, a missing authorisation scheme at operating-system or application level lets the attacker reach functions the account was never meant to use. The attacker needs to find and use such a weakness, typically with the effort of a software exploit."
+    },
+    {
+      "code": "AS45",
+      "name": "Concealing attacks by exploiting insufficient or manipulated logging",
+      "prerequisiteCodes": [],
+      "questionCodes": [
+        "QIE7",
+        "QIE7b",
+        "QIE8"
+      ],
+      "factorEstimates": {
+        "EX": "rap.ex.02",
+        "KT": "rap.kt.01"
+      },
+      "requiredAnswersRaw": "QIE7[Yes], QIE7b[Yes|*], QIE8[Yes|*]",
+      "requiredAnswers": {
+        "op": "or",
+        "terms": [
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QIE7",
+                "a1": "Yes",
+                "a2": null
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QIE7b",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "patterns": [
+              {
+                "question": "QIE8",
+                "a1": "Yes",
+                "a2": "*"
+              }
+            ]
+          }
+        ]
+      },
+      "comment": "Where the product keeps no useful log, or its logs can be altered, an attack or an attack attempt leaves no usable trace and goes unnoticed. The attacker needs little beyond the access already gained."
+    }
+  ]
+}

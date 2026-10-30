@@ -1,0 +1,174 @@
+assets:
+  - category: hardware
+    description: Mobile-network modem and antenna/SIM interfaces supporting the configured cellular WAN. Radio bands and capabilities depend on hardware variant; 450 MHz and all-band coverage are unverified in the supplied manuals.
+    id: asset-1
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Cellular connectivity hardware
+    securityProperties:
+      a: true
+      operational: true
+    sort: 0
+  - category: hardware
+    description: Dual SIM slots with automatic failover switching for carrier redundancy and enhanced availability
+    id: asset-2
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Dual SIM Controller
+    securityProperties:
+      a: true
+    sort: 1
+  - category: data
+    description: VPN private keys, certificates, pre-shared secrets and administrator/AAA credentials enable access to connected networks and management functions. The supplied manuals do not establish TPM-backed storage or general encryption at rest.
+    id: asset-3
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Cryptographic key and credential storage
+    securityProperties:
+      a: true
+      c: true
+      i: true
+    sort: 2
+  - category: firmware
+    description: Embedded software for routing, firewall/NAT, VPN, management, logs and diagnostics. Manual firmware/bootloader updates and optional uploaded Python applications are documented. Exact installed version and update authenticity protections are unconfirmed.
+    id: asset-4
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Embedded router firmware
+    securityProperties:
+      a: true
+      c: true
+      i: true
+      operational: true
+    sort: 3
+  - category: function
+    description: IPsec and OpenVPN services establish protected tunnels using configured keys or certificates to remote networks. Confidentiality, peer authentication and continued operation depend on configuration; no secure default, hardware key storage or deployment guarantee is evidenced.
+    id: asset-5
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: VPN Tunnel Engine
+    securityProperties:
+      a: true
+      c: true
+      i: true
+      operational: true
+    sort: 4
+  - category: function
+    description: Routing, forwarding, NAT and standard/extended access rules govern traffic between equipment LANs, WANs and VPN networks. Effective separation depends on configuration; a simultaneous dual-APN separation mechanism is not evidenced in the supplied manuals.
+    id: asset-6
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Traffic routing and firewall policy
+    securityProperties:
+      a: true
+      c: true
+      i: true
+      operational: true
+    sort: 5
+  - category: function
+    description: WebUI/CLI configuration, account/service ACL controls, backup/import, manual firmware upload and log/diagnostic export. Centralized zero-touch management and a separate fleet agent are unverified in the supplied manuals.
+    id: asset-7
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Administration and update functions
+    securityProperties:
+      a: true
+      c: true
+      i: true
+      operational: true
+    sort: 6
+  - category: data
+    description: Persistent firewall/routing rules, service ACLs, account credentials, SIM/APN settings, VPN parameters, certificates and private keys. Backups can include private keys and optionally encrypt plaintext passwords. Deployed storage protections remain unconfirmed.
+    id: asset-8
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Configuration Store
+    securityProperties:
+      a: true
+      c: true
+      i: true
+    sort: 7
+  - category: data
+    description: Transported equipment monitoring/control traffic and other customer payload, network/account identifiers, device/configuration logs, diagnostic files and packet captures. Optional positioning or connected-camera payload depends on deployment. Confidentiality, integrity, availability and privacy requirements depend on the carried data and operational use.
+    id: asset-9
+    linkedDsCodes: []
+    linkedStepCodes: []
+    name: Operational traffic, logs and diagnostics
+    securityProperties:
+      a: true
+      c: true
+      i: true
+      operational: true
+      privacy: true
+    sort: 8
+attachments: []
+description: Industrial 4G LTE cellular router designed for energy sector substation automation. Supports all LTE bands including 450 MHz (B31/B72), Dual SIM with auto-fallback, TPM 2.0, and IPv4/IPv6 dual-stack. Features OpenVPN and IPSec VPN, dual APN for traffic separation, and integrated firewall. DIN-rail metal housing, 12–48 V DC input, high EMC immunity per EN 61000-4. Managed centrally via Smart EMS with zero-touch provisioning.
+description_detail:
+  foreseeableMisuse: Using the router or optional I/O as a safety controller, protection relay or emergency-stop device; using the cellular/VPN link for control that requires guaranteed real-time response or uninterrupted safety-critical connectivity; installing the bare device in exposed outdoor, wet or condensing environments, or operating it outside its specified electrical and temperature limits. These are foreseeable uses outside the defined industrial communications role and operating conditions. Suitability for safety functions or deterministic real-time control is not established.
+  functionality: Industrial cellular router connecting local equipment networks to remote sites through Ethernet and mobile networks. The product provides routing, NAT, configurable firewall rules, VPN tunnels, local and remote administration, logging and diagnostics. The TOE includes the router hardware, embedded firmware, configuration and supplied networking/security functions. Optional Wi-Fi, serial I/O, positioning and uploaded applications depend on hardware variant and configuration.
+  intendedUse: Business-to-business connectivity for field equipment, including the existing assessment scenario of secondary substations and distributed energy assets. The router transports monitoring and control traffic between local IEDs/RTUs and remote control or management systems, with configurable VPN protection. Installation and maintenance are performed by trained technicians and network administrators. External equipment, carrier infrastructure, remote servers and management platforms are outside the TOE boundary.
+  notes: |-
+    Evidence basis: reviewed product documentation. Exact hardware variant, installed firmware, deployed configuration and customer applications are unconfirmed.
+
+    TOE boundary: physical router, embedded firmware, configuration and supplied networking/security functions. External IEDs/RTUs, customer LANs, carrier infrastructure, management computers and remote VPN/AAA/syslog/control services are operational-environment dependencies. Optional Wi-Fi, serial I/O, positioning and application development functions depend on variant/configuration.
+
+    The existing substation/energy use case is retained. Impact assumptions: loss/manipulation of monitoring/control connectivity can cause Major disturbance and potentially dangerous situations. These are deployment assumptions, not manual findings; actual command authority, redundancy and independent safeguards require confirmation. Fatal injury or equipment destruction is not inferred. Proprietary firmware/application IP is assumed slightly innovative.
+
+    Foreseeable camera support includes connected network cameras. Accounts, logs, customer traffic, diagnostic packet captures and potentially identifiable camera images support the significant personal-data scenario. Actual payload sensitivity, quantity and retention are unconfirmed.
+
+    Service life and planned support are both assumed to be 5-10 years at the user's instruction. This is not an evidenced manufacturer support commitment. Regular field-update planning, product replacement strategy, secure production/suppliers and vulnerability-handling assurances are not demonstrated by the supplied manuals.
+
+    Per user instruction, No answers for unevidenced controls/processes mean 'not demonstrated by the reviewed documentation', not proof that the manufacturer lacks them. This covers SBOM/vulnerability documentation, timely/free security patches, separate security updates, security testing, public advisories/disclosure policy/reporting contact, authentic update delivery, automatic updates and committed support. Undocumented individual confidentiality/SLA/legal obligations are also not assumed.
+
+    Documented capabilities: admin/read-only roles and AAA; configurable management-service ACLs; backups with optional password encryption/private-key export; logs/syslog; manual firmware upload; dual SIM/failover; firewall/NAT; IPsec/OpenVPN/certificates; Python SDK/IDE debug; optional serial/I/O; packet capture and diagnostics. Capabilities do not establish secure deployed settings or trusted peers.
+
+    Earlier claims of TPM 2.0, 450 MHz/B31/B72, gigabit Ethernet, dual-APN separation, IPv6, zero-touch provisioning and a named fleet-management platform are unverified in these manuals and receive no security credit. Secure boot, signed updates, MFA, comprehensive encryption at rest, audit-log integrity and cybersecurity certification are not established. Exact product/version identifiers and a published DoC URL remain missing; the manual reproduces a CE declaration.
+  operationalEnvironment:
+    deploymentContext: Industrial embedded appliance installed on a DIN rail or workstation in a field equipment cabinet, including the existing substation/energy deployment scenario. Powered from 12-48 VDC; operating range -25 to +70 C with noncondensing humidity. Customer equipment, carrier networks, remote control/management services and power supply form the operational environment.
+    networkZone: Gateway between operational-equipment LANs and cellular/Ethernet WANs, including potentially Internet-facing connectivity. VPN endpoints connect remote control networks. Management/payload separation and service restrictions depend on configuration; deployed segmentation and peer trust are unconfirmed.
+    operatorProfile: Trained installers, network/security administrators and operational maintenance staff. Administrator accounts have full configuration rights; standard users have read-only monitoring access. External AAA supports RADIUS, TACACS+ and LDAP. Administrators manage credentials, VPN keys/certificates, firewall/service ACLs, backups and firmware updates. Connected equipment exchanges operational traffic.
+    physicalAccess: Normally installed in a field equipment cabinet or controlled technical area accessible to authorized installers and maintenance staff. Site locks and access controls are external assumptions. Hardware is reachable during servicing; reset, SIM, antenna, Ethernet, power and variant-specific console/I/O connections can be tampered with if physical access is obtained. Public access is not intended.
+interfaces:
+  - description: Cellular modem/SIM/antenna connectivity with variant-dependent 2G/3G/4G capability. SMS can query status and issue configured reboot/connection commands using a permitted-number list. Optional Wi-Fi variants can act as access point or client; exact variant and deployment are unconfirmed.
+    exposedTo: mobile-network-operator, public-internet, optional-wireless-LAN, nearby-radio-parties
+    id: interface-1
+    kind: radio
+    name: Cellular WAN and SMS interface
+    sort: 0
+  - description: RJ45 connections for local operational equipment and optional Ethernet WAN uplink. Port count and speed depend on the selected hardware variant. Includes routed, switched and forwarded traffic and exposed management services.
+    exposedTo: substation-lan, ieds, rtus
+    id: interface-2
+    kind: network
+    name: Ethernet LAN/WAN interfaces
+    sort: 1
+  - description: Logical VPN tunnel interfaces over the cellular WAN link to the DSO control center VPN concentrator
+    exposedTo: control-center, scada-master, vpn-concentrator
+    id: interface-3
+    kind: network
+    name: VPN Tunnel Endpoints (OpenVPN/IPSec)
+    sort: 2
+  - description: Local serial console is documented. RS232/RS485 data channels, digital input and relay output are variant dependent; optional serial forwarding or SMS relay commands may exchange operational data. Exact installed interfaces are unconfirmed.
+    exposedTo: local-technician, connected-serial-equipment, optional-digital-I/O
+    id: interface-4
+    kind: serial
+    name: Serial console and optional serial/I/O interfaces
+    sort: 3
+  - description: HTTP/HTTPS WebUI, Telnet/SSH CLI, SNMP, external AAA and syslog, subject to configurable service and source ACL restrictions. Firmware/configuration imports, diagnostics and optional Python application/IDE debug functions are exposed through administration. A separate fleet-management channel is unverified.
+    exposedTo: administrator, management-network, external-AAA-and-syslog-services
+    id: interface-5
+    kind: network
+    name: Network administration and monitoring
+    sort: 4
+  - description: Wide-range DC power input terminal block, supporting 12 V to 48 V DC for flexible substation power supply integration
+    exposedTo: power-infrastructure
+    id: interface-6
+    kind: physical
+    name: DC Power Input (12–48 V)
+    sort: 5
+  - description: Status LEDs, physical factory-reset control and SIM slots. Local service access can reset configuration or alter subscriber identity; variant-specific serial/I/O connections are documented separately. These interfaces are reachable by persons with physical access to the router.
+    exposedTo: operator, field-technician
+    id: interface-7
+    kind: physical
+    name: Physical service and status interfaces
+    sort: 6
+name: Substation Cellular Router (TW800 Series)

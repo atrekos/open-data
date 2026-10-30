@@ -5,7 +5,7 @@ type definitions. Each schema's `$id` is its address under https://data.atrekos.
 
 - `schemas/index.json` lists every schema, the Atrekos versions it covers and its address.
 - `schemas/<name>/<version>.json` is one schema.
-- `examples/` is reserved for worked examples.
+- `examples/` holds worked examples: one complete assessment of a fictional product, as the product's own export.
 
 The schemas describe shape only. They carry no framework text and do not change the licence a framework
 file or an export carries. Atrekos is not affiliated with the bodies whose frameworks it can hold.

@@ -1,0 +1,560 @@
+{
+  "org_id": "organisation",
+  "version": "1.0",
+  "status": "published",
+  "settings": {
+    "manufacturerName": "ACME Security",
+    "answerLists": {
+      "Yes / No": [
+        "Yes",
+        "No"
+      ],
+      "Type of gateway": [
+        "Local network gateway",
+        "Internet-facing gateway"
+      ]
+    },
+    "inlineDelimiters": {
+      "cmOpen": "{C",
+      "cmClose": "}",
+      "assumptionOpen": "{A",
+      "assumptionClose": "}",
+      "atSep": "@",
+      "colonSep": ":"
+    },
+    "lifetimeOptions": [
+      "0 - 5 years",
+      "5 - 10 years",
+      "10 - 20 years",
+      "20+ years"
+    ],
+    "tolerableThreshold": 3,
+    "nonNegotiable": []
+  },
+  "damageCategories": [
+    {
+      "name": "Personal Data"
+    },
+    {
+      "name": "Loss of Intellectual Property"
+    },
+    {
+      "name": "Financial and Legal"
+    },
+    {
+      "name": "Safety"
+    },
+    {
+      "name": "Function and Availability"
+    }
+  ],
+  "damageLevels": [
+    {
+      "name": "Immaterial",
+      "value": 1
+    },
+    {
+      "name": "Low",
+      "value": 2
+    },
+    {
+      "name": "Medium",
+      "value": 3
+    },
+    {
+      "name": "High",
+      "value": 4
+    },
+    {
+      "name": "Critical",
+      "value": 5
+    }
+  ],
+  "damageCriteria": [
+    {
+      "category": "Personal Data",
+      "name": "Personal data (low)",
+      "damageLevelId": "Low"
+    },
+    {
+      "category": "Personal Data",
+      "name": "Personal data (significant)",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Personal Data",
+      "name": "Personal data (ruinous)",
+      "damageLevelId": "Critical"
+    },
+    {
+      "category": "Loss of Intellectual Property",
+      "name": "IP (slightly innovative)",
+      "damageLevelId": "Low"
+    },
+    {
+      "category": "Loss of Intellectual Property",
+      "name": "IP (moderately innovative)",
+      "damageLevelId": "Medium"
+    },
+    {
+      "category": "Loss of Intellectual Property",
+      "name": "IP (highly innovative)",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Financial and Legal",
+      "name": "Low financial damage",
+      "damageLevelId": "Low"
+    },
+    {
+      "category": "Financial and Legal",
+      "name": "Medium financial damage",
+      "damageLevelId": "Medium"
+    },
+    {
+      "category": "Financial and Legal",
+      "name": "High financial damage",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Financial and Legal",
+      "name": "Critical financial damage",
+      "damageLevelId": "Critical"
+    },
+    {
+      "category": "Safety",
+      "name": "Potentially dangerous situation",
+      "damageLevelId": "Low"
+    },
+    {
+      "category": "Safety",
+      "name": "Light or moderate injury",
+      "damageLevelId": "Medium"
+    },
+    {
+      "category": "Safety",
+      "name": "Severe injury (survival probable)",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Safety",
+      "name": "Life-threatening injury",
+      "damageLevelId": "Critical"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Disturbance",
+      "damageLevelId": "Low"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Service required",
+      "damageLevelId": "Medium"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Major disturbance",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Environmental damage",
+      "damageLevelId": "High"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Critical disturbance (destruction)",
+      "damageLevelId": "Critical"
+    },
+    {
+      "category": "Function and Availability",
+      "name": "Critical environmental damage",
+      "damageLevelId": "Critical"
+    }
+  ],
+  "rapFactors": [
+    {
+      "key": "ET"
+    },
+    {
+      "key": "EX"
+    },
+    {
+      "key": "KT"
+    },
+    {
+      "key": "WO"
+    },
+    {
+      "key": "EQ"
+    }
+  ],
+  "rapFactorOptions": [
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.01",
+      "label": "≤ one day",
+      "value": 0
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.02",
+      "label": "≤ one week",
+      "value": 1
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.04",
+      "label": "≤ one month",
+      "value": 4
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.06",
+      "label": "≤ three months",
+      "value": 10
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.09",
+      "label": "≤ six months",
+      "value": 17
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.10",
+      "label": "> six months",
+      "value": 19
+    },
+    {
+      "factorKey": "ET",
+      "engineKey": "rap.et.11",
+      "label": "Not exploitable",
+      "value": 25
+    },
+    {
+      "factorKey": "EX",
+      "engineKey": "rap.ex.01",
+      "label": "Layman",
+      "value": 0
+    },
+    {
+      "factorKey": "EX",
+      "engineKey": "rap.ex.02",
+      "label": "Proficient",
+      "value": 3
+    },
+    {
+      "factorKey": "EX",
+      "engineKey": "rap.ex.03",
+      "label": "Expert",
+      "value": 6
+    },
+    {
+      "factorKey": "EX",
+      "engineKey": "rap.ex.04",
+      "label": "Multiple experts",
+      "value": 8
+    },
+    {
+      "factorKey": "KT",
+      "engineKey": "rap.kt.01",
+      "label": "Public",
+      "value": 0
+    },
+    {
+      "factorKey": "KT",
+      "engineKey": "rap.kt.02",
+      "label": "Restricted",
+      "value": 3
+    },
+    {
+      "factorKey": "KT",
+      "engineKey": "rap.kt.03",
+      "label": "Sensitive",
+      "value": 7
+    },
+    {
+      "factorKey": "KT",
+      "engineKey": "rap.kt.04",
+      "label": "Critical",
+      "value": 11
+    },
+    {
+      "factorKey": "WO",
+      "engineKey": "rap.wo.01",
+      "label": "Unnecessary / unlimited access",
+      "value": 0
+    },
+    {
+      "factorKey": "WO",
+      "engineKey": "rap.wo.02",
+      "label": "Easy",
+      "value": 1
+    },
+    {
+      "factorKey": "WO",
+      "engineKey": "rap.wo.03",
+      "label": "Moderate",
+      "value": 4
+    },
+    {
+      "factorKey": "WO",
+      "engineKey": "rap.wo.04",
+      "label": "Difficult",
+      "value": 10
+    },
+    {
+      "factorKey": "WO",
+      "engineKey": "rap.wo.05",
+      "label": "None",
+      "value": 25
+    },
+    {
+      "factorKey": "EQ",
+      "engineKey": "rap.eq.01",
+      "label": "Standard",
+      "value": 0
+    },
+    {
+      "factorKey": "EQ",
+      "engineKey": "rap.eq.02",
+      "label": "Specialized",
+      "value": 4
+    },
+    {
+      "factorKey": "EQ",
+      "engineKey": "rap.eq.03",
+      "label": "Bespoke",
+      "value": 7
+    },
+    {
+      "factorKey": "EQ",
+      "engineKey": "rap.eq.04",
+      "label": "Multiple bespoke",
+      "value": 9
+    }
+  ],
+  "rapClasses": [
+    {
+      "name": "Basic",
+      "threshold": 0
+    },
+    {
+      "name": "Enhanced-Basic",
+      "threshold": 10
+    },
+    {
+      "name": "Moderate",
+      "threshold": 14
+    },
+    {
+      "name": "High",
+      "threshold": 20
+    },
+    {
+      "name": "Beyond High",
+      "threshold": 25
+    }
+  ],
+  "riskValues": [
+    {
+      "name": "Negligible",
+      "value": 0
+    },
+    {
+      "name": "Low",
+      "value": 1
+    },
+    {
+      "name": "Moderate",
+      "value": 2
+    },
+    {
+      "name": "High",
+      "value": 3
+    },
+    {
+      "name": "Very High",
+      "value": 4
+    }
+  ],
+  "riskMatrixCells": [
+    {
+      "damageLevelId": "Immaterial",
+      "rapClassId": "Basic",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Immaterial",
+      "rapClassId": "Enhanced-Basic",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Immaterial",
+      "rapClassId": "Moderate",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Immaterial",
+      "rapClassId": "High",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Immaterial",
+      "rapClassId": "Beyond High",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Low",
+      "rapClassId": "Basic",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "Low",
+      "rapClassId": "Enhanced-Basic",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "Low",
+      "rapClassId": "Moderate",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "Low",
+      "rapClassId": "High",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "Low",
+      "rapClassId": "Beyond High",
+      "riskValueId": "Low"
+    },
+    {
+      "damageLevelId": "Medium",
+      "rapClassId": "Basic",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "Medium",
+      "rapClassId": "Enhanced-Basic",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "Medium",
+      "rapClassId": "Moderate",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "Medium",
+      "rapClassId": "High",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "Medium",
+      "rapClassId": "Beyond High",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "High",
+      "rapClassId": "Basic",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "High",
+      "rapClassId": "Enhanced-Basic",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "High",
+      "rapClassId": "Moderate",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "High",
+      "rapClassId": "High",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "High",
+      "rapClassId": "Beyond High",
+      "riskValueId": "Moderate"
+    },
+    {
+      "damageLevelId": "Critical",
+      "rapClassId": "Basic",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "Critical",
+      "rapClassId": "Enhanced-Basic",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "Critical",
+      "rapClassId": "Moderate",
+      "riskValueId": "Very High"
+    },
+    {
+      "damageLevelId": "Critical",
+      "rapClassId": "High",
+      "riskValueId": "High"
+    },
+    {
+      "damageLevelId": "Critical",
+      "rapClassId": "Beyond High",
+      "riskValueId": "Moderate"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "ACME Security"
+    },
+    {
+      "name": "Customer"
+    },
+    {
+      "name": "Other (see comment)"
+    }
+  ],
+  "riskTreatmentOptions": [
+    {
+      "name": "Accept"
+    },
+    {
+      "name": "Avoid"
+    },
+    {
+      "name": "Mitigate"
+    },
+    {
+      "name": "Transfer"
+    }
+  ],
+  "strideMappings": [
+    {
+      "code": "S",
+      "name": "Spoofing"
+    },
+    {
+      "code": "T",
+      "name": "Tampering"
+    },
+    {
+      "code": "R",
+      "name": "Repudiation"
+    },
+    {
+      "code": "I",
+      "name": "Information disclosure"
+    },
+    {
+      "code": "D",
+      "name": "Denial of service"
+    },
+    {
+      "code": "E",
+      "name": "Elevation of privilege"
+    }
+  ]
+}

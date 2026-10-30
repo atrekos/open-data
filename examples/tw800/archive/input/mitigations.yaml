@@ -1,0 +1,148 @@
+- attackStepCode: AS14
+  catalogCodes: []
+  comment: "{CPlanned local-network continuity and independent fallback - verification pending:Basic}"
+  inline:
+    - name: Planned local-network continuity and independent fallback - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS15
+  catalogCodes:
+    - CM1
+  inline: []
+- attackStepCode: AS16
+  catalogCodes:
+    - CM15
+    - CM5
+  inline: []
+- attackStepCode: AS17
+  catalogCodes:
+    - C15
+  inline: []
+- attackStepCode: AS18
+  catalogCodes:
+    - CM12
+  inline: []
+- attackStepCode: AS2
+  catalogCodes:
+    - CM20
+  inline: []
+- attackStepCode: AS21
+  catalogCodes:
+    - A14
+  inline: []
+- attackStepCode: AS22
+  catalogCodes: []
+  comment: "{CPlanned IP extraction protection and distribution controls - verification pending:Basic}"
+  inline:
+    - name: Planned IP extraction protection and distribution controls - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS23
+  catalogCodes:
+    - CM7
+  inline: []
+- attackStepCode: AS24
+  catalogCodes: []
+  comment: "{CPlanned persistent-storage confidentiality and protected keys - verification pending:Basic}"
+  inline:
+    - name: Planned persistent-storage confidentiality and protected keys - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS25
+  catalogCodes:
+    - CM16
+  inline: []
+- attackStepCode: AS26
+  catalogCodes:
+    - CM8
+  inline: []
+- attackStepCode: AS29
+  catalogCodes:
+    - C32
+  inline: []
+- attackStepCode: AS3
+  catalogCodes:
+    - CM2
+  inline: []
+- attackStepCode: AS30
+  catalogCodes:
+    - C17
+  inline: []
+- attackStepCode: AS31
+  catalogCodes:
+    - CM1
+  inline: []
+- attackStepCode: AS33
+  catalogCodes: []
+  comment: "{CPlanned confidential-data flow inventory and recipient controls - verification pending:Basic}"
+  inline:
+    - name: Planned confidential-data flow inventory and recipient controls - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS35
+  catalogCodes: []
+  comment: "{CPlanned external-link continuity and safe local operation - verification pending:Basic}"
+  inline:
+    - name: Planned external-link continuity and safe local operation - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS36
+  catalogCodes:
+    - CM11
+  inline: []
+- attackStepCode: AS37
+  catalogCodes:
+    - A17
+  inline: []
+- attackStepCode: AS38
+  catalogCodes:
+    - A18
+  inline: []
+- attackStepCode: AS39
+  catalogCodes:
+    - CM21
+  inline: []
+- attackStepCode: AS4
+  catalogCodes: []
+  comment: "{CPlanned denial-of-service resilience and resource isolation - verification pending:Basic}"
+  inline:
+    - name: Planned denial-of-service resilience and resource isolation - verification pending
+      rapClass: Basic
+      type: C
+- attackStepCode: AS40
+  catalogCodes:
+    - A46
+    - A47
+  inline: []
+- attackStepCode: AS41
+  catalogCodes:
+    - C17
+  inline: []
+- attackStepCode: AS45
+  catalogCodes:
+    - CM39
+  inline: []
+- attackStepCode: AS5
+  catalogCodes:
+    - CM11
+  inline: []
+- attackStepCode: AS6
+  catalogCodes:
+    - CM10
+  inline: []
+- attackStepCode: AS7
+  catalogCodes:
+    - CM11
+  inline: []
+- attackStepCode: AS8
+  catalogCodes: []
+  comment: "{APlanned operator safeguards for wireless outages - agreement and verification pending@operator:Basic}"
+  inline:
+    - name: Planned operator safeguards for wireless outages - agreement and verification pending
+      rapClass: Basic
+      stakeholder: operator
+      type: A
+- attackStepCode: AS9
+  catalogCodes:
+    - CM1
+  inline: []

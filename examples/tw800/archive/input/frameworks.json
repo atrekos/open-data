@@ -1,0 +1,4404 @@
+{
+  "descriptors": [
+    {
+      "id": "cra",
+      "name": "Cyber Resilience Act (Regulation (EU) 2024/2847): Annex I Part I, Annex I Part II, Annex II",
+      "version": "1.0",
+      "asOf": "2026-09-26",
+      "kind": "Regulation",
+      "licence": "EU law; free to reproduce.",
+      "publisher": "European Union",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847",
+      "disclaimer": "The requirement texts are those of Regulation (EU) 2024/2847. A verdict here is a projection of this assessment, not a presumption of conformity.",
+      "processing": "text",
+      "textPolicy": "full",
+      "defaultBasis": "countermeasures"
+    },
+    {
+      "id": "iec-62443-4-2",
+      "name": "ISA/IEC 62443-4-2",
+      "version": "1.0",
+      "asOf": "2026-09-26",
+      "kind": "Standard",
+      "levels": [
+        {
+          "id": "sl1",
+          "label": "SL 1"
+        },
+        {
+          "id": "sl2",
+          "label": "SL 2"
+        },
+        {
+          "id": "sl3",
+          "label": "SL 3"
+        },
+        {
+          "id": "sl4",
+          "label": "SL 4"
+        }
+      ],
+      "licence": "IEC copyright. Control ids and the requirement titles the packs cite only; no clause text.",
+      "publisher": "IEC",
+      "sourceUrl": "https://webstore.iec.ch/en/publication/34421",
+      "disclaimer": "Control ids and titles only; consult ISA/IEC 62443-4-2 for the requirements. A verdict here is a projection of this assessment, not a certification.",
+      "processing": "titles",
+      "textPolicy": "title",
+      "defaultBasis": "countermeasures"
+    },
+    {
+      "id": "red",
+      "name": "Radio Equipment Directive 2014/53/EU, Article 3(3)(d), (e): EN 18031-1, -2",
+      "version": "1.0",
+      "asOf": "2026-10-03",
+      "kind": "Harmonised standards (transitional)",
+      "licence": "Control ids only: the requirement codes of EN 18031-1:2024 and EN 18031-2:2024 (for example ACM-1) and, in the restriction notes, the clause numbers the Official Journal names. None of the standards' text is reproduced. The restriction and validity wording is that of the Official Journal acts cited. No licence finding on reproducing the text exists; until one does, ids only.",
+      "validity": {
+        "from": "2025-08-01",
+        "basis": "Delegated Regulation (EU) 2022/30, applicable from 1 August 2025, repealed by Delegated Regulation (EU) 2026/339 Art. 1 with effect from 11 December 2027",
+        "until": "2027-12-10",
+        "transitionalNote": "Radio equipment placed on the Union market between 1 August 2025 and 10 December 2027 stays subject to Article 3(3)(d), (e), (f) of Directive 2014/53/EU, and to market surveillance on that basis after the repeal (recital 5 of Regulation (EU) 2026/339). The trigger is the date of placing on the market, not design, manufacture or shipment."
+      },
+      "publisher": "CEN and CENELEC (the standards); European Commission (the citation)",
+      "sourceUrl": "http://data.europa.eu/eli/dec_impl/2025/138/oj",
+      "attributes": [
+        {
+          "key": "redArticle",
+          "label": "RED essential requirement",
+          "values": [
+            "Art. 3(3)(d)",
+            "Art. 3(3)(e)"
+          ]
+        }
+      ],
+      "disclaimer": "CEN and CENELEC neither endorse nor have reviewed this mapping. A verdict here is a projection of this assessment that supports the manufacturer's technical documentation; it is not a presumption of conformity: the sections of each standard named \"rationale\" and \"guidance\" confer none (Implementing Decision (EU) 2025/138), and a control marked Restricted carries the further restriction named on it. Scope of this version: EN 18031-1 (Article 3(3)(d)) and EN 18031-2 (Article 3(3)(e)) for internet-connected radio equipment. EN 18031-3 (Article 3(3)(f), equipment that transfers money, monetary value or virtual currency) is out of scope; such equipment needs a separate assessment. Within EN 18031-2, only equipment processing personal data is judged; the toy, childcare and wearable clauses, and traffic and location data, are out of scope because the questionnaire does not ask about them. Applicability is decided by the answers: QA5 (wireless connections) with QA6 or QA10b (internet connection) for Part 1, and QI2 (personal data) in addition for Part 2. QA5 asks about wireless connections more broadly than radio equipment, so the product's radio role decides whether this framework applies. Each requirement shows the EN IEC 62443-4-2:2019 requirements its part's informative Annex B names; these links are shown and never change a verdict. It applies to radio equipment placed on the market between 1 August 2025 and 10 December 2027; Delegated Regulation (EU) 2022/30 is repealed with effect from 11 December 2027 (Delegated Regulation (EU) 2026/339).",
+      "processing": "none",
+      "reviewNote": "Covers Parts 1 and 2, gates each part on the questions that decide its scope, and carries the Annex B links to EN IEC 62443-4-2. Reviewed against the Official Journal when a new reference or restriction for EN 18031 is published, and retired on 11 December 2027 for new assignments; pins stay.",
+      "textPolicy": "id",
+      "defaultBasis": "countermeasures",
+      "applicabilityEffect": "exclude"
+    }
+  ],
+  "controls": [
+    {
+      "catalogId": "cra",
+      "controlId": "annex-i",
+      "title": "Annex I, Part I: cybersecurity requirements relating to the properties of products with digital elements",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "1",
+      "title": "Products with digital elements shall be designed, developed and produced in such a way that they ensure an appropriate level of cybersecurity based on the risks.",
+      "parentId": "annex-i",
+      "basis": "assessment"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "a",
+      "title": "be made available on the market without known exploitable vulnerabilities",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "b",
+      "title": "be made available on the market with a secure by default configuration, unless otherwise agreed between manufacturer and business user in relation to a tailor-made product with digital elements, including the possibility to reset the product to its original state",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "b.1",
+      "title": "a secure by default configuration, unless otherwise agreed for a tailor-made product",
+      "parentId": "b",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "b.2",
+      "title": "the possibility to reset the product to its original state",
+      "parentId": "b",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c",
+      "title": "ensure that vulnerabilities can be addressed through security updates, including, where applicable, through automatic security updates that are installed within an appropriate timeframe enabled as a default setting, with a clear and easy-to-use opt-out mechanism, through the notification of available updates to users, and the option to temporarily postpone them",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c.1",
+      "title": "vulnerabilities can be addressed through security updates",
+      "parentId": "c",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c.2",
+      "title": "automatic security updates, installed within an appropriate timeframe and enabled as a default setting, where applicable",
+      "parentId": "c",
+      "basis": "countermeasures",
+      "applicability": {
+        "note": "where_applicable"
+      }
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c.3",
+      "title": "a clear and easy-to-use opt-out mechanism",
+      "parentId": "c",
+      "basis": "countermeasures",
+      "applicability": {
+        "note": "where_applicable"
+      }
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c.4",
+      "title": "notification of available updates to users",
+      "parentId": "c",
+      "basis": "countermeasures",
+      "applicability": {
+        "note": "where_applicable"
+      }
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "c.5",
+      "title": "the option to temporarily postpone updates",
+      "parentId": "c",
+      "basis": "countermeasures",
+      "applicability": {
+        "note": "where_applicable"
+      }
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "d",
+      "title": "ensure protection from unauthorised access by appropriate control mechanisms, including but not limited to authentication, identity or access management systems, and report on possible unauthorised access",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "d.1",
+      "title": "protection from unauthorised access by appropriate control mechanisms, including authentication, identity or access management systems",
+      "parentId": "d",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "d.2",
+      "title": "report on possible unauthorised access",
+      "parentId": "d",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "e",
+      "title": "protect the confidentiality of stored, transmitted or otherwise processed data, personal or other, such as by encrypting relevant data at rest or in transit by state of the art mechanisms, and by using other technical means",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "f",
+      "title": "protect the integrity of stored, transmitted or otherwise processed data, personal or other, commands, programs and configuration against any manipulation or modification not authorised by the user, and report on corruptions",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "f.1",
+      "title": "protect the integrity of stored, transmitted or otherwise processed data, commands, programs and configuration against unauthorised manipulation or modification",
+      "parentId": "f",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "f.2",
+      "title": "report on corruptions",
+      "parentId": "f",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "g",
+      "title": "process only data, personal or other, that are adequate, relevant and limited to what is necessary in relation to the intended purpose of the product with digital elements (data minimisation)",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "h",
+      "title": "protect the availability of essential and basic functions, also after an incident, including through resilience  and mitigation measures against denial-of-service attacks",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "h.1",
+      "title": "protect the availability of essential and basic functions, also after an incident",
+      "parentId": "h",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "h.2",
+      "title": "resilience and mitigation measures against denial-of-service attacks",
+      "parentId": "h",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "i",
+      "title": "minimise the negative impact by the products themselves or connected devices on the availability of services provided by other devices or networks",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "j",
+      "title": "be designed, developed and produced to limit attack surfaces, including external interfaces",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "k",
+      "title": "be designed, developed and produced to reduce the impact of an incident using appropriate exploitation mitigation mechanisms and techniques",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "l",
+      "title": "provide security related information by recording and monitoring relevant internal activity, including the access to or modification of data, services or functions, with an opt-out mechanism for the user",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "l.1",
+      "title": "record and monitor relevant internal activity, including access to or modification of data, services or functions",
+      "parentId": "l",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "l.2",
+      "title": "an opt-out mechanism for the user",
+      "parentId": "l",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "m",
+      "title": "provide the possibility for users to securely and easily remove on a permanent basis all data and settings and, where such data can be transferred to other products or systems, ensure that this is done in a secure manner",
+      "parentId": "annex-i",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "m.1",
+      "title": "securely and easily remove on a permanent basis all data and settings",
+      "parentId": "m",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "m.2",
+      "title": "where data can be transferred to other products or systems, ensure this is done securely",
+      "parentId": "m",
+      "basis": "countermeasures"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "annex-i-part-ii",
+      "title": "Annex I, Part II: vulnerability handling requirements",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-1",
+      "title": "identify and document vulnerabilities and components contained in products with digital elements, including by drawing up a software bill of materials in a commonly used and machine-readable format covering at the very least the top-level dependencies of the products;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Maintain a component inventory and a machine-readable SBOM (e.g. CycloneDX or SPDX) covering at least top-level dependencies, regenerated for every release."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-2",
+      "title": "in relation to the risks posed to products with digital elements, address and remediate vulnerabilities without delay, including by providing security updates; where technically feasible, new security updates shall be provided separately from functionality updates;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Operate a remediation process with defined timelines; ship security fixes decoupled from feature releases where technically feasible."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-3",
+      "title": "apply effective and regular tests and reviews of the security of the product with digital elements;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Establish a recurring security testing cadence (e.g. penetration tests, fuzzing, dependency scanning, code review) and record the results."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-4",
+      "title": "once a security update has been made available, share and publicly disclose information about fixed vulnerabilities, including a description of the vulnerabilities, information allowing users to identify the product with digital elements affected, the impacts of the vulnerabilities, their severity and clear and accessible information helping users to remediate the vulnerabilities; in duly justified cases, where manufacturers consider the security risks of publication to outweigh the security benefits, they may delay making public information regarding a fixed vulnerability until after users have been given the possibility to apply the relevant patch;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Publish security advisories per fixed vulnerability: description, affected versions, impact, severity, and remediation steps. Delayed publication must be justified and time-bounded."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-5",
+      "title": "put in place and enforce a policy on coordinated vulnerability disclosure;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Adopt, publish and enforce a CVD policy (e.g. based on ISO/IEC 29147 and 30111)."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-6",
+      "title": "take measures to facilitate the sharing of information about potential vulnerabilities in their product with digital elements as well as in third-party components contained in that product, including by providing a contact address for the reporting of the vulnerabilities discovered in the product with digital elements;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Provide a single, published point of contact (e.g. security@ address and security.txt) for vulnerability reports, covering third-party components."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-7",
+      "title": "provide for mechanisms to securely distribute updates for products with digital elements to ensure that vulnerabilities are fixed or mitigated in a timely manner and, where applicable for security updates, in an automatic manner;",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Protect the update channel end-to-end (signed updates, integrity and authenticity verification on device); support automatic security updates where applicable."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "P2-8",
+      "title": "ensure that, where security updates are available to address identified security issues, they are disseminated without delay and, unless otherwise agreed between a manufacturer and a business user in relation to a tailor-made product with digital elements, free of charge, accompanied by advisory messages providing users with the relevant information, including on potential action to be taken.",
+      "parentId": "annex-i-part-ii",
+      "basis": "questions",
+      "notes": "Distribute security updates promptly and free of charge for the committed support period, accompanied by advisories with recommended user actions."
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "annex-ii",
+      "title": "Annex II: information and instructions to the user",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-1",
+      "title": "<the name, registered trade name or registered trade mark of the manufacturer, and the postal address and the email address at which the manufacturer can be contacted, on the product or, where that is not possible, on its packaging or in a document accompanying the product>",
+      "parentId": "annex-ii",
+      "basis": "documentation",
+      "documentationSource": "contacts"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-2",
+      "title": "<point of contact where information about cybersecurity vulnerabilities of the product can be reported and received>",
+      "parentId": "annex-ii",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-3",
+      "title": "<the correct identification of the type, batch, version or serial number or other element allowing the identification of the product and the corresponding instructions and user information>",
+      "parentId": "annex-ii",
+      "basis": "documentation",
+      "documentationSource": "productIdentification"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-4",
+      "title": "<the intended use, including the security environment provided by the manufacturer, as well as the product’s essential functionalities and information about the security properties>",
+      "parentId": "annex-ii",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-5",
+      "title": "<any known or foreseeable circumstance, related to the use of the product with digital elements in accordance with its intended purpose or under conditions of reasonably foreseeable misuse, which may lead to significant cybersecurity risks>",
+      "parentId": "annex-ii",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-6",
+      "title": "<if and, where applicable, where the software bill of materials can be accessed>",
+      "parentId": "annex-ii",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-7",
+      "title": "<where applicable, the internet address at which the EU declaration of conformity can be accessed>",
+      "parentId": "annex-ii",
+      "basis": "documentation",
+      "documentationSource": "docAddress"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-8",
+      "title": "<the type of technical security support offered by the manufacturer and until when it will be provided, at the very least until when users can expect to receive security updates>",
+      "parentId": "annex-ii",
+      "basis": "questions"
+    },
+    {
+      "catalogId": "cra",
+      "controlId": "II-9",
+      "title": "<detailed instructions or an internet address referring to such detailed instructions and information on:\n(a) the necessary measures during initial commissioning and throughout the lifetime of the product to ensure its secure use;\n(b) how changes to the product can affect the security of data;\n(c) how security-relevant updates can be installed;\n(d) the secure decommissioning of the product, including information on how user data can be securely removed>",
+      "parentId": "annex-ii",
+      "basis": "documentation",
+      "documentationSource": "instructions"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 1",
+      "title": "FR 1 - Identification and authentication control (IAC)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.1",
+      "title": "CR 1.1 - Human user identification and authentication",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.1 RE(1)",
+      "title": "RE (1) Unique identification and authentication:",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.1 RE(2)",
+      "title": "RE (2) Multifactor authentication for all interfaces",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.2",
+      "title": "CR 1.2 - Software process and device identification and authentication",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.2 RE(1)",
+      "title": "RE (1) Unique identification and authentication",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.3",
+      "title": "CR 1.3 - Account management",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.4",
+      "title": "CR 1.4 - Identifier management",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.5",
+      "title": "CR 1.5 - Authenticator management",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.5 RE(1)",
+      "title": "RE (1) Hardware security for authenticators",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 1.6",
+      "title": "NDR 1.6 - Wireless access management",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 1.6 RE(1)",
+      "title": "RE (1) Unique identification and authentication",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.7",
+      "title": "CR 1.7 - Strength of password-based authentication",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.7 RE(1)",
+      "title": "RE (1) Password generation and lifetime restrictions for human users",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.7 RE(2)",
+      "title": "RE (2) Password lifetime restrictions for all users (human, software process, or device)",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.8",
+      "title": "CR 1.8 - Public key infrastructure certificates",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.9",
+      "title": "CR 1.9 - Strength of public key-based authentication",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.9 RE(1)",
+      "title": "RE (1) Hardware security for public key-based authentication",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.10",
+      "title": "CR 1.10 - Authenticator feedback",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.11",
+      "title": "CR 1.11 - Unsuccessful login attempts",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.12",
+      "title": "CR 1.12 - System use notification",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 1.13",
+      "title": "NDR 1.13 - Access via untrusted networks",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 1.13 RE(1)",
+      "title": "RE (1) Explicit access request approval",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.14",
+      "title": "CR 1.14 - Strength of symmetric key-based authentication",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 1.14 RE(1)",
+      "title": "RE (1) Hardware security for symmetric key-based authentication",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 2",
+      "title": "FR 2 - Use control (UC)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.1",
+      "title": "CR 2.1 - Authorization enforcement",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.1 RE(1)",
+      "title": "RE (1) Authorization enforcement for all users (humans, software processes and devices)",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.1 RE(2)",
+      "title": "RE (2) Permission mapping to roles",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.1 RE(3)",
+      "title": "RE (3) Supervisor override",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.1 RE(4)",
+      "title": "RE (4) Dual approval",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.2",
+      "title": "CR 2.2 - Wireless use control",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.3",
+      "title": "CR 2.3 - Use control for portable and mobile devices"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "SAR 2.4",
+      "title": "SAR 2.4 - Mobile code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "SAR 2.4 RE(1)",
+      "title": "RE (1) Mobile code authenticity check",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 2.4",
+      "title": "EDR 2.4 - Mobile code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 2.4 RE(1)",
+      "title": "RE (1) Mobile code authenticity check",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 2.4",
+      "title": "HDR 2.4 - Mobile code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 2.4 RE(1)",
+      "title": "RE (1) Mobile code authenticity check",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 2.4",
+      "title": "NDR 2.4 - Mobile code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 2.4 RE(1)",
+      "title": "RE (1) Mobile code authenticity check",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.5",
+      "title": "CR 2.5 - Session lock",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.6",
+      "title": "CR 2.6 - Remote session termination",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.7",
+      "title": "CR 2.7 - Concurrent session control",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.8",
+      "title": "CR 2.8 - Auditable events",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.9",
+      "title": "CR 2.9 - Audit storage capacity",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.9 RE(1)",
+      "title": "RE (1) Warn when audit record storage capacity threshold reached",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.10",
+      "title": "CR 2.10 - Response to audit processing failures",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.11",
+      "title": "CR 2.11 - Timestamps",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.11 RE(1)",
+      "title": "RE (1) Time synchronization",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.11 RE(2)",
+      "title": "RE (2) Protection of time source integrity",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.12",
+      "title": "CR 2.12 - Non -repudiation",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 2.12 RE(1)",
+      "title": "RE (1) Non -repudiation for all users",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 2.13",
+      "title": "EDR 2.13 - Use of physical diagnostic and test interfaces",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 2.13 RE(1)",
+      "title": "RE (1) Active monitoring",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 2.13",
+      "title": "HDR 2.13 - Use of physical diagnostic and test interfaces",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 2.13 RE(1)",
+      "title": "RE (1) Active monitoring",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 2.13",
+      "title": "NDR 2.13 - Use of physical diagnostic and test interfaces",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 2.13 RE(1)",
+      "title": "RE (1) Active monitoring",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 3",
+      "title": "FR 3 - System integrity (SI)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.1",
+      "title": "CR 3.1 - Communication integrity",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.1 RE(1)",
+      "title": "RE (1) Communication authentication",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "SAR 3.2",
+      "title": "SAR 3.2 - Protection from malicious code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.2",
+      "title": "EDR 3.2 - Protection from malicious code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.2",
+      "title": "HDR 3.2 - Protection from malicious code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.2 RE(1)",
+      "title": "RE (1) Report version of code protection",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.2",
+      "title": "NDR 3.2 - Protection from malicious code",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.3",
+      "title": "CR 3.3 - Security functionality verification",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.3 RE(1)",
+      "title": "RE (1) Security functionality verification during normal operation",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.4",
+      "title": "CR 3.4 - Software and information integrity",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.4 RE(1)",
+      "title": "RE (1) Authenticity of software and information",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.4 RE(2)",
+      "title": "RE (2) Automated notification of integrity violations",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.5",
+      "title": "CR 3.5 - Input validation",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.6",
+      "title": "CR 3.6 - Deterministic output",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.7",
+      "title": "CR 3.7 - Error handling",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.8",
+      "title": "CR 3.8 - Session integrity",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.9",
+      "title": "CR 3.9 - Protection of audit information",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 3.9 RE(1)",
+      "title": "RE (1) Audit records on write -once media",
+      "levels": [
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.10",
+      "title": "EDR 3.10 - Support for updates",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.10 RE(1)",
+      "title": "RE (1) Update authenticity and integrity",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.10",
+      "title": "HDR 3.10 - Support for updates",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.10 RE(1)",
+      "title": "RE (1) Update authenticity and integrity",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.10",
+      "title": "NDR 3.10 - Support for updates",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.10 RE(1)",
+      "title": "RE (1) Update authenticity and integrity",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.11",
+      "title": "EDR 3.11 - Physical tamper resistance and detection",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.11 RE(1)",
+      "title": "RE (1) Notification of a tampering attempt",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.11",
+      "title": "HDR 3.11 - Physical tamper resistance and detection",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.11 RE(1)",
+      "title": "RE (1) Notification of a tampering attempt",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.11",
+      "title": "NDR 3.11 - Physical tamper resistance and detection",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.11 RE(1)",
+      "title": "RE (1) Notification of a tampering attempt",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.12",
+      "title": "EDR 3.12 - Provisioning product supplier roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.12",
+      "title": "HDR 3.12 - Provisioning product supplier roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.12",
+      "title": "NDR 3.12 - Provisioning product supplier roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.13",
+      "title": "EDR 3.13 - Provisioning asset owner roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.13",
+      "title": "HDR 3.13 - Provisioning asset owner roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.13",
+      "title": "NDR 3.13 - Provisioning asset owner roots of trust",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.14",
+      "title": "EDR 3.14 - Integrity of the boot process",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "EDR 3.14 RE(1)",
+      "title": "RE (1) Authenticity of the boot process",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.14",
+      "title": "HDR 3.14 - Integrity of the boot process",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "HDR 3.14 RE(1)",
+      "title": "RE (1) Authenticity of the boot process",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.14",
+      "title": "NDR 3.14 - Integrity of the boot process",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 3.14 RE(1)",
+      "title": "RE (1) Authenticity of the boot process",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 4",
+      "title": "FR 4 - Data confidentiality (DC)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 4.1",
+      "title": "CR 4.1 - Information confidentiality",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 4.2",
+      "title": "CR 4.2 - Information persistence",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 4.2 RE(1)",
+      "title": "RE (1) Erase of shared memory resources",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 4.2 RE(2)",
+      "title": "RE (2) Erase verification",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 4.3",
+      "title": "CR 4.3 - Use of cryptography",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 5",
+      "title": "FR 5 - Restricted data flow (RDF)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 5.1",
+      "title": "CR 5.1 - Network segmentation",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 5.2",
+      "title": "NDR 5.2 - Zone boundary protection",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 5.2 RE(1)",
+      "title": "RE (1) Deny all, permit by exception",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 5.2 RE(2)",
+      "title": "RE (2) Island mode",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 5.2 RE(3)",
+      "title": "RE (3) Fail close",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "NDR 5.3",
+      "title": "NDR 5.3 - General purpose, person-to-person communication restrictions",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 6",
+      "title": "FR 6 - Timely response to events (TRE)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 6.1",
+      "title": "CR 6.1 - Audit log accessibility",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 6.1 RE(1)",
+      "title": "RE (1) Programmatic access to audit logs",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 6.2",
+      "title": "CR 6.2 - Continuous monitoring",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "FR 7",
+      "title": "FR 7 - Resource availability (RA)"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.1",
+      "title": "CR 7.1 - Denial of service protection RE(1) Manage communication load from component",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.2",
+      "title": "CR 7.2 - Resource management",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.3",
+      "title": "CR 7.3 - Control system backup",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.3 RE(1)",
+      "title": "RE (1) Backup integrity verification",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.4",
+      "title": "CR 7.4 - Control system recovery and reconstitution",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.5",
+      "title": "CR 7.5 - Emergency power"
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.6",
+      "title": "CR 7.6 - Network and security configuration settings",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.6 RE(1)",
+      "title": "RE (1) Machine-readable reporting of current security settings",
+      "levels": [
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.7",
+      "title": "CR 7.7 - Least functionality",
+      "levels": [
+        "sl1",
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "iec-62443-4-2",
+      "controlId": "CR 7.8",
+      "title": "CR 7.8 - Control system component inventory",
+      "levels": [
+        "sl2",
+        "sl3",
+        "sl4"
+      ]
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1",
+      "title": "",
+      "attributes": {
+        "redArticle": "Art. 3(3)(d)"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:ACM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CCK",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CRY",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:NMM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:RLM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SCM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SSM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SUM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:TCM",
+      "title": "",
+      "parentId": "en-18031-1"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:ACM-1",
+      "title": "",
+      "parentId": "en-18031-1:ACM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:ACM-2",
+      "title": "",
+      "parentId": "en-18031-1:ACM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-1",
+      "title": "",
+      "parentId": "en-18031-1:AUM"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-1-1",
+      "title": "",
+      "parentId": "en-18031-1:AUM-1",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-1-2",
+      "title": "",
+      "parentId": "en-18031-1:AUM-1",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-2",
+      "title": "",
+      "parentId": "en-18031-1:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-3",
+      "title": "",
+      "parentId": "en-18031-1:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-4",
+      "title": "",
+      "parentId": "en-18031-1:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-5",
+      "title": "",
+      "parentId": "en-18031-1:AUM"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-5-1",
+      "title": "",
+      "parentId": "en-18031-1:AUM-5",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "status": "restricted",
+      "statusNote": "Implementing Decision (EU) 2025/138, notice 2: no presumption of conformity if, applying clauses 6.2.5.1 and 6.2.5.2 of the standard, the user is allowed not to set and use any password. Where the standard is not applied in full, Directive 2014/53/EU Art. 17(4) requires EU-type examination (Annex III) or full quality assurance (Annex IV).",
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-5-2",
+      "title": "",
+      "parentId": "en-18031-1:AUM-5",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "status": "restricted",
+      "statusNote": "Implementing Decision (EU) 2025/138, notice 2: no presumption of conformity if, applying clauses 6.2.5.1 and 6.2.5.2 of the standard, the user is allowed not to set and use any password. Where the standard is not applied in full, Directive 2014/53/EU Art. 17(4) requires EU-type examination (Annex III) or full quality assurance (Annex IV).",
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:AUM-6",
+      "title": "",
+      "parentId": "en-18031-1:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CCK-1",
+      "title": "",
+      "parentId": "en-18031-1:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CCK-2",
+      "title": "",
+      "parentId": "en-18031-1:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CCK-3",
+      "title": "",
+      "parentId": "en-18031-1:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:CRY-1",
+      "title": "",
+      "parentId": "en-18031-1:CRY",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-1",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      },
+      "notes": "Annex B of the standard names no EN IEC 62443-4-2:2019 requirement for this code; evidence comes only from direct bindings."
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-2",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-3",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-4",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-5",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:GEC-6",
+      "title": "",
+      "parentId": "en-18031-1:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.5",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:NMM-1",
+      "title": "",
+      "parentId": "en-18031-1:NMM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 6.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 6.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:RLM-1",
+      "title": "",
+      "parentId": "en-18031-1:RLM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.4",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SCM-1",
+      "title": "",
+      "parentId": "en-18031-1:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SCM-2",
+      "title": "",
+      "parentId": "en-18031-1:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SCM-3",
+      "title": "",
+      "parentId": "en-18031-1:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SCM-4",
+      "title": "",
+      "parentId": "en-18031-1:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SSM-1",
+      "title": "",
+      "parentId": "en-18031-1:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SSM-2",
+      "title": "",
+      "parentId": "en-18031-1:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SSM-3",
+      "title": "",
+      "parentId": "en-18031-1:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SUM-1",
+      "title": "",
+      "parentId": "en-18031-1:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SUM-2",
+      "title": "",
+      "parentId": "en-18031-1:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:SUM-3",
+      "title": "",
+      "parentId": "en-18031-1:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-1:TCM-1",
+      "title": "",
+      "parentId": "en-18031-1:TCM",
+      "relations": [
+        {
+          "note": "EN 18031-1:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment: QA5 = Yes, and QA6 = Yes or QA10b = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes], QA5[Yes|*] & QA10b[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2",
+      "title": "",
+      "attributes": {
+        "redArticle": "Art. 3(3)(e)"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:ACM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CCK",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CRY",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:DLM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:LGM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SCM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SSM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SUM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:UNM",
+      "title": "",
+      "parentId": "en-18031-2"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:ACM-1",
+      "title": "",
+      "parentId": "en-18031-2:ACM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:ACM-2",
+      "title": "",
+      "parentId": "en-18031-2:ACM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-1",
+      "title": "",
+      "parentId": "en-18031-2:AUM"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-1-1",
+      "title": "",
+      "parentId": "en-18031-2:AUM-1",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-1-2",
+      "title": "",
+      "parentId": "en-18031-2:AUM-1",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-2",
+      "title": "",
+      "parentId": "en-18031-2:AUM"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-2-1",
+      "title": "",
+      "parentId": "en-18031-2:AUM-2",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-2-2",
+      "title": "",
+      "parentId": "en-18031-2:AUM-2",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.2",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.4",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.12",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 1.13",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Part 2 gate. This clause applies only where the primary function is processing special categories of personal data, which no question asks; the assessor decides.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-3",
+      "title": "",
+      "parentId": "en-18031-2:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-4",
+      "title": "",
+      "parentId": "en-18031-2:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.5",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-5",
+      "title": "",
+      "parentId": "en-18031-2:AUM"
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-5-1",
+      "title": "",
+      "parentId": "en-18031-2:AUM-5",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "status": "restricted",
+      "statusNote": "Implementing Decision (EU) 2025/138, notice 2: no presumption of conformity if, applying clauses 6.2.5.1 and 6.2.5.2 of the standard, the user is allowed not to set and use any password. Where the standard is not applied in full, Directive 2014/53/EU Art. 17(4) requires EU-type examination (Annex III) or full quality assurance (Annex IV).",
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-5-2",
+      "title": "",
+      "parentId": "en-18031-2:AUM-5",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "status": "restricted",
+      "statusNote": "Implementing Decision (EU) 2025/138, notice 2: no presumption of conformity if, applying clauses 6.2.5.1 and 6.2.5.2 of the standard, the user is allowed not to set and use any password. Where the standard is not applied in full, Directive 2014/53/EU Art. 17(4) requires EU-type examination (Annex III) or full quality assurance (Annex IV).",
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:AUM-6",
+      "title": "",
+      "parentId": "en-18031-2:AUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.11",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CCK-1",
+      "title": "",
+      "parentId": "en-18031-2:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 1.14",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CCK-2",
+      "title": "",
+      "parentId": "en-18031-2:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CCK-3",
+      "title": "",
+      "parentId": "en-18031-2:CCK",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:CRY-1",
+      "title": "",
+      "parentId": "en-18031-2:CRY",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.3",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:DLM-1",
+      "title": "",
+      "parentId": "en-18031-2:DLM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-1",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      },
+      "notes": "Annex B of the standard names no EN IEC 62443-4-2:2019 requirement for this code; evidence comes only from direct bindings."
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-2",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.7",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-3",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 5.2",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-4",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-5",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.7",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-6",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.5",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:GEC-7",
+      "title": "",
+      "parentId": "en-18031-2:GEC",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 7.6",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:LGM-1",
+      "title": "",
+      "parentId": "en-18031-2:LGM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.9",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:LGM-2",
+      "title": "",
+      "parentId": "en-18031-2:LGM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:LGM-3",
+      "title": "",
+      "parentId": "en-18031-2:LGM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.9",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:LGM-4",
+      "title": "",
+      "parentId": "en-18031-2:LGM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 2.11",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SCM-1",
+      "title": "",
+      "parentId": "en-18031-2:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SCM-2",
+      "title": "",
+      "parentId": "en-18031-2:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SCM-3",
+      "title": "",
+      "parentId": "en-18031-2:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SCM-4",
+      "title": "",
+      "parentId": "en-18031-2:SCM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.8",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SSM-1",
+      "title": "",
+      "parentId": "en-18031-2:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SSM-2",
+      "title": "",
+      "parentId": "en-18031-2:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 3.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SSM-3",
+      "title": "",
+      "parentId": "en-18031-2:SSM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "CR 4.1",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SUM-1",
+      "title": "",
+      "parentId": "en-18031-2:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SUM-2",
+      "title": "",
+      "parentId": "en-18031-2:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:SUM-3",
+      "title": "",
+      "parentId": "en-18031-2:SUM",
+      "relations": [
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "EDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "HDR 3.10",
+          "assertedBy": "publisher"
+        },
+        {
+          "note": "EN 18031-2:2024, Annex B (informative mapping to EN IEC 62443-4-2:2019).",
+          "scheme": "framework:iec-62443-4-2",
+          "target": "NDR 3.10",
+          "assertedBy": "publisher"
+        }
+      ],
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      }
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:UNM-1",
+      "title": "",
+      "parentId": "en-18031-2:UNM",
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      },
+      "notes": "Annex B of the standard names no EN IEC 62443-4-2:2019 requirement for this code; evidence comes only from direct bindings."
+    },
+    {
+      "catalogId": "red",
+      "controlId": "en-18031-2:UNM-2",
+      "title": "",
+      "parentId": "en-18031-2:UNM",
+      "applicability": {
+        "note": "Internet-connected wireless equipment processing personal data: QA5 = Yes, QA6 or QA10b = Yes, and QI2 = Yes.",
+        "when": "QA5[Yes|*] & QA6[Yes] & QI2[Yes|*], QA5[Yes|*] & QA10b[Yes|*] & QI2[Yes|*]"
+      },
+      "notes": "Annex B of the standard names no EN IEC 62443-4-2:2019 requirement for this code; evidence comes only from direct bindings."
+    }
+  ]
+}

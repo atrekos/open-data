@@ -1,0 +1,3 @@
+- assumptionCode: A14
+  passedTo: operator
+  rationale: The operator is responsible to limit access to the product and its physical interfaces taking adequate measures.
