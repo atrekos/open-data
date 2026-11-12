@@ -5,6 +5,30 @@
   "schemas": [
     {
       "name": "archive-manifest",
+      "version": "7",
+      "$id": "https://data.atrekos.com/schemas/archive-manifest/7.json",
+      "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",
+      "covers": "archiveSchemaVersion 7",
+      "path": "schemas/archive-manifest/7.json"
+    },
+    {
+      "name": "archive-provenance",
+      "version": "7",
+      "$id": "https://data.atrekos.com/schemas/archive-provenance/7.json",
+      "description": "`provenance.json` of an assessment archive: the only file that carries internal identifiers (with `localKeys`, the map from each local key the rest of the archive uses to its identifier), the approval, the snapshot generations and `pdfsWithDatabaseId`, the frozen PDFs that print the assessment id. Deleting it leaves the rest of the archive verifiable.",
+      "covers": "archiveSchemaVersion 7",
+      "path": "schemas/archive-provenance/7.json"
+    },
+    {
+      "name": "archive-input",
+      "version": "7",
+      "$id": "https://data.atrekos.com/schemas/archive-input/7.json",
+      "description": "The `input/` directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.",
+      "covers": "archiveSchemaVersion 7",
+      "path": "schemas/archive-input/7.json"
+    },
+    {
+      "name": "archive-manifest",
       "version": "6",
       "$id": "https://data.atrekos.com/schemas/archive-manifest/6.json",
       "description": "`manifest.json` of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.",

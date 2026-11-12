@@ -49,8 +49,9 @@ import { join, relative, sep, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 
-/** The only archive schema this script understands. */
-const SUPPORTED_SCHEMA_VERSION = 5;
+/** The archive schemas this script understands: 6 added the attachments' provenance in `input/toe.yaml`, which it does not read (#2149 M1). */
+const SUPPORTED_SCHEMA_VERSIONS = [5, 6, 7];
+const NEWEST_SCHEMA_VERSION = Math.max(...SUPPORTED_SCHEMA_VERSIONS);
 
 /**
  * The files a recipient is invited to edit.
@@ -633,16 +634,16 @@ export function main(argv) {
   // Version first, before anything is read or reported: a newer archive may
   // mean things this script would describe wrongly, and a wrong description of
   // evidence is worse than none.
-  if (manifest.archiveSchemaVersion !== SUPPORTED_SCHEMA_VERSION) {
+  if (!SUPPORTED_SCHEMA_VERSIONS.includes(manifest.archiveSchemaVersion)) {
     const newer =
       typeof manifest.archiveSchemaVersion === 'number' &&
-      manifest.archiveSchemaVersion > SUPPORTED_SCHEMA_VERSION;
+      manifest.archiveSchemaVersion > NEWEST_SCHEMA_VERSION;
     return fail(
       EXIT.VERSION,
       newer
         ? [
-            `This archive is newer than this script (schema ${manifest.archiveSchemaVersion}, this script understands ${SUPPORTED_SCHEMA_VERSION}).`,
-            'Checking it here would mislead you. Use the script that shipped with it.',
+            `This archive is newer than this script (schema ${manifest.archiveSchemaVersion}, this script understands ${SUPPORTED_SCHEMA_VERSIONS.slice(0, -1).join(', ')} and ${NEWEST_SCHEMA_VERSION}).`,
+            'Checking it here would mislead you. Get a current copy of the script from the exporter or from Atrekos, by a route other than this archive, check it as the README describes, and run that.',
           ]
         : `Unrecognised archive schema version: ${JSON.stringify(manifest.archiveSchemaVersion)}.`,
     );
@@ -661,6 +662,7 @@ export function main(argv) {
   // --- Header ---
   const reopened = manifest.evidenceStatus === 'working-copy' && Boolean(manifest.approvedAt);
   print(`Atrekos assessment archive — verification report`);
+  print('  This script is part of the archive it checks. See README.md, "Checking it", for how to check it first.');
   print(`  schema version : ${manifest.archiveSchemaVersion}`);
   print(`  engine version : ${manifest.engineVersion}`);
   print(`  evidence status: ${manifest.evidenceStatus}${statusNote}`);
@@ -689,7 +691,7 @@ export function main(argv) {
     print('The manifest in this archive is not the one you were given.');
     print(`  you gave    : ${expected.toLowerCase()}`);
     print(`  this archive: ${manifestHash}`);
-    print('Whoever passed it on may have changed it, files and manifest together. Do not rely on it.');
+    print('Treat this archive as altered: whoever passed it on may have changed it, files and manifest together.');
     return EXIT.INTEGRITY;
   }
 
@@ -742,11 +744,11 @@ export function main(argv) {
     print('');
     if (expected !== null) {
       print('The manifest matches the hash you gave, and every file matches the manifest.');
-      print('This archive is byte-for-byte what was exported.');
+      print('The archive matches the manifest you checked.');
     } else {
       print('No changes. Every file matches the manifest in this archive.');
       print('The manifest itself is not signed, so this does not show the archive is what was exported.');
-      print('To check it, compare the manifest hash above with one you received separately.');
+      print('To check it, compare the manifest hash above with one you received separately (see README.md, "Checking it").');
     }
     return EXIT.OK;
   }

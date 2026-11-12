@@ -22,10 +22,25 @@ is the questionnaire as answered, keyed by the same question codes the reports c
 
 ## Checking it
 
-Every file is listed in `manifest.json` with its SHA-256. Recomputing them shows that the
-files agree with the manifest. The manifest is not signed, so that alone does not show this
-archive is what was exported: compare the SHA-256 of `manifest.json` (the script below prints
-it) with one you received separately, or give it as `--expect-manifest-sha256 <hash>`.
+Every file is listed in `manifest.json` with its SHA-256. Recomputing them shows that the files agree with
+the manifest, and nothing more. To check the archive itself, in this order:
+
+1. **Before running anything from this archive**, know that it is not signed. Nothing in it, this README
+   and the script included, can prove the archive is what was exported: whoever changed it could have
+   changed those too.
+2. Get the SHA-256 of `manifest.json` from the person or system that exported it, **by a different route
+   than this archive** (not from a file inside it).
+3. Compute the SHA-256 of `manifest.json` with a tool you already have, not with anything from the
+   archive: `shasum -a 256 manifest.json`, `sha256sum manifest.json`, or
+   `certutil -hashfile manifest.json SHA256`. Compare it with the one you were given. **If they differ,
+   stop.**
+4. Compute the SHA-256 of `regenerate.mjs` the same way and compare it with its entry in `manifest.json`.
+   **If they differ, stop.**
+5. Only then run `node regenerate.mjs` (optionally with `--expect-manifest-sha256 <hash>`, as a second
+   check of the hash you were given). The script runs with your user's privileges; read it first if you
+   can.
+
+If you have no hash from a separate route, the archive cannot be shown authentic.
 
 ## Regenerating it
 
@@ -34,7 +49,7 @@ node regenerate.mjs
 ```
 
 Node 24, no installation, no network access, no dependencies. The script is
-**read-only** — it writes nothing into this archive.
+**read-only** — it writes nothing into this archive. (As shipped, when step 4 above passed.)
 
 It does two things:
 

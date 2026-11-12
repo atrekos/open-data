@@ -170,6 +170,24 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
     </thead>
     <tbody>
       <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-manifest/7.json">archive-manifest</a><code class="id">https://data.atrekos.com/schemas/archive-manifest/7.json</code></td>
+        <td class="version" data-label="Version">7</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 7</td>
+        <td class="what" data-label="What it describes"><code>manifest.json</code> of an assessment archive: the engine version, the input hash, the pinned catalogue versions, the evidence status and a SHA-256 for every file.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-provenance/7.json">archive-provenance</a><code class="id">https://data.atrekos.com/schemas/archive-provenance/7.json</code></td>
+        <td class="version" data-label="Version">7</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 7</td>
+        <td class="what" data-label="What it describes"><code>provenance.json</code> of an assessment archive: the only file that carries internal identifiers (with <code>localKeys</code>, the map from each local key the rest of the archive uses to its identifier), the approval, the snapshot generations and <code>pdfsWithDatabaseId</code>, the frozen PDFs that print the assessment id. Deleting it leaves the rest of the archive verifiable.</td>
+      </tr>
+      <tr>
+        <td class="schema" data-label="Schema"><a href="schemas/archive-input/7.json">archive-input</a><code class="id">https://data.atrekos.com/schemas/archive-input/7.json</code></td>
+        <td class="version" data-label="Version">7</td>
+        <td class="covers" data-label="Covers">archiveSchemaVersion 7</td>
+        <td class="what" data-label="What it describes">The <code>input/</code> directory of an assessment archive as one object keyed by file path, YAML files parsed (assets, interfaces and the organisation are named by local keys): answers, mitigations, treatments, quality acceptances, condition hand-overs, the TOE, tracing, the model and catalogue snapshots, and the pinned frameworks when there are any.</td>
+      </tr>
+      <tr>
         <td class="schema" data-label="Schema"><a href="schemas/archive-manifest/6.json">archive-manifest</a><code class="id">https://data.atrekos.com/schemas/archive-manifest/6.json</code></td>
         <td class="version" data-label="Version">6</td>
         <td class="covers" data-label="Covers">archiveSchemaVersion 6</td>
@@ -413,7 +431,7 @@ footer .generated { font-size: var(--text-xs); line-height: var(--lh-xs); }
   </table>
   <p class="after-table"><a href="schemas/index.json">schemas/index.json</a></p>
   <h2>Examples</h2>
-  <p>One worked example: <a href="examples/tw800/README.md">a complete assessment of a fictional product</a>, exactly as the product's own export writes it, with its inputs, its computed results and a README that walks through them.</p>
+  <p>One worked example: <a href="https://github.com/atrekos/open-data/tree/main/examples/tw800">a complete assessment of a fictional product</a>, exactly as the product's own export writes it, with its inputs, its computed results and a README that walks through them.</p>
 </main>
 <footer class="wrap">
   <p>The schemas describe shape only. They carry no framework text and do not change the licence a framework

@@ -52,10 +52,12 @@ result states what it relies on; it does not claim that a measure works.
 
 ## Checking it
 
-1. **Hashes.** `node archive/regenerate.mjs` (Node 24, no installation, no network, read-only) recomputes every file's SHA-256
-   against `archive/manifest.json`. If they match, the files agree with the manifest; the manifest is not signed, so compare
-   its SHA-256 (the script prints it) with one you received separately, or give it as `--expect-manifest-sha256 <hash>`. Any
-   other SHA-256 tool does the same job from the manifest's list.
+1. **Hashes.** The manifest is not signed and `archive/regenerate.mjs` is part of the archive, so check both before you trust
+   the script's answer. Get the manifest's SHA-256 by a route other than this archive, compute it yourself
+   (`shasum -a 256 archive/manifest.json`, `sha256sum` or `certutil -hashfile`) and compare; check the script's own hash
+   against its entry in the manifest the same way; only then run `node archive/regenerate.mjs` (Node 24, no installation, no
+   network, read-only), which recomputes every file's SHA-256 against `archive/manifest.json`. Without a hash from a separate
+   route the archive cannot be shown authentic.
 2. **Schemas.** Each machine-readable file follows a published schema at https://data.atrekos.com/schemas/ (the manifest, the
    provenance file, the result as `json-export` and the inputs as `archive-input`, each at the version the file names). Any
    JSON Schema 2020-12 validator checks them.
